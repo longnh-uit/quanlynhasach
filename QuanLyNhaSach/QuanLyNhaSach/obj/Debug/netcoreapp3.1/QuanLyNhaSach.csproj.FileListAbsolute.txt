@@ -1,0 +1,16 @@
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.exe
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.deps.json
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.json
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.runtimeconfig.dev.json
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csprojAssemblyReference.cache
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.Properties.Resources.resources
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.GenerateResource.cache
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfoInputs.cache
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.AssemblyInfo.cs
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.csproj.CoreCompileInputs.cache
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.dll
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.pdb
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.genruntimeconfig.cache
+D:\Courses\NhaSach\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\netcoreapp3.1\QuanLyNhaSach.frmLogin.resources

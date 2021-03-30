@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Courses\\NhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
+    "C:\\Users\\phand\\OneDrive\\Desktop\\CNPM\\quanlynhasach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {}
   },
   "projects": {
-    "D:\\Courses\\NhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
+    "C:\\Users\\phand\\OneDrive\\Desktop\\CNPM\\quanlynhasach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Courses\\NhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "projectUniqueName": "C:\\Users\\phand\\OneDrive\\Desktop\\CNPM\\quanlynhasach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
         "projectName": "QuanLyNhaSach",
-        "projectPath": "D:\\Courses\\NhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Courses\\NhaSach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
+        "projectPath": "C:\\Users\\phand\\OneDrive\\Desktop\\CNPM\\quanlynhasach\\QuanLyNhaSach\\QuanLyNhaSach\\QuanLyNhaSach.csproj",
+        "packagesPath": "C:\\Users\\phand\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phand\\OneDrive\\Desktop\\CNPM\\quanlynhasach\\QuanLyNhaSach\\QuanLyNhaSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phand\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

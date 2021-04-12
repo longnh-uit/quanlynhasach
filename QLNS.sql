@@ -1,4 +1,5 @@
 ﻿create database QLNS
+go
 use QLNS
 set dateformat DMY
 

@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyNhaSach.Forms
 {
-    partial class Dash_board
+    partial class frmDash_board
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dash_board));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDash_board));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnThutien = new System.Windows.Forms.Button();
@@ -223,7 +223,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Location = new System.Drawing.Point(64, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 23);
+            this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhà sách";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -274,7 +274,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(63, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 23);
+            this.label3.Size = new System.Drawing.Size(258, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Shop Management System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -298,7 +298,7 @@ namespace QuanLyNhaSach.Forms
             this.lblTime.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblTime.Location = new System.Drawing.Point(758, 7);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(106, 23);
+            this.lblTime.Size = new System.Drawing.Size(83, 19);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "HH:MM:SS";
             // 
@@ -309,7 +309,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Location = new System.Drawing.Point(63, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
+            this.label4.Size = new System.Drawing.Size(50, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "Role: ";
             // 
@@ -320,7 +320,7 @@ namespace QuanLyNhaSach.Forms
             this.label2.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Location = new System.Drawing.Point(63, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
+            this.label2.Size = new System.Drawing.Size(87, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Welcome:";
             // 
@@ -333,7 +333,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
-            // Dash_board
+            // frmDash_board
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -343,7 +343,7 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Dash_board";
+            this.Name = "frmDash_board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dash_board";
             this.Load += new System.EventHandler(this.Dash_board_Load);
@@ -381,7 +381,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Timer timerTime;
     }
 }

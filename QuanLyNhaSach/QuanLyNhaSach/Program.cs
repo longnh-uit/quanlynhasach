@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaSach.Forms;
 
 namespace QuanLyNhaSach
 {
@@ -17,7 +18,14 @@ namespace QuanLyNhaSach
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            frmLogin loginForm = new frmLogin();
+            Application.Run(loginForm);
+
+            if (loginForm.UserSuccessfullyAuthenticated)
+            {
+                // MainForm is defined elsewhere
+                Application.Run(new frmDash_board());
+            }
         }
     }
 }

@@ -1,0 +1,44 @@
+sách
+--------
+id		char(5) primary key
+tên sách	varchar(30)
+thể loại	varchar(20) 
+tác giả		varchar(40)
+số lượng	int
+đơn giá nhập	money
+
+khách hàng
+--------
+id		char(5) primary key
+họ tên		varchar(40)
+địa chỉ		varchar(50)
+điện thoại	varchar(10)
+email		varchar(20)
+
+thu tiền
+--------
+id khách hàng	char(5) primary key
+ngày thu tiền	datetime
+số tiền thu	money
+
+báo cáo tồn
+--------
+tháng		int
+id sách		char(5) primary key
+tồn đầu		int
+phát sinh	int
+tồn cuối	int
+
+báo cáo công nợ
+--------
+tháng		int
+id khách hàng	char(5) primary key
+nợ đầu		money
+phát sinh	money
+nợ cuối		money
+
+administrators
+--------
+tên		varchar(40)
+username	varchar(20) primary key
+password	varchar(20)

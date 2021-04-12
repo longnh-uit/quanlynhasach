@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach.Forms
 {
-    public partial class Dash_board : Form
+    public partial class frmDash_board : Form
     {
         int PanelWidth;
         bool isColapsed;
-        public Dash_board()
+        public frmDash_board()
         {
             InitializeComponent();
             PanelWidth = panelLeft.Width;

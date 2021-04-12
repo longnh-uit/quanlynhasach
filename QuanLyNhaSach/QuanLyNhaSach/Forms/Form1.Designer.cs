@@ -97,10 +97,9 @@ namespace QuanLyNhaSach
             this.lblBookShopName.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblBookShopName.Location = new System.Drawing.Point(71, 9);
             this.lblBookShopName.Name = "lblBookShopName";
-            this.lblBookShopName.Size = new System.Drawing.Size(187, 32);
+            this.lblBookShopName.Size = new System.Drawing.Size(148, 25);
             this.lblBookShopName.TabIndex = 0;
             this.lblBookShopName.Text = "Tên nhà sách";
-            this.lblBookShopName.Click += new System.EventHandler(this.lblBookShopName_Click);
             // 
             // lblUsername
             // 
@@ -109,7 +108,7 @@ namespace QuanLyNhaSach
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblUsername.Location = new System.Drawing.Point(412, 333);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(160, 23);
+            this.lblUsername.Size = new System.Drawing.Size(133, 21);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Tên đăng nhập:";
             // 
@@ -133,7 +132,7 @@ namespace QuanLyNhaSach
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblLogin.Location = new System.Drawing.Point(499, 287);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(272, 32);
+            this.lblLogin.Size = new System.Drawing.Size(216, 25);
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Vui lòng đăng nhập";
             // 
@@ -142,7 +141,7 @@ namespace QuanLyNhaSach
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.Location = new System.Drawing.Point(415, 357);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(370, 37);
+            this.txtUsername.Size = new System.Drawing.Size(370, 31);
             this.txtUsername.TabIndex = 0;
             // 
             // lblPassword
@@ -152,7 +151,7 @@ namespace QuanLyNhaSach
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblPassword.Location = new System.Drawing.Point(412, 402);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(92, 23);
+            this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Mật khẩu";
             // 
@@ -161,7 +160,7 @@ namespace QuanLyNhaSach
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(415, 426);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(370, 37);
+            this.txtPassword.Size = new System.Drawing.Size(370, 31);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -188,12 +187,13 @@ namespace QuanLyNhaSach
             this.lblForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblForgotPassword.Location = new System.Drawing.Point(532, 476);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(168, 23);
+            this.lblForgotPassword.Size = new System.Drawing.Size(136, 19);
             this.lblForgotPassword.TabIndex = 0;
             this.lblForgotPassword.Text = "Quên mật khẩu?";
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1200, 720);
@@ -210,7 +210,7 @@ namespace QuanLyNhaSach
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();

@@ -39,7 +39,6 @@ namespace QuanLyNhaSach.Forms
             this.btnNhapsach = new System.Windows.Forms.Button();
             this.panelSide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -72,7 +71,7 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(248, 720);
+            this.panelLeft.Size = new System.Drawing.Size(248, 806);
             this.panelLeft.TabIndex = 0;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
@@ -172,7 +171,6 @@ namespace QuanLyNhaSach.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -181,22 +179,6 @@ namespace QuanLyNhaSach.Forms
             this.panel2.Size = new System.Drawing.Size(248, 125);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(185, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(63, 62);
-            this.button7.TabIndex = 3;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // label1
             // 
@@ -228,7 +210,7 @@ namespace QuanLyNhaSach.Forms
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(248, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(952, 44);
+            this.panel4.Size = new System.Drawing.Size(1164, 44);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -242,7 +224,7 @@ namespace QuanLyNhaSach.Forms
             this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(890, -6);
+            this.button8.Location = new System.Drawing.Point(1102, -6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(62, 53);
             this.button8.TabIndex = 4;
@@ -271,7 +253,7 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(248, 44);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(952, 81);
+            this.panel5.Size = new System.Drawing.Size(1164, 81);
             this.panel5.TabIndex = 1;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -281,7 +263,7 @@ namespace QuanLyNhaSach.Forms
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.lblTime.Location = new System.Drawing.Point(758, 7);
+            this.lblTime.Location = new System.Drawing.Point(970, 7);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(106, 23);
             this.lblTime.TabIndex = 4;
@@ -323,14 +305,14 @@ namespace QuanLyNhaSach.Forms
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl.Location = new System.Drawing.Point(248, 125);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(952, 595);
+            this.panelControl.Size = new System.Drawing.Size(1164, 681);
             this.panelControl.TabIndex = 2;
             // 
             // frmDash_board
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.ClientSize = new System.Drawing.Size(1412, 806);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -373,7 +355,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panelControl;
     }

@@ -139,5 +139,18 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
 
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (Form_FinishOrder uf = new Form_FinishOrder())
+            {
+                uf.ShowDialog();
+            }
+        }
     }
 }

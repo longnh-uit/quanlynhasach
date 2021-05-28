@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaSach.Forms.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,6 @@ namespace QuanLyNhaSach.Forms
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -95,10 +95,6 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnHome);
-        }
 
         private void btnNhapsach_Click(object sender, EventArgs e)
         {
@@ -108,6 +104,8 @@ namespace QuanLyNhaSach.Forms
         private void btnHoadon_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnHoadon);
+            UC_Hoadon uchd = new UC_Hoadon();
+            AddControltoPanel(uchd);
         }
 
         private void btnTracuu_Click(object sender, EventArgs e)
@@ -124,11 +122,42 @@ namespace QuanLyNhaSach.Forms
         {
             moveSidePanel(btnBaocao);
         }
+        private void AddControltoPanel(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(c);
+        }
 
         private void timerTime_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
             lblTime.Text = dt.ToString("HH:MM:ss");
+        }
+
+        private void panelLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

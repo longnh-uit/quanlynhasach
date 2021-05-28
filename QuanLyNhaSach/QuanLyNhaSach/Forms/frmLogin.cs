@@ -30,7 +30,7 @@ namespace QuanLyNhaSach
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Create connection to database
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=JARVIS\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
             // Make query
             string query = "Select * from ADMINISTRATORS where username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text +"'";
             // Create adapter

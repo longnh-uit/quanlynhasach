@@ -38,7 +38,6 @@ namespace QuanLyNhaSach.Forms
             this.btnHoadon = new System.Windows.Forms.Button();
             this.btnNhapsach = new System.Windows.Forms.Button();
             this.panelSide = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace QuanLyNhaSach.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.panelControl = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,13 +68,13 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Controls.Add(this.btnHoadon);
             this.panelLeft.Controls.Add(this.btnNhapsach);
             this.panelLeft.Controls.Add(this.panelSide);
-            this.panelLeft.Controls.Add(this.btnHome);
             this.panelLeft.Controls.Add(this.panel2);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(248, 720);
             this.panelLeft.TabIndex = 0;
+            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // btnBaocao
             // 
@@ -84,7 +84,7 @@ namespace QuanLyNhaSach.Forms
             this.btnBaocao.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnBaocao.Image = ((System.Drawing.Image)(resources.GetObject("btnBaocao.Image")));
             this.btnBaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaocao.Location = new System.Drawing.Point(12, 476);
+            this.btnBaocao.Location = new System.Drawing.Point(14, 407);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.Size = new System.Drawing.Size(234, 63);
             this.btnBaocao.TabIndex = 7;
@@ -101,7 +101,7 @@ namespace QuanLyNhaSach.Forms
             this.btnThutien.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnThutien.Image = ((System.Drawing.Image)(resources.GetObject("btnThutien.Image")));
             this.btnThutien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThutien.Location = new System.Drawing.Point(12, 407);
+            this.btnThutien.Location = new System.Drawing.Point(14, 338);
             this.btnThutien.Name = "btnThutien";
             this.btnThutien.Size = new System.Drawing.Size(234, 63);
             this.btnThutien.TabIndex = 6;
@@ -118,7 +118,7 @@ namespace QuanLyNhaSach.Forms
             this.btnTracuu.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnTracuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTracuu.Image")));
             this.btnTracuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTracuu.Location = new System.Drawing.Point(12, 338);
+            this.btnTracuu.Location = new System.Drawing.Point(14, 269);
             this.btnTracuu.Name = "btnTracuu";
             this.btnTracuu.Size = new System.Drawing.Size(234, 63);
             this.btnTracuu.TabIndex = 5;
@@ -135,7 +135,7 @@ namespace QuanLyNhaSach.Forms
             this.btnHoadon.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnHoadon.Image = ((System.Drawing.Image)(resources.GetObject("btnHoadon.Image")));
             this.btnHoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoadon.Location = new System.Drawing.Point(12, 269);
+            this.btnHoadon.Location = new System.Drawing.Point(14, 200);
             this.btnHoadon.Name = "btnHoadon";
             this.btnHoadon.Size = new System.Drawing.Size(234, 63);
             this.btnHoadon.TabIndex = 4;
@@ -152,7 +152,7 @@ namespace QuanLyNhaSach.Forms
             this.btnNhapsach.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnNhapsach.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapsach.Image")));
             this.btnNhapsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapsach.Location = new System.Drawing.Point(12, 200);
+            this.btnNhapsach.Location = new System.Drawing.Point(14, 131);
             this.btnNhapsach.Name = "btnNhapsach";
             this.btnNhapsach.Size = new System.Drawing.Size(234, 63);
             this.btnNhapsach.TabIndex = 3;
@@ -169,24 +169,6 @@ namespace QuanLyNhaSach.Forms
             this.panelSide.Name = "panelSide";
             this.panelSide.Size = new System.Drawing.Size(8, 63);
             this.panelSide.TabIndex = 2;
-            // 
-            // btnHome
-            // 
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(12, 131);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(234, 63);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "    Trang chủ";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel2
             // 
@@ -223,7 +205,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Location = new System.Drawing.Point(64, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 19);
+            this.label1.Size = new System.Drawing.Size(103, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhà sách";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -248,6 +230,7 @@ namespace QuanLyNhaSach.Forms
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(952, 44);
             this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // button8
             // 
@@ -274,7 +257,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(63, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 19);
+            this.label3.Size = new System.Drawing.Size(327, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Shop Management System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -290,15 +273,17 @@ namespace QuanLyNhaSach.Forms
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(952, 81);
             this.panel5.TabIndex = 1;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // lblTime
             // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblTime.Location = new System.Drawing.Point(758, 7);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(83, 19);
+            this.lblTime.Size = new System.Drawing.Size(106, 23);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "HH:MM:SS";
             // 
@@ -309,7 +294,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Location = new System.Drawing.Point(63, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "Role: ";
             // 
@@ -320,7 +305,7 @@ namespace QuanLyNhaSach.Forms
             this.label2.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Location = new System.Drawing.Point(63, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 19);
+            this.label2.Size = new System.Drawing.Size(110, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Welcome:";
             // 
@@ -333,11 +318,20 @@ namespace QuanLyNhaSach.Forms
             // 
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
+            // panelControl
+            // 
+            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl.Location = new System.Drawing.Point(248, 125);
+            this.panelControl.Name = "panelControl";
+            this.panelControl.Size = new System.Drawing.Size(952, 595);
+            this.panelControl.TabIndex = 2;
+            // 
             // frmDash_board
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelLeft);
@@ -373,7 +367,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button btnHoadon;
         private System.Windows.Forms.Button btnNhapsach;
         private System.Windows.Forms.Panel panelSide;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button8;
@@ -382,5 +375,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Timer timerTime;
+        private System.Windows.Forms.Panel panelControl;
     }
 }

@@ -64,6 +64,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxSotientra = new System.Windows.Forms.TextBox();
+            this.lblCheck = new System.Windows.Forms.Label();
             button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -321,7 +322,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(660, 461);
+            this.button3.Location = new System.Drawing.Point(660, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 49);
             this.button3.TabIndex = 12;
@@ -335,7 +336,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(509, 420);
+            this.label4.Location = new System.Drawing.Point(509, 449);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 13;
@@ -347,7 +348,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(510, 368);
+            this.label5.Location = new System.Drawing.Point(510, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 23);
             this.label5.TabIndex = 14;
@@ -359,7 +360,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(509, 312);
+            this.label6.Location = new System.Drawing.Point(509, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 23);
             this.label6.TabIndex = 15;
@@ -372,7 +373,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label7.Location = new System.Drawing.Point(510, 253);
+            this.label7.Location = new System.Drawing.Point(510, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 23);
             this.label7.TabIndex = 16;
@@ -384,7 +385,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label8.Location = new System.Drawing.Point(509, 197);
+            this.label8.Location = new System.Drawing.Point(509, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 23);
             this.label8.TabIndex = 17;
@@ -393,7 +394,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxSoluong
             // 
             this.txtBoxSoluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSoluong.Location = new System.Drawing.Point(661, 364);
+            this.txtBoxSoluong.Location = new System.Drawing.Point(661, 393);
             this.txtBoxSoluong.Name = "txtBoxSoluong";
             this.txtBoxSoluong.ReadOnly = true;
             this.txtBoxSoluong.Size = new System.Drawing.Size(150, 27);
@@ -403,7 +404,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxTheloai
             // 
             this.txtBoxTheloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxTheloai.Location = new System.Drawing.Point(661, 308);
+            this.txtBoxTheloai.Location = new System.Drawing.Point(661, 337);
             this.txtBoxTheloai.Name = "txtBoxTheloai";
             this.txtBoxTheloai.ReadOnly = true;
             this.txtBoxTheloai.Size = new System.Drawing.Size(150, 27);
@@ -412,7 +413,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxTensach
             // 
             this.txtBoxTensach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxTensach.Location = new System.Drawing.Point(661, 249);
+            this.txtBoxTensach.Location = new System.Drawing.Point(661, 278);
             this.txtBoxTensach.Name = "txtBoxTensach";
             this.txtBoxTensach.ReadOnly = true;
             this.txtBoxTensach.Size = new System.Drawing.Size(150, 27);
@@ -422,7 +423,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxNgay
             // 
             this.txtBoxNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNgay.Location = new System.Drawing.Point(661, 193);
+            this.txtBoxNgay.Location = new System.Drawing.Point(661, 222);
             this.txtBoxNgay.Name = "txtBoxNgay";
             this.txtBoxNgay.ReadOnly = true;
             this.txtBoxNgay.Size = new System.Drawing.Size(150, 27);
@@ -452,16 +453,30 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxSotientra
             // 
             this.txtBoxSotientra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotientra.Location = new System.Drawing.Point(661, 416);
+            this.txtBoxSotientra.Location = new System.Drawing.Point(661, 445);
             this.txtBoxSotientra.Name = "txtBoxSotientra";
             this.txtBoxSotientra.ReadOnly = true;
             this.txtBoxSotientra.Size = new System.Drawing.Size(150, 27);
             this.txtBoxSotientra.TabIndex = 24;
             // 
+            // lblCheck
+            // 
+            this.lblCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCheck.AutoSize = true;
+            this.lblCheck.ForeColor = System.Drawing.Color.Red;
+            this.lblCheck.Location = new System.Drawing.Point(509, 180);
+            this.lblCheck.Name = "lblCheck";
+            this.lblCheck.Size = new System.Drawing.Size(317, 20);
+            this.lblCheck.TabIndex = 26;
+            this.lblCheck.Text = "* Khách hàng không đủ điều kiện để mua hàng";
+            this.lblCheck.Visible = false;
+            this.lblCheck.Click += new System.EventHandler(this.lblCheck_Click);
+            // 
             // UC_Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCheck);
             this.Controls.Add(button7);
             this.Controls.Add(this.txtBoxSotientra);
             this.Controls.Add(this.textBox6);
@@ -527,5 +542,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBoxSotientra;
+        private System.Windows.Forms.Label lblCheck;
     }
 }

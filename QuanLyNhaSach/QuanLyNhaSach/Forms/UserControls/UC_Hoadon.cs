@@ -112,12 +112,23 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button7_Click(object sender, EventArgs e)
         {
-            txtBoxNgay.ReadOnly = false;
+            //Kiem tra dieu kien khach hang co mua hang duoc khong, khong du dieu kien thi -> true else false
+            txtBoxNgay.ReadOnly = false; 
             txtBoxTensach.ReadOnly = false;
             txtBoxTheloai.ReadOnly = false;
             txtBoxSotientra.ReadOnly = false;
             txtBoxSoluong.ReadOnly = false;
 
+
+            //Hiện dòng thông báo "khách hàng không đủ điều kiện"
+            if (txtBoxNgay.ReadOnly)
+            {
+                lblCheck.Visible = true;
+            }
+            else
+            {
+                lblCheck.Visible = false;
+            }
         }
 
         private void txtBoxTensach_TextChanged(object sender, EventArgs e)
@@ -151,6 +162,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 uf.ShowDialog();
             }
+        }
+
+        private void lblCheck_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

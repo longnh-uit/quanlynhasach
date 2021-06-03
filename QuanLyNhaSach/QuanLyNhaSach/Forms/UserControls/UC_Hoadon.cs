@@ -72,7 +72,12 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-
+            try
+            { listView1.Items.RemoveAt(listView1.SelectedIndices[0]); }
+            catch
+            {
+                MessageBox.Show("Chọn Item muốn xóa!");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -145,10 +150,47 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
 
         }
-
+        private bool IsDate(string tempDate)
+        {
+            DateTime fromDateValue;
+            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
+            if (txtBoxNgay.TextLength > 0 && txtBoxTensach.TextLength > 0 && txtBoxTheloai.TextLength > 0 && txtBoxHoten.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxSotientra.TextLength > 0 && txtBoxSodienthoai.TextLength > 0)
+            {
+                if (IsDate(txtBoxNgay.Text))
+                {
 
+
+                    string[] arr = new string[3];
+                    arr[1] = txtBoxSoluong.Text;
+                    arr[0] = txtBoxTensach.Text;
+                    arr[2] = ""; //Cần lấy giá tiền từ CSDL;
+                    ListViewItem lst = new ListViewItem(arr);
+                    listView1.Items.Add(lst);
+                    txtBoxTensach.Text = "";
+                    txtBoxSoluong.Text = "";
+                    txtBoxSotientra.Text = "";
+                    txtBoxTheloai.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Ngày không hợp lệ !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cần phải nhập tất cả các mục !");
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,6 +207,35 @@ namespace QuanLyNhaSach.Forms.UserControls
         }
 
         private void lblCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxSoluong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxSotientra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxSotientra_TextChanged(object sender, EventArgs e)
         {
 
         }

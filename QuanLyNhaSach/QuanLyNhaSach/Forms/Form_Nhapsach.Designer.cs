@@ -38,17 +38,17 @@ namespace QuanLyNhaSach.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxSoluong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxSotientra = new System.Windows.Forms.TextBox();
+            this.txtBoxTheloai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBoxNgaynhap = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxDongianhap = new System.Windows.Forms.TextBox();
+            this.txtBoxTensach = new System.Windows.Forms.TextBox();
+            this.txtBoxTacgia = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -65,8 +65,9 @@ namespace QuanLyNhaSach.Forms
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 53);
             this.button4.TabIndex = 55;
-            this.button4.Text = "Xóa tất cả";
+            this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -153,13 +154,15 @@ namespace QuanLyNhaSach.Forms
             this.label6.TabIndex = 65;
             this.label6.Text = "Đơn giá nhập";
             // 
-            // textBox2
+            // txtBoxSoluong
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(212, 339);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 27);
-            this.textBox2.TabIndex = 64;
+            this.txtBoxSoluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxSoluong.Location = new System.Drawing.Point(212, 339);
+            this.txtBoxSoluong.Name = "txtBoxSoluong";
+            this.txtBoxSoluong.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxSoluong.TabIndex = 64;
+            this.txtBoxSoluong.TextChanged += new System.EventHandler(this.txtBoxSoluong_TextChanged);
+            this.txtBoxSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSoluong_KeyPress);
             // 
             // label3
             // 
@@ -185,13 +188,13 @@ namespace QuanLyNhaSach.Forms
             this.label2.TabIndex = 61;
             this.label2.Text = "Tác giả";
             // 
-            // txtBoxSotientra
+            // txtBoxTheloai
             // 
-            this.txtBoxSotientra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotientra.Location = new System.Drawing.Point(212, 233);
-            this.txtBoxSotientra.Name = "txtBoxSotientra";
-            this.txtBoxSotientra.Size = new System.Drawing.Size(234, 27);
-            this.txtBoxSotientra.TabIndex = 60;
+            this.txtBoxTheloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTheloai.Location = new System.Drawing.Point(212, 233);
+            this.txtBoxTheloai.Name = "txtBoxTheloai";
+            this.txtBoxTheloai.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxTheloai.TabIndex = 60;
             // 
             // label5
             // 
@@ -217,13 +220,14 @@ namespace QuanLyNhaSach.Forms
             this.label4.TabIndex = 57;
             this.label4.Text = "Thể loại";
             // 
-            // textBox3
+            // txtBoxNgaynhap
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(212, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 27);
-            this.textBox3.TabIndex = 69;
+            this.txtBoxNgaynhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxNgaynhap.Location = new System.Drawing.Point(212, 91);
+            this.txtBoxNgaynhap.Name = "txtBoxNgaynhap";
+            this.txtBoxNgaynhap.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxNgaynhap.TabIndex = 69;
+            this.txtBoxNgaynhap.TextChanged += new System.EventHandler(this.txtBoxNgaynhap_TextChanged);
             // 
             // label8
             // 
@@ -238,29 +242,31 @@ namespace QuanLyNhaSach.Forms
             this.label8.Tag = "";
             this.label8.Text = "Ngày nhập";
             // 
-            // textBox4
+            // txtBoxDongianhap
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(212, 396);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(234, 27);
-            this.textBox4.TabIndex = 70;
+            this.txtBoxDongianhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxDongianhap.Location = new System.Drawing.Point(212, 396);
+            this.txtBoxDongianhap.Name = "txtBoxDongianhap";
+            this.txtBoxDongianhap.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxDongianhap.TabIndex = 70;
+            this.txtBoxDongianhap.TextChanged += new System.EventHandler(this.txtBoxDongianhap_TextChanged);
+            this.txtBoxDongianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxDongianhap_KeyPress);
             // 
-            // textBox5
+            // txtBoxTensach
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(212, 181);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(234, 27);
-            this.textBox5.TabIndex = 71;
+            this.txtBoxTensach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTensach.Location = new System.Drawing.Point(212, 181);
+            this.txtBoxTensach.Name = "txtBoxTensach";
+            this.txtBoxTensach.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxTensach.TabIndex = 71;
             // 
-            // textBox1
+            // txtBoxTacgia
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(212, 290);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 27);
-            this.textBox1.TabIndex = 72;
+            this.txtBoxTacgia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTacgia.Location = new System.Drawing.Point(212, 290);
+            this.txtBoxTacgia.Name = "txtBoxTacgia";
+            this.txtBoxTacgia.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxTacgia.TabIndex = 72;
             // 
             // button1
             // 
@@ -274,13 +280,15 @@ namespace QuanLyNhaSach.Forms
             this.button1.TabIndex = 73;
             this.button1.Text = "=>";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(544, 91);
             this.listView1.Name = "listView1";
@@ -288,6 +296,7 @@ namespace QuanLyNhaSach.Forms
             this.listView1.TabIndex = 74;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
             // 
             // columnHeader1
             // 
@@ -325,17 +334,17 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.button8);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtBoxTacgia);
+            this.Controls.Add(this.txtBoxTensach);
+            this.Controls.Add(this.txtBoxDongianhap);
+            this.Controls.Add(this.txtBoxNgaynhap);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtBoxSoluong);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtBoxSotientra);
+            this.Controls.Add(this.txtBoxTheloai);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
@@ -365,17 +374,17 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxSoluong;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxSotientra;
+        private System.Windows.Forms.TextBox txtBoxTheloai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxNgaynhap;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxDongianhap;
+        private System.Windows.Forms.TextBox txtBoxTensach;
+        private System.Windows.Forms.TextBox txtBoxTacgia;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;

@@ -119,6 +119,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxSotientra.Size = new System.Drawing.Size(234, 32);
             this.txtBoxSotientra.TabIndex = 28;
             this.txtBoxSotientra.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
+            this.txtBoxSotientra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
             // 
             // txtBoxSoluong
             // 
@@ -181,6 +182,7 @@ namespace QuanLyNhaSach.Forms
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(234, 32);
             this.textBox2.TabIndex = 32;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label3
             // 
@@ -287,6 +289,7 @@ namespace QuanLyNhaSach.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_FinishOrder";
             this.Load += new System.EventHandler(this.Form_FinishOrder_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form_FinishOrder_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

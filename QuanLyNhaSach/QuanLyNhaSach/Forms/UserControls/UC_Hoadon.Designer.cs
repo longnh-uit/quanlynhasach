@@ -49,7 +49,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxHoten = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxTheloai = new System.Windows.Forms.TextBox();
             this.txtBoxTensach = new System.Windows.Forms.TextBox();
             this.txtBoxNgay = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxSodienthoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxSotientra = new System.Windows.Forms.TextBox();
             this.lblCheck = new System.Windows.Forms.Label();
@@ -294,14 +294,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // textBox1
+            // txtBoxHoten
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(661, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 27);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBoxHoten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxHoten.Location = new System.Drawing.Point(661, 21);
+            this.txtBoxHoten.Name = "txtBoxHoten";
+            this.txtBoxHoten.Size = new System.Drawing.Size(150, 27);
+            this.txtBoxHoten.TabIndex = 10;
+            this.txtBoxHoten.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -400,6 +400,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSoluong.Size = new System.Drawing.Size(150, 27);
             this.txtBoxSoluong.TabIndex = 18;
             this.txtBoxSoluong.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtBoxSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSoluong_KeyPress);
             // 
             // txtBoxTheloai
             // 
@@ -430,13 +431,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxNgay.TabIndex = 21;
             this.txtBoxNgay.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // txtBoxSodienthoai
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(661, 72);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 27);
-            this.textBox6.TabIndex = 23;
+            this.txtBoxSodienthoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxSodienthoai.Location = new System.Drawing.Point(661, 72);
+            this.txtBoxSodienthoai.Name = "txtBoxSodienthoai";
+            this.txtBoxSodienthoai.Size = new System.Drawing.Size(150, 27);
+            this.txtBoxSodienthoai.TabIndex = 23;
+            this.txtBoxSodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // label9
             // 
@@ -458,6 +460,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSotientra.ReadOnly = true;
             this.txtBoxSotientra.Size = new System.Drawing.Size(150, 27);
             this.txtBoxSotientra.TabIndex = 24;
+            this.txtBoxSotientra.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
+            this.txtBoxSotientra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
             // 
             // lblCheck
             // 
@@ -479,7 +483,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Controls.Add(this.lblCheck);
             this.Controls.Add(button7);
             this.Controls.Add(this.txtBoxSotientra);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtBoxSodienthoai);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBoxNgay);
             this.Controls.Add(this.txtBoxTensach);
@@ -491,7 +495,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxHoten);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Name = "UC_Hoadon";
@@ -515,7 +519,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxHoten;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
@@ -539,7 +543,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.TextBox txtBoxTheloai;
         private System.Windows.Forms.TextBox txtBoxTensach;
         private System.Windows.Forms.TextBox txtBoxNgay;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBoxSodienthoai;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBoxSotientra;
         private System.Windows.Forms.Label lblCheck;

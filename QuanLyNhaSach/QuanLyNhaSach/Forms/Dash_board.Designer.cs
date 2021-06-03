@@ -32,6 +32,7 @@ namespace QuanLyNhaSach.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDash_board));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnThaydoiquydinh = new System.Windows.Forms.Button();
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnThutien = new System.Windows.Forms.Button();
             this.btnTracuu = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panelLeft.Controls.Add(this.btnThaydoiquydinh);
             this.panelLeft.Controls.Add(this.btnBaocao);
             this.panelLeft.Controls.Add(this.btnThutien);
             this.panelLeft.Controls.Add(this.btnTracuu);
@@ -74,6 +76,23 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Size = new System.Drawing.Size(248, 806);
             this.panelLeft.TabIndex = 0;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
+            // 
+            // btnThaydoiquydinh
+            // 
+            this.btnThaydoiquydinh.FlatAppearance.BorderSize = 0;
+            this.btnThaydoiquydinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThaydoiquydinh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnThaydoiquydinh.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnThaydoiquydinh.Image = ((System.Drawing.Image)(resources.GetObject("btnThaydoiquydinh.Image")));
+            this.btnThaydoiquydinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThaydoiquydinh.Location = new System.Drawing.Point(14, 476);
+            this.btnThaydoiquydinh.Name = "btnThaydoiquydinh";
+            this.btnThaydoiquydinh.Size = new System.Drawing.Size(234, 63);
+            this.btnThaydoiquydinh.TabIndex = 8;
+            this.btnThaydoiquydinh.Text = "  Thay đổi quy định";
+            this.btnThaydoiquydinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThaydoiquydinh.UseVisualStyleBackColor = true;
+            this.btnThaydoiquydinh.Click += new System.EventHandler(this.btnThaydoiquydinh_Click);
             // 
             // btnBaocao
             // 
@@ -307,6 +326,7 @@ namespace QuanLyNhaSach.Forms
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(1164, 681);
             this.panelControl.TabIndex = 2;
+            this.panelControl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl_Paint);
             // 
             // frmDash_board
             // 
@@ -357,5 +377,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Button btnThaydoiquydinh;
     }
 }

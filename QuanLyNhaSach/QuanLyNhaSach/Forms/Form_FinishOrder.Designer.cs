@@ -36,15 +36,15 @@ namespace QuanLyNhaSach.Forms
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.logo2 = new System.Windows.Forms.PictureBox();
-            this.txtBoxSotientra = new System.Windows.Forms.TextBox();
+            this.txtBoxGiamgia = new System.Windows.Forms.TextBox();
             this.txtBoxSoluong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxSotienphaitra = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxSotiennhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSotienthua = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -111,15 +111,14 @@ namespace QuanLyNhaSach.Forms
             this.logo2.TabIndex = 5;
             this.logo2.TabStop = false;
             // 
-            // txtBoxSotientra
+            // txtBoxGiamgia
             // 
-            this.txtBoxSotientra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotientra.Location = new System.Drawing.Point(315, 142);
-            this.txtBoxSotientra.Name = "txtBoxSotientra";
-            this.txtBoxSotientra.Size = new System.Drawing.Size(234, 32);
-            this.txtBoxSotientra.TabIndex = 28;
-            this.txtBoxSotientra.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
-            this.txtBoxSotientra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
+            this.txtBoxGiamgia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxGiamgia.Location = new System.Drawing.Point(315, 142);
+            this.txtBoxGiamgia.Name = "txtBoxGiamgia";
+            this.txtBoxGiamgia.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxGiamgia.TabIndex = 28;
+            this.txtBoxGiamgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxGiamgia_KeyPress);
             // 
             // txtBoxSoluong
             // 
@@ -154,14 +153,14 @@ namespace QuanLyNhaSach.Forms
             this.label4.TabIndex = 25;
             this.label4.Text = "Giảm giá (%)";
             // 
-            // textBox1
+            // txtBoxSotienphaitra
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(315, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(234, 32);
-            this.textBox1.TabIndex = 30;
+            this.txtBoxSotienphaitra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxSotienphaitra.Location = new System.Drawing.Point(315, 195);
+            this.txtBoxSotienphaitra.Name = "txtBoxSotienphaitra";
+            this.txtBoxSotienphaitra.ReadOnly = true;
+            this.txtBoxSotienphaitra.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxSotienphaitra.TabIndex = 30;
             // 
             // label2
             // 
@@ -175,14 +174,14 @@ namespace QuanLyNhaSach.Forms
             this.label2.TabIndex = 29;
             this.label2.Text = "Số tiền phải trả";
             // 
-            // textBox2
+            // txtBoxSotiennhan
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(315, 248);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 32);
-            this.textBox2.TabIndex = 32;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.txtBoxSotiennhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxSotiennhan.Location = new System.Drawing.Point(315, 248);
+            this.txtBoxSotiennhan.Name = "txtBoxSotiennhan";
+            this.txtBoxSotiennhan.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxSotiennhan.TabIndex = 32;
+            this.txtBoxSotiennhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotiennhan_KeyPress);
             // 
             // label3
             // 
@@ -196,17 +195,17 @@ namespace QuanLyNhaSach.Forms
             this.label3.TabIndex = 31;
             this.label3.Text = "Số tiền nhận";
             // 
-            // label6
+            // lblSotienthua
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(163, 309);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 23);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Số tiền thừa";
+            this.lblSotienthua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSotienthua.AutoSize = true;
+            this.lblSotienthua.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSotienthua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.lblSotienthua.Location = new System.Drawing.Point(163, 309);
+            this.lblSotienthua.Name = "lblSotienthua";
+            this.lblSotienthua.Size = new System.Drawing.Size(116, 23);
+            this.lblSotienthua.TabIndex = 33;
+            this.lblSotienthua.Text = "Số tiền thừa";
             // 
             // label7
             // 
@@ -267,12 +266,12 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.lblSotienthua);
+            this.Controls.Add(this.txtBoxSotiennhan);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxSotienphaitra);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtBoxSotientra);
+            this.Controls.Add(this.txtBoxGiamgia);
             this.Controls.Add(this.txtBoxSoluong);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -304,15 +303,15 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo2;
-        private System.Windows.Forms.TextBox txtBoxSotientra;
+        private System.Windows.Forms.TextBox txtBoxGiamgia;
         private System.Windows.Forms.TextBox txtBoxSoluong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxSotienphaitra;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxSotiennhan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSotienthua;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

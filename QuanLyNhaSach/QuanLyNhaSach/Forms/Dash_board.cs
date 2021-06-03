@@ -161,5 +161,15 @@ namespace QuanLyNhaSach.Forms
         {
 
         }
+
+        private void btnThaydoiquydinh_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btnThaydoiquydinh);
+        }
+
+        private void panelControl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

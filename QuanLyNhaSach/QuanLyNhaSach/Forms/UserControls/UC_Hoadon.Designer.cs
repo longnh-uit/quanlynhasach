@@ -301,7 +301,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxHoten.Name = "txtBoxHoten";
             this.txtBoxHoten.Size = new System.Drawing.Size(150, 27);
             this.txtBoxHoten.TabIndex = 10;
-            this.txtBoxHoten.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBoxHoten.ModifiedChanged += new System.EventHandler(this.txtBoxHoten_ModifiedChanged);
+            this.txtBoxHoten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxHoten_KeyPress);
             // 
             // label1
             // 

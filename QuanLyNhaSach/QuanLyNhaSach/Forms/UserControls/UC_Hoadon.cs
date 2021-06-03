@@ -90,11 +90,6 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -117,22 +112,19 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //Kiem tra dieu kien khach hang co mua hang duoc khong, khong du dieu kien thi -> true else false
-            txtBoxNgay.ReadOnly = false; 
-            txtBoxTensach.ReadOnly = false;
-            txtBoxTheloai.ReadOnly = false;
-            txtBoxSotientra.ReadOnly = false;
-            txtBoxSoluong.ReadOnly = false;
-
-
-            //Hiện dòng thông báo "khách hàng không đủ điều kiện"
-            if (txtBoxNgay.ReadOnly)
+            bool isEligible = true; // Nếu khách đủ điều kiện thì biến này true, ko thì false (SQL)
+            if (isEligible)
             {
-                lblCheck.Visible = true;
+                txtBoxNgay.ReadOnly = false;
+                txtBoxTensach.ReadOnly = false;
+                txtBoxTheloai.ReadOnly = false;
+                txtBoxSotientra.ReadOnly = false;
+                txtBoxSoluong.ReadOnly = false;
+                lblCheck.Visible = false;
             }
             else
             {
-                lblCheck.Visible = false;
+                lblCheck.Visible = true; // Hiện "khách ko đủ đk"
             }
         }
 
@@ -217,6 +209,17 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 e.Handled = true;
             }
+            txtBoxNgay.ReadOnly = true;
+            txtBoxTensach.ReadOnly = true;
+            txtBoxTheloai.ReadOnly = true;
+            txtBoxSotientra.ReadOnly = true;
+            txtBoxSoluong.ReadOnly = true;
+            txtBoxTensach.Text = "";
+            txtBoxSoluong.Text = "";
+            txtBoxSotientra.Text = "";
+            txtBoxTheloai.Text = "";
+            txtBoxNgay.Text = "";
+
         }
 
         private void txtBoxSoluong_KeyPress(object sender, KeyPressEventArgs e)
@@ -238,6 +241,24 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void txtBoxSotientra_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBoxHoten_ModifiedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxHoten_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtBoxNgay.ReadOnly = true;
+            txtBoxTensach.ReadOnly = true;
+            txtBoxTheloai.ReadOnly = true;
+            txtBoxSotientra.ReadOnly = true;
+            txtBoxSoluong.ReadOnly = true;
+            txtBoxTensach.Text = "";
+            txtBoxSoluong.Text = "";
+            txtBoxSotientra.Text = "";
+            txtBoxTheloai.Text = "";
+            txtBoxNgay.Text = "";
         }
     }
 }

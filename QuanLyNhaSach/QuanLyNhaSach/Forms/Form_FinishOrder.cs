@@ -25,11 +25,6 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void txtBoxSotientra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -42,10 +37,7 @@ namespace QuanLyNhaSach.Forms
 
         private void txtBoxSotientra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+
         }
 
         private void Form_FinishOrder_KeyPress(object sender, KeyPressEventArgs e)
@@ -54,6 +46,19 @@ namespace QuanLyNhaSach.Forms
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtBoxGiamgia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBoxSotiennhan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar))
             {

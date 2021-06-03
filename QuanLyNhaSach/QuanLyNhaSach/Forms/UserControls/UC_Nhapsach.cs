@@ -59,5 +59,18 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnNhapsach_Click(object sender, EventArgs e)
+        {
+            using (Form_Nhapsach ns = new Form_Nhapsach())
+            {
+                ns.ShowDialog();
+            }
+        }
     }
 }

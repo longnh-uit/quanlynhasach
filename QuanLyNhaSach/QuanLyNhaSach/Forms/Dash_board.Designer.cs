@@ -155,7 +155,7 @@ namespace QuanLyNhaSach.Forms
             this.btnNhapsach.Name = "btnNhapsach";
             this.btnNhapsach.Size = new System.Drawing.Size(234, 63);
             this.btnNhapsach.TabIndex = 3;
-            this.btnNhapsach.Text = "    Sách hiện có";
+            this.btnNhapsach.Text = "    Nhập sách";
             this.btnNhapsach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhapsach.UseVisualStyleBackColor = true;
             this.btnNhapsach.Click += new System.EventHandler(this.btnNhapsach_Click);

@@ -99,6 +99,8 @@ namespace QuanLyNhaSach.Forms
         private void btnNhapsach_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnNhapsach);
+            UC_Nhapsach ucns = new UC_Nhapsach();
+            AddControltoPanel(ucns);
         }
 
         private void btnHoadon_Click(object sender, EventArgs e)

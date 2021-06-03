@@ -17,7 +17,8 @@ namespace QuanLyNhaSach.Forms
 
         private void Form_Nhapsach_Load(object sender, EventArgs e)
         {
-
+            // Tu dong dien ngay hien tai
+            txtBoxNgaynhap.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace QuanLyNhaSach.Forms
         private bool IsDate(string tempDate)
         {
             DateTime fromDateValue;
-            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd", "d/M/yyyy", "d/MM/yyyy", "dd/M/yyyy" };
             if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
             {
                 return true;

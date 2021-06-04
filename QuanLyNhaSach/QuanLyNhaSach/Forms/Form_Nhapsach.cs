@@ -125,6 +125,11 @@ namespace QuanLyNhaSach.Forms
                 MessageBox.Show("Chọn Item muốn xóa!");
             }
         }
+
+        private void txtBoxTheloai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

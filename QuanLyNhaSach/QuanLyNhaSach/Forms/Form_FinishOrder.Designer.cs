@@ -117,7 +117,8 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxGiamgia.Location = new System.Drawing.Point(315, 142);
             this.txtBoxGiamgia.Name = "txtBoxGiamgia";
             this.txtBoxGiamgia.Size = new System.Drawing.Size(234, 32);
-            this.txtBoxGiamgia.TabIndex = 28;
+            this.txtBoxGiamgia.TabIndex = 1;
+            this.txtBoxGiamgia.TextChanged += new System.EventHandler(this.txtBoxGiamgia_TextChanged);
             this.txtBoxGiamgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxGiamgia_KeyPress);
             // 
             // txtBoxSoluong
@@ -180,7 +181,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxSotiennhan.Location = new System.Drawing.Point(315, 248);
             this.txtBoxSotiennhan.Name = "txtBoxSotiennhan";
             this.txtBoxSotiennhan.Size = new System.Drawing.Size(234, 32);
-            this.txtBoxSotiennhan.TabIndex = 32;
+            this.txtBoxSotiennhan.TabIndex = 2;
             this.txtBoxSotiennhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotiennhan_KeyPress);
             // 
             // label3
@@ -253,7 +254,7 @@ namespace QuanLyNhaSach.Forms
             this.checkBox1.Location = new System.Drawing.Point(411, 305);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(159, 27);
-            this.checkBox1.TabIndex = 37;
+            this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Xuất hóa đơn";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 

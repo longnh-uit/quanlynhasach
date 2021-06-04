@@ -113,6 +113,8 @@ namespace QuanLyNhaSach.Forms
         private void btnTracuu_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnTracuu);
+            UC_Tracuu uctc = new UC_Tracuu();
+            AddControltoPanel(uctc);
         }
 
         private void btnThutien_Click(object sender, EventArgs e)

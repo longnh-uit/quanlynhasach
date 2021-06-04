@@ -13,6 +13,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         public UC_Hoadon()
         {
             InitializeComponent();
+            txtBoxNgay.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void UC_Hoadon_Load(object sender, EventArgs e)
@@ -102,7 +103,11 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            string soluong = listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text;
+            int sl = int.Parse(soluong);
+            sl++;
+            soluong = sl.ToString();
+            listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text = soluong;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -259,6 +264,28 @@ namespace QuanLyNhaSach.Forms.UserControls
             txtBoxSotientra.Text = "";
             txtBoxTheloai.Text = "";
             txtBoxNgay.Text = "";
+        }
+
+        private void txtBoxHoten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            string soluong = listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text;
+            int sl = int.Parse(soluong);
+            sl--;
+            if (sl >= 1)
+            {
+                soluong = sl.ToString();
+                listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text = soluong;
+            }
+        }
+
+        private void txtBoxSodienthoai_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

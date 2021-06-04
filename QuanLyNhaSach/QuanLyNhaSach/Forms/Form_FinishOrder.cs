@@ -65,5 +65,10 @@ namespace QuanLyNhaSach.Forms
                 e.Handled = true;
             }
         }
+
+        private void txtBoxGiamgia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

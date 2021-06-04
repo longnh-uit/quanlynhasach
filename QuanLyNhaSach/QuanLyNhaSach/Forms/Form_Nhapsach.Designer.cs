@@ -160,7 +160,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxSoluong.Location = new System.Drawing.Point(212, 339);
             this.txtBoxSoluong.Name = "txtBoxSoluong";
             this.txtBoxSoluong.Size = new System.Drawing.Size(234, 27);
-            this.txtBoxSoluong.TabIndex = 64;
+            this.txtBoxSoluong.TabIndex = 73;
             this.txtBoxSoluong.TextChanged += new System.EventHandler(this.txtBoxSoluong_TextChanged);
             this.txtBoxSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSoluong_KeyPress);
             // 
@@ -194,7 +194,8 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxTheloai.Location = new System.Drawing.Point(212, 233);
             this.txtBoxTheloai.Name = "txtBoxTheloai";
             this.txtBoxTheloai.Size = new System.Drawing.Size(234, 27);
-            this.txtBoxTheloai.TabIndex = 60;
+            this.txtBoxTheloai.TabIndex = 71;
+            this.txtBoxTheloai.TextChanged += new System.EventHandler(this.txtBoxTheloai_TextChanged);
             // 
             // label5
             // 
@@ -223,7 +224,7 @@ namespace QuanLyNhaSach.Forms
             // txtBoxNgaynhap
             // 
             this.txtBoxNgaynhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNgaynhap.Location = new System.Drawing.Point(212, 91);
+            this.txtBoxNgaynhap.Location = new System.Drawing.Point(212, 92);
             this.txtBoxNgaynhap.Name = "txtBoxNgaynhap";
             this.txtBoxNgaynhap.Size = new System.Drawing.Size(234, 27);
             this.txtBoxNgaynhap.TabIndex = 69;
@@ -248,7 +249,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxDongianhap.Location = new System.Drawing.Point(212, 396);
             this.txtBoxDongianhap.Name = "txtBoxDongianhap";
             this.txtBoxDongianhap.Size = new System.Drawing.Size(234, 27);
-            this.txtBoxDongianhap.TabIndex = 70;
+            this.txtBoxDongianhap.TabIndex = 74;
             this.txtBoxDongianhap.TextChanged += new System.EventHandler(this.txtBoxDongianhap_TextChanged);
             this.txtBoxDongianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxDongianhap_KeyPress);
             // 
@@ -258,7 +259,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxTensach.Location = new System.Drawing.Point(212, 181);
             this.txtBoxTensach.Name = "txtBoxTensach";
             this.txtBoxTensach.Size = new System.Drawing.Size(234, 27);
-            this.txtBoxTensach.TabIndex = 71;
+            this.txtBoxTensach.TabIndex = 70;
             // 
             // txtBoxTacgia
             // 
@@ -277,7 +278,7 @@ namespace QuanLyNhaSach.Forms
             this.button1.Location = new System.Drawing.Point(452, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 84);
-            this.button1.TabIndex = 73;
+            this.button1.TabIndex = 75;
             this.button1.Text = "=>";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -293,7 +294,7 @@ namespace QuanLyNhaSach.Forms
             this.listView1.Location = new System.Drawing.Point(544, 91);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(465, 343);
-            this.listView1.TabIndex = 74;
+            this.listView1.TabIndex = 80;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
@@ -320,7 +321,7 @@ namespace QuanLyNhaSach.Forms
             this.button8.Location = new System.Drawing.Point(959, 10);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(62, 53);
-            this.button8.TabIndex = 75;
+            this.button8.TabIndex = 100;
             this.button8.Text = "X";
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button8.UseVisualStyleBackColor = false;

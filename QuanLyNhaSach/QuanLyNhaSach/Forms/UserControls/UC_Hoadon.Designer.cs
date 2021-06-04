@@ -80,7 +80,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             button7.Location = new System.Drawing.Point(661, 117);
             button7.Name = "button7";
             button7.Size = new System.Drawing.Size(120, 49);
-            button7.TabIndex = 25;
+            button7.TabIndex = 3;
             button7.Text = "Kiểm tra";
             button7.UseVisualStyleBackColor = false;
             button7.Click += new System.EventHandler(this.button7_Click);
@@ -248,6 +248,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button5.TabIndex = 17;
             this.button5.Text = "-";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_2);
             // 
             // button2
             // 
@@ -300,8 +301,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxHoten.Location = new System.Drawing.Point(661, 21);
             this.txtBoxHoten.Name = "txtBoxHoten";
             this.txtBoxHoten.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxHoten.TabIndex = 10;
+            this.txtBoxHoten.TabIndex = 1;
             this.txtBoxHoten.ModifiedChanged += new System.EventHandler(this.txtBoxHoten_ModifiedChanged);
+            this.txtBoxHoten.TextChanged += new System.EventHandler(this.txtBoxHoten_TextChanged);
             this.txtBoxHoten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxHoten_KeyPress);
             // 
             // label1
@@ -326,7 +328,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button3.Location = new System.Drawing.Point(660, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 49);
-            this.button3.TabIndex = 12;
+            this.button3.TabIndex = 9;
             this.button3.Text = "Thêm vào giỏ";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -399,7 +401,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSoluong.Name = "txtBoxSoluong";
             this.txtBoxSoluong.ReadOnly = true;
             this.txtBoxSoluong.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxSoluong.TabIndex = 18;
+            this.txtBoxSoluong.TabIndex = 7;
             this.txtBoxSoluong.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.txtBoxSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSoluong_KeyPress);
             // 
@@ -410,7 +412,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxTheloai.Name = "txtBoxTheloai";
             this.txtBoxTheloai.ReadOnly = true;
             this.txtBoxTheloai.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxTheloai.TabIndex = 19;
+            this.txtBoxTheloai.TabIndex = 6;
             // 
             // txtBoxTensach
             // 
@@ -419,7 +421,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxTensach.Name = "txtBoxTensach";
             this.txtBoxTensach.ReadOnly = true;
             this.txtBoxTensach.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxTensach.TabIndex = 20;
+            this.txtBoxTensach.TabIndex = 5;
             this.txtBoxTensach.TextChanged += new System.EventHandler(this.txtBoxTensach_TextChanged);
             // 
             // txtBoxNgay
@@ -429,7 +431,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxNgay.Name = "txtBoxNgay";
             this.txtBoxNgay.ReadOnly = true;
             this.txtBoxNgay.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxNgay.TabIndex = 21;
+            this.txtBoxNgay.TabIndex = 4;
             this.txtBoxNgay.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtBoxSodienthoai
@@ -438,7 +440,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSodienthoai.Location = new System.Drawing.Point(661, 72);
             this.txtBoxSodienthoai.Name = "txtBoxSodienthoai";
             this.txtBoxSodienthoai.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxSodienthoai.TabIndex = 23;
+            this.txtBoxSodienthoai.TabIndex = 2;
+            this.txtBoxSodienthoai.TextChanged += new System.EventHandler(this.txtBoxSodienthoai_TextChanged);
             this.txtBoxSodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // label9
@@ -460,7 +463,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSotientra.Name = "txtBoxSotientra";
             this.txtBoxSotientra.ReadOnly = true;
             this.txtBoxSotientra.Size = new System.Drawing.Size(150, 27);
-            this.txtBoxSotientra.TabIndex = 24;
+            this.txtBoxSotientra.TabIndex = 8;
             this.txtBoxSotientra.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
             this.txtBoxSotientra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
             // 

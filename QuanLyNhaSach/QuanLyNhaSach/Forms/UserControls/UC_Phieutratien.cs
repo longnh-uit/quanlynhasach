@@ -106,13 +106,13 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
             if (txtBoxDiachi.TextLength == 0 && txBoxHoten.TextLength == 0 && txtBoxEmail.TextLength == 0 && txtBoxSDT.TextLength == 0)
             {
-                MessageBox.Show("Cần điền ít nhất một mục để tra cứu khách hàng");
+                MessageBox.Show("Cần điền ít nhất một mục");
             }
             else
             {
                 //SQL
                 //LỌC THEO TEXTBOX RỒI CHO VÀO DATAGRID
-                MessageBox.Show("Tra cứu khách hàng thành công!");
+                MessageBox.Show("Thành công!");
             }
         }
 
@@ -138,6 +138,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         }
 
         private void txBoxHoten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxDiachi_TextChanged(object sender, EventArgs e)
         {
 
         }

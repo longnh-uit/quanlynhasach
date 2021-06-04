@@ -184,7 +184,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(413, 152);
+            this.txtBoxEmail.Location = new System.Drawing.Point(413, 146);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(182, 32);
             this.txtBoxEmail.TabIndex = 4;
@@ -194,7 +194,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(328, 155);
+            this.label3.Location = new System.Drawing.Point(339, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 23);
             this.label3.TabIndex = 10;
@@ -202,7 +202,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxSDT
             // 
-            this.txtBoxSDT.Location = new System.Drawing.Point(128, 152);
+            this.txtBoxSDT.Location = new System.Drawing.Point(151, 143);
             this.txtBoxSDT.Name = "txtBoxSDT";
             this.txtBoxSDT.Size = new System.Drawing.Size(182, 32);
             this.txtBoxSDT.TabIndex = 3;
@@ -213,29 +213,30 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 155);
+            this.label1.Location = new System.Drawing.Point(68, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 23);
+            this.label1.Size = new System.Drawing.Size(49, 23);
             this.label1.TabIndex = 8;
-            this.label1.Text = "SĐT";
+            this.label1.Text = "SĐT ";
             // 
             // txtBoxDiachi
             // 
-            this.txtBoxDiachi.Location = new System.Drawing.Point(128, 93);
+            this.txtBoxDiachi.Location = new System.Drawing.Point(151, 93);
             this.txtBoxDiachi.Name = "txtBoxDiachi";
-            this.txtBoxDiachi.Size = new System.Drawing.Size(467, 32);
+            this.txtBoxDiachi.Size = new System.Drawing.Size(444, 32);
             this.txtBoxDiachi.TabIndex = 2;
+            this.txtBoxDiachi.TextChanged += new System.EventHandler(this.txtBoxDiachi_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 96);
+            this.label4.Location = new System.Drawing.Point(32, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 23);
+            this.label4.Size = new System.Drawing.Size(85, 23);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Địa chỉ";
+            this.label4.Text = "Địa chỉ ";
             // 
             // txBoxHoten
             // 
@@ -250,11 +251,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 38);
+            this.label2.Location = new System.Drawing.Point(10, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 23);
+            this.label2.Size = new System.Drawing.Size(107, 23);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Họ và tên";
+            this.label2.Text = "Họ và tên ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridView1

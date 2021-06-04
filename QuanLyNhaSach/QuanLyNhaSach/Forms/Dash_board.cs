@@ -127,6 +127,8 @@ namespace QuanLyNhaSach.Forms
         private void btnBaocao_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnBaocao);
+            UC_Baocao ucbc = new UC_Baocao();
+            AddControltoPanel(ucbc);
         }
         private void AddControltoPanel(Control c)
         {
@@ -168,7 +170,9 @@ namespace QuanLyNhaSach.Forms
 
         private void btnThaydoiquydinh_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnThaydoiquydinh);
+            //moveSidePanel(btnThaydoiquydinh);
+            Form_Thaydoiquydinh tdqd = new Form_Thaydoiquydinh();
+            tdqd.ShowDialog();
         }
 
         private void panelControl_Paint(object sender, PaintEventArgs e)

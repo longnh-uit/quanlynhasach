@@ -52,7 +52,7 @@ namespace QuanLyNhaSach.Forms
 
         private void txtBoxGiamgia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar))
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -60,7 +60,7 @@ namespace QuanLyNhaSach.Forms
 
         private void txtBoxSotiennhan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar))
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }

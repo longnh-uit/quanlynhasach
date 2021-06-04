@@ -71,6 +71,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 681);
             this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel5
             // 
@@ -90,6 +91,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1144, 94);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // btnNhapsach
             // 

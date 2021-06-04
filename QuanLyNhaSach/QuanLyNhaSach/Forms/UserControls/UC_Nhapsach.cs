@@ -72,5 +72,15 @@ namespace QuanLyNhaSach.Forms.UserControls
                 ns.ShowDialog();
             }
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

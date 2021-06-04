@@ -34,5 +34,13 @@ namespace QuanLyNhaSach.Forms
         {
             //Cập nhật CSDl
         }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
+        }
     }
 }

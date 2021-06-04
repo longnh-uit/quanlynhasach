@@ -123,7 +123,7 @@ namespace QuanLyNhaSach.Forms
             this.btnThutien.Name = "btnThutien";
             this.btnThutien.Size = new System.Drawing.Size(234, 63);
             this.btnThutien.TabIndex = 6;
-            this.btnThutien.Text = "    Phiếu thu tiền";
+            this.btnThutien.Text = "    Khách hàng";
             this.btnThutien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThutien.UseVisualStyleBackColor = true;
             this.btnThutien.Click += new System.EventHandler(this.btnThutien_Click);

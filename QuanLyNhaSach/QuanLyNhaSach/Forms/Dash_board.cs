@@ -120,6 +120,8 @@ namespace QuanLyNhaSach.Forms
         private void btnThutien_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnThutien);
+            UC_Phieutratien utptt = new UC_Phieutratien();
+            AddControltoPanel(utptt);
         }
 
         private void btnBaocao_Click(object sender, EventArgs e)

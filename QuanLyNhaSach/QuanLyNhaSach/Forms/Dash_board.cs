@@ -42,7 +42,9 @@ namespace QuanLyNhaSach.Forms
 
         private void Dash_board_Load(object sender, EventArgs e)
         {
-
+            UC_Tracuu uctc = new UC_Tracuu();
+            AddControltoPanel(uctc);
+            moveSidePanel(btnTracuu);
         }
 
         private void button8_Click(object sender, EventArgs e)

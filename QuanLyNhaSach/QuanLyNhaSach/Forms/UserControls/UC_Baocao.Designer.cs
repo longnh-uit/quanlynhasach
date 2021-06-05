@@ -35,6 +35,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.txtBoxThangnam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCongno = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongno)).BeginInit();
@@ -106,6 +106,21 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel4.TabIndex = 6;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint_1);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.GrayText;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(865, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(210, 50);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "      Xuất báo cáo";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // txtBoxThangnam
             // 
             this.txtBoxThangnam.Location = new System.Drawing.Point(638, 33);
@@ -134,11 +149,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnCongno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCongno.Image = ((System.Drawing.Image)(resources.GetObject("btnCongno.Image")));
             this.btnCongno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCongno.Location = new System.Drawing.Point(173, 0);
+            this.btnCongno.Location = new System.Drawing.Point(209, 0);
             this.btnCongno.Name = "btnCongno";
-            this.btnCongno.Size = new System.Drawing.Size(226, 94);
+            this.btnCongno.Size = new System.Drawing.Size(235, 94);
             this.btnCongno.TabIndex = 1;
-            this.btnCongno.Text = "     Báo cáo công nợ";
+            this.btnCongno.Text = "        Báo cáo công nợ";
             this.btnCongno.UseVisualStyleBackColor = false;
             this.btnCongno.Click += new System.EventHandler(this.btnCongno_Click);
             // 
@@ -153,7 +168,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnBaocaoton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBaocaoton.Location = new System.Drawing.Point(0, 0);
             this.btnBaocaoton.Name = "btnBaocaoton";
-            this.btnBaocaoton.Size = new System.Drawing.Size(173, 94);
+            this.btnBaocaoton.Size = new System.Drawing.Size(209, 94);
             this.btnBaocaoton.TabIndex = 0;
             this.btnBaocaoton.Text = "     Báo cáo tồn";
             this.btnBaocaoton.UseVisualStyleBackColor = false;
@@ -228,6 +243,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.dgvCongno.RowTemplate.Height = 29;
             this.dgvCongno.Size = new System.Drawing.Size(1144, 567);
             this.dgvCongno.TabIndex = 8;
+            this.dgvCongno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCongno_CellContentClick_1);
             // 
             // Column6
             // 
@@ -263,19 +279,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
             this.Column11.Width = 210;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.GrayText;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(873, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 38);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "Xuất báo cáo";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // UC_Baocao
             // 

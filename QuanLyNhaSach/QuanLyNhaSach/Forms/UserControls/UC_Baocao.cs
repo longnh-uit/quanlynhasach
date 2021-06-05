@@ -106,5 +106,10 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
 
         }
+
+        private void dgvCongno_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

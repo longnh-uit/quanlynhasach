@@ -30,6 +30,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void InitializeComponent()
         {
             System.Windows.Forms.Button button7;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Phieutratien));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -64,11 +65,13 @@ namespace QuanLyNhaSach.Forms.UserControls
             button7.Dock = System.Windows.Forms.DockStyle.Fill;
             button7.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             button7.ForeColor = System.Drawing.Color.White;
+            button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             button7.Location = new System.Drawing.Point(0, 0);
             button7.Name = "button7";
             button7.Size = new System.Drawing.Size(339, 226);
             button7.TabIndex = 4;
-            button7.Text = "THU TIỀN";
+            button7.Text = "  THU TIỀN";
             button7.UseVisualStyleBackColor = false;
             button7.Click += new System.EventHandler(this.button7_Click);
             // 

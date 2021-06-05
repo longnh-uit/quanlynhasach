@@ -106,7 +106,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnNhapsach.Name = "btnNhapsach";
             this.btnNhapsach.Size = new System.Drawing.Size(173, 94);
             this.btnNhapsach.TabIndex = 0;
-            this.btnNhapsach.Text = "     Nhập sách";
+            this.btnNhapsach.Text = "       Nhập sách";
             this.btnNhapsach.UseVisualStyleBackColor = false;
             this.btnNhapsach.Click += new System.EventHandler(this.btnNhapsach_Click);
             // 

@@ -30,6 +30,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void InitializeComponent()
         {
             System.Windows.Forms.Button button7;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Hoadon));
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -328,11 +329,13 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(447, 525);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(414, 529);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 49);
+            this.button3.Size = new System.Drawing.Size(198, 49);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Thêm vào giỏ";
+            this.button3.Text = "    Thêm vào giỏ";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

@@ -104,7 +104,7 @@ namespace QuanLyNhaSach.Forms
             this.logo2.BackColor = System.Drawing.Color.White;
             this.logo2.ErrorImage = null;
             this.logo2.Image = ((System.Drawing.Image)(resources.GetObject("logo2.Image")));
-            this.logo2.Location = new System.Drawing.Point(16, 53);
+            this.logo2.Location = new System.Drawing.Point(16, 31);
             this.logo2.Name = "logo2";
             this.logo2.Size = new System.Drawing.Size(124, 111);
             this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

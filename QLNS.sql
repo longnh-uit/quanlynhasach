@@ -96,3 +96,10 @@ create table THAMSO(
 	LuongTonToiThieu int,
 	KiemTraSoTienThu bit,
 )
+create table ADMINISTRATORS (
+	HOTEN		varchar(40),
+	USERNAME	varchar(20) primary key,
+	PASSWORD	varchar(20)
+)
+
+insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password') 

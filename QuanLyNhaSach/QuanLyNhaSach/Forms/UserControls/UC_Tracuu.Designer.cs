@@ -29,6 +29,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Tracuu));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -162,11 +163,13 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(973, 0);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(766, 91);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 53);
+            this.button4.Size = new System.Drawing.Size(225, 53);
             this.button4.TabIndex = 38;
-            this.button4.Text = "Xuất danh sách";
+            this.button4.Text = "         Xuất danh sách";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -176,9 +179,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnTracuu.BackColor = System.Drawing.Color.SeaGreen;
             this.btnTracuu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTracuu.ForeColor = System.Drawing.Color.White;
-            this.btnTracuu.Location = new System.Drawing.Point(766, 42);
+            this.btnTracuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTracuu.Image")));
+            this.btnTracuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTracuu.Location = new System.Drawing.Point(766, 15);
             this.btnTracuu.Name = "btnTracuu";
-            this.btnTracuu.Size = new System.Drawing.Size(150, 53);
+            this.btnTracuu.Size = new System.Drawing.Size(225, 58);
             this.btnTracuu.TabIndex = 6;
             this.btnTracuu.Text = "Tra cứu";
             this.btnTracuu.UseVisualStyleBackColor = false;

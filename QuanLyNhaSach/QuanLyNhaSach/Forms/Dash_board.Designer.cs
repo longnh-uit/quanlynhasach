@@ -32,6 +32,7 @@ namespace QuanLyNhaSach.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDash_board));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnDangky = new System.Windows.Forms.Button();
             this.btnThaydoiquydinh = new System.Windows.Forms.Button();
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnThutien = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panelLeft.Controls.Add(this.btnDangky);
             this.panelLeft.Controls.Add(this.btnThaydoiquydinh);
             this.panelLeft.Controls.Add(this.btnBaocao);
             this.panelLeft.Controls.Add(this.btnThutien);
@@ -76,6 +78,23 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Size = new System.Drawing.Size(248, 806);
             this.panelLeft.TabIndex = 0;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
+            // 
+            // btnDangky
+            // 
+            this.btnDangky.FlatAppearance.BorderSize = 0;
+            this.btnDangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangky.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangky.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDangky.Image = ((System.Drawing.Image)(resources.GetObject("btnDangky.Image")));
+            this.btnDangky.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangky.Location = new System.Drawing.Point(14, 545);
+            this.btnDangky.Name = "btnDangky";
+            this.btnDangky.Size = new System.Drawing.Size(234, 63);
+            this.btnDangky.TabIndex = 9;
+            this.btnDangky.Text = "    Đăng ký";
+            this.btnDangky.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangky.UseVisualStyleBackColor = true;
+            this.btnDangky.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnThaydoiquydinh
             // 
@@ -204,7 +223,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.Location = new System.Drawing.Point(64, 77);
+            this.label1.Location = new System.Drawing.Point(67, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 23);
             this.label1.TabIndex = 2;
@@ -378,5 +397,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button btnThaydoiquydinh;
+        private System.Windows.Forms.Button btnDangky;
     }
 }

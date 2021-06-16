@@ -97,9 +97,9 @@ namespace QuanLyNhaSach
             this.lblBookShopName.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblBookShopName.Location = new System.Drawing.Point(71, 9);
             this.lblBookShopName.Name = "lblBookShopName";
-            this.lblBookShopName.Size = new System.Drawing.Size(187, 32);
+            this.lblBookShopName.Size = new System.Drawing.Size(364, 32);
             this.lblBookShopName.TabIndex = 0;
-            this.lblBookShopName.Text = "Tên nhà sách";
+            this.lblBookShopName.Text = "Book management system";
             // 
             // lblUsername
             // 
@@ -130,7 +130,7 @@ namespace QuanLyNhaSach
             this.lblLogin.BackColor = System.Drawing.Color.White;
             this.lblLogin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.lblLogin.Location = new System.Drawing.Point(499, 287);
+            this.lblLogin.Location = new System.Drawing.Point(463, 287);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(272, 32);
             this.lblLogin.TabIndex = 0;
@@ -213,6 +213,7 @@ namespace QuanLyNhaSach
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();

@@ -39,10 +39,35 @@ namespace QuanLyNhaSach.Forms
         {
 
         }
-
+        private void Unable_button(Button b)
+        {
+            b.Enabled = false;
+            Color cl = Color.FromName("Gray");
+            b.ForeColor = cl;
+        }
         private void Dash_board_Load(object sender, EventArgs e)
         {
+            //Khi mới bật thì ở mục tra cứu
+            UC_Tracuu uctc = new UC_Tracuu();
+            AddControltoPanel(uctc);
+            moveSidePanel(btnTracuu);
 
+            string Chucvu = "Quản lí"; // Cần kiểm tra tài khoản login chức vụ gì rồi gán vô đây
+            if (Chucvu=="Nhân viên bán hàng")
+            {
+                Unable_button(btnBaocao);
+                Unable_button(btnDangky);
+                Unable_button(btnThaydoiquydinh);
+                Unable_button(btnNhapsach);
+            }
+            else if (Chucvu=="Thủ kho")
+            {
+                Unable_button(btnBaocao);
+                Unable_button(btnDangky);
+                Unable_button(btnThaydoiquydinh);
+                Unable_button(btnThutien);
+                Unable_button(btnHoadon);
+            }    
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -178,6 +203,12 @@ namespace QuanLyNhaSach.Forms
         private void panelControl_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_Dangky dk = new Form_Dangky();
+            dk.ShowDialog();
         }
     }
 }

@@ -7,6 +7,9 @@ chưa tìm được host free SQL server nên tạm thời thao tác trên máy 
 4. Thông tin ở ô Server name sẽ ứng với ô Server name của cửa sổ Connect to Server khi vừa bật SSMS
 5. Ở ô Select or enter a database name, chọn database QLNS
 6. Bấm Ok
-7. Ở cửa sổ Server Explorer, chuột phải vào database chọn properties
-8. Ở của sổ Properties (nếu chưa hiện ra thì chờ một lúc), copy giá trị của Connection String
-9. Bật source code của frmLogin lên, paste giá trị vừa copy vào tham trị của SqlConnection ở phần Create connection to database
+
+!!! Thay đổi cách connect server
+1. Bật file Program.cs
+2. Tại biến ServerPath của class Globals, thay đổi đường dẫn đến thư mục server
+3. Chạy bình thường
+

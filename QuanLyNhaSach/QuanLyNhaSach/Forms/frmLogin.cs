@@ -29,12 +29,10 @@ namespace QuanLyNhaSach
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Create connection to database
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
             // Make query
             string query = "Select * from ADMINISTRATORS where username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text +"'";
             // Create adapter
-            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
             DataTable dtb1 = new DataTable();
             // Fill the table with whichever entry in the DB fits the criteria of: having the username put in the txtUsername.Text
             // and password from txtPassword.Text

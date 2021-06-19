@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -36,24 +37,16 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnXong_Click(object sender, EventArgs e)
         {
-            if (txtBoxNgaynhap.TextLength > 0 && txtBoxTensach.TextLength > 0 && txtBoxTheloai.TextLength > 0 && txtBoxTacgia.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxDongianhap.TextLength > 0)
+            if (lv_nhapSach.Items.Count > 0)
             {
                 if (IsDate(txtBoxNgaynhap.Text))
                 {
+ //                   ListViewItem item = lv_nhapSach.Items[0];
 
-
-                    string[] arr = new string[2];
-                    arr[1] = txtBoxSoluong.Text;
-                    arr[0] = txtBoxTensach.Text;
-                    ListViewItem lst = new ListViewItem(arr);
-                    listView1.Items.Add(lst);
-                    txtBoxTensach.Text = "";
-                    txtBoxSoluong.Text = "";
-                    txtBoxTacgia.Text = "";
-                    txtBoxTheloai.Text = "";
-                    txtBoxDongianhap.Text = "";
+ //                   string transaction = "set  ";
+ //                   SqlDataAdapter sda = new SqlDataAdapter(transaction, Globals.sqlcon);
                 }
                 else
                 {
@@ -116,10 +109,34 @@ namespace QuanLyNhaSach.Forms
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            if (txtBoxNgaynhap.TextLength > 0 && txtBoxTensach.TextLength > 0 && txtBoxTheloai.TextLength > 0 && txtBoxTacgia.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxDongianhap.TextLength > 0)
+            {
+                string[] arr = new string[5];
+                ListViewItem itm;
+                // them Item vao ListView
+                arr[0] = txtBoxTensach.Text;
+                arr[1] = txtBoxTheloai.Text;
+                arr[2] = txtBoxTacgia.Text;
+                arr[3] = txtBoxSoluong.Text;
+                arr[4] = txtBoxDongianhap.Text;
+
+                itm = new ListViewItem(arr);
+                lv_nhapSach.Items.Add(itm);
+
+                txtBoxTensach.Text = "";
+                txtBoxSoluong.Text = "";
+                txtBoxTacgia.Text = "";
+                txtBoxTheloai.Text = "";
+                txtBoxDongianhap.Text = "";
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             try
-            { listView1.Items.RemoveAt(listView1.SelectedIndices[0]); }
+            { lv_nhapSach.Items.RemoveAt(lv_nhapSach.SelectedIndices[0]); }
             catch
             {
                 MessageBox.Show("Chọn Item muốn xóa!");

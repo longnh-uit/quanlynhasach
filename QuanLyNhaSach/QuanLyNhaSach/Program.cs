@@ -4,6 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaSach.Forms;
+using System.Data.SqlClient;
+
+//Class chua bien toan cuc
+public static class Globals
+{
+    public static string ServerPath = System.IO.Path.Combine(@"D:\Courses\NhaSach\server\");
+    public static SqlConnection sqlcon;
+}
 
 namespace QuanLyNhaSach
 {
@@ -15,6 +23,13 @@ namespace QuanLyNhaSach
         [STAThread]
         static void Main()
         {
+            // Create connection to database
+            Globals.sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;
+                          AttachDbFilename=" + Globals.ServerPath + @"QLNS.mdf;
+                          Integrated Security=True;
+                          Connect Timeout=30;
+                          User Instance=True");
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

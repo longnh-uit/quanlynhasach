@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms.UserControls
 {
@@ -17,7 +18,15 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void UC_Tracuu_Load(object sender, EventArgs e)
         {
-
+            Globals.sqlcon.Open();
+            string query = "select TenSach, TheLoai, TacGia, SoLuong from SACH where SoLuong > 0";
+            SqlCommand com = new SqlCommand(query, Globals.sqlcon);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(com);
+            DataTable sach = new DataTable();
+            sda.Fill(sach);
+            Globals.sqlcon.Close();
+            dgvSach.DataSource = sach;
         }
 
         private void btnNhapsach_Click(object sender, EventArgs e)
@@ -153,6 +162,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 e.Handled = true;
             }
+        }
+
+        private void dgvSach_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvSach.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString(); 
         }
     }
 }

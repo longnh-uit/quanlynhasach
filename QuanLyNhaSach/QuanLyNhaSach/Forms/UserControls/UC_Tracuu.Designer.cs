@@ -30,12 +30,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Tracuu));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Theloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSach = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,63 +50,34 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Theloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvSach
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSach.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.Sach,
             this.Theloai,
             this.Tacgia,
             this.Soluong});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 185);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 486);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 125;
-            // 
-            // Sach
-            // 
-            this.Sach.HeaderText = "Sách";
-            this.Sach.MinimumWidth = 6;
-            this.Sach.Name = "Sach";
-            this.Sach.Width = 350;
-            // 
-            // Theloai
-            // 
-            this.Theloai.HeaderText = "Thể loại";
-            this.Theloai.MinimumWidth = 6;
-            this.Theloai.Name = "Theloai";
-            this.Theloai.Width = 200;
-            // 
-            // Tacgia
-            // 
-            this.Tacgia.HeaderText = "Tác giả";
-            this.Tacgia.MinimumWidth = 6;
-            this.Tacgia.Name = "Tacgia";
-            this.Tacgia.Width = 250;
-            // 
-            // Soluong
-            // 
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            this.Soluong.Width = 165;
+            this.dgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSach.Location = new System.Drawing.Point(10, 185);
+            this.dgvSach.Name = "dgvSach";
+            this.dgvSach.RowHeadersWidth = 51;
+            this.dgvSach.RowTemplate.Height = 29;
+            this.dgvSach.Size = new System.Drawing.Size(1144, 486);
+            this.dgvSach.TabIndex = 10;
+            this.dgvSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvSach.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvSach_RowPostPaint);
             // 
             // panel2
             // 
@@ -144,7 +110,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(521, 118);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 23);
+            this.label7.Size = new System.Drawing.Size(70, 19);
             this.label7.TabIndex = 40;
             this.label7.Text = "lớn nhất";
             // 
@@ -154,7 +120,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(766, 124);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 20);
+            this.label6.Size = new System.Drawing.Size(0, 17);
             this.label6.TabIndex = 39;
             // 
             // button4
@@ -195,7 +161,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(521, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 23);
+            this.label5.Size = new System.Drawing.Size(76, 19);
             this.label5.TabIndex = 12;
             this.label5.Text = "nhỏ nhất";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -204,7 +170,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxLonnhat.Location = new System.Drawing.Point(629, 118);
             this.txtBoxLonnhat.Name = "txtBoxLonnhat";
-            this.txtBoxLonnhat.Size = new System.Drawing.Size(77, 32);
+            this.txtBoxLonnhat.Size = new System.Drawing.Size(77, 27);
             this.txtBoxLonnhat.TabIndex = 5;
             this.txtBoxLonnhat.TextChanged += new System.EventHandler(this.txtBoxLonnhat_TextChanged);
             this.txtBoxLonnhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxLonnhat_KeyPress);
@@ -213,7 +179,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxNhonhat.Location = new System.Drawing.Point(629, 67);
             this.txtBoxNhonhat.Name = "txtBoxNhonhat";
-            this.txtBoxNhonhat.Size = new System.Drawing.Size(77, 32);
+            this.txtBoxNhonhat.Size = new System.Drawing.Size(77, 27);
             this.txtBoxNhonhat.TabIndex = 4;
             this.txtBoxNhonhat.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.txtBoxNhonhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxNhonhat_KeyPress);
@@ -224,7 +190,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(413, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 23);
+            this.label4.Size = new System.Drawing.Size(79, 19);
             this.label4.TabIndex = 9;
             this.label4.Text = "Số lượng:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -233,7 +199,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTheloai.Location = new System.Drawing.Point(521, 12);
             this.txtBoxTheloai.Name = "txtBoxTheloai";
-            this.txtBoxTheloai.Size = new System.Drawing.Size(196, 32);
+            this.txtBoxTheloai.Size = new System.Drawing.Size(196, 27);
             this.txtBoxTheloai.TabIndex = 3;
             // 
             // label3
@@ -242,7 +208,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(413, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 23);
+            this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "Thể loại:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -251,7 +217,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTacgia.Location = new System.Drawing.Point(120, 73);
             this.txtBoxTacgia.Name = "txtBoxTacgia";
-            this.txtBoxTacgia.Size = new System.Drawing.Size(196, 32);
+            this.txtBoxTacgia.Size = new System.Drawing.Size(196, 27);
             this.txtBoxTacgia.TabIndex = 2;
             // 
             // label2
@@ -260,7 +226,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 23);
+            this.label2.Size = new System.Drawing.Size(69, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tác giả:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -269,7 +235,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTensach.Location = new System.Drawing.Point(120, 12);
             this.txtBoxTensach.Name = "txtBoxTensach";
-            this.txtBoxTensach.Size = new System.Drawing.Size(196, 32);
+            this.txtBoxTensach.Size = new System.Drawing.Size(196, 27);
             this.txtBoxTensach.TabIndex = 1;
             this.txtBoxTensach.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -279,7 +245,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(3, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 23);
+            this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tên sách:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -317,10 +283,47 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel1.Size = new System.Drawing.Size(10, 681);
             this.panel1.TabIndex = 5;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // Sach
+            // 
+            this.Sach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Sach.DataPropertyName = "TenSach";
+            this.Sach.HeaderText = "Sách";
+            this.Sach.MinimumWidth = 6;
+            this.Sach.Name = "Sach";
+            // 
+            // Theloai
+            // 
+            this.Theloai.DataPropertyName = "TheLoai";
+            this.Theloai.HeaderText = "Thể loại";
+            this.Theloai.MinimumWidth = 6;
+            this.Theloai.Name = "Theloai";
+            this.Theloai.Width = 200;
+            // 
+            // Tacgia
+            // 
+            this.Tacgia.DataPropertyName = "TacGia";
+            this.Tacgia.HeaderText = "Tác giả";
+            this.Tacgia.MinimumWidth = 6;
+            this.Tacgia.Name = "Tacgia";
+            this.Tacgia.Width = 250;
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "SoLuong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.MinimumWidth = 6;
+            this.Soluong.Name = "Soluong";
+            this.Soluong.Width = 165;
+            // 
             // UC_Tracuu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSach);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
@@ -330,7 +333,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Name = "UC_Tracuu";
             this.Size = new System.Drawing.Size(1164, 681);
             this.Load += new System.EventHandler(this.UC_Tracuu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -339,7 +342,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSach;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
@@ -357,12 +360,12 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnTracuu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sach;
         private System.Windows.Forms.DataGridViewTextBoxColumn Theloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tacgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
     }
 }

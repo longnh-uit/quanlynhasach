@@ -29,6 +29,7 @@ namespace QuanLyNhaSach
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Globals.sqlcon.Open();
             // Make query
             string query = "Select * from ADMINISTRATORS where username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text +"'";
             // Create adapter
@@ -37,18 +38,22 @@ namespace QuanLyNhaSach
             // Fill the table with whichever entry in the DB fits the criteria of: having the username put in the txtUsername.Text
             // and password from txtPassword.Text
             sda.Fill(dtb1);
+            Globals.sqlcon.Close();
             // If there is 1 element (a match has been found), allow access
             if (dtb1.Rows.Count == 1)
             {
                 UserSuccessfullyAuthenticated = true;
+                Globals.name = dtb1.Rows[0].Field <string>(0);
+                Globals.role = dtb1.Rows[0].Field <string>(3);
+
                 Close();
+
             }
             // If incorrect, don't allow access
             else
             {
                 MessageBox.Show("Sai mật khẩu hoặc tên đăng nhập không tồn tại");
             }
-
             
         }
 

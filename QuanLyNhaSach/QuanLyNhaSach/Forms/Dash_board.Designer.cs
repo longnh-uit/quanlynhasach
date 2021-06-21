@@ -48,8 +48,8 @@ namespace QuanLyNhaSach.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.panelControl = new System.Windows.Forms.Panel();
@@ -225,7 +225,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Location = new System.Drawing.Point(67, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 23);
+            this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhà sách";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -277,7 +277,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(63, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 23);
+            this.label3.Size = new System.Drawing.Size(258, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Shop Management System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -286,8 +286,8 @@ namespace QuanLyNhaSach.Forms
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel5.Controls.Add(this.lblTime);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.lblRole);
+            this.panel5.Controls.Add(this.lblWelcome);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(248, 44);
             this.panel5.Name = "panel5";
@@ -303,31 +303,31 @@ namespace QuanLyNhaSach.Forms
             this.lblTime.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblTime.Location = new System.Drawing.Point(970, 7);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(106, 23);
+            this.lblTime.Size = new System.Drawing.Size(83, 19);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "HH:MM:SS";
             // 
-            // label4
+            // lblRole
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label4.Location = new System.Drawing.Point(63, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Role: ";
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRole.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lblRole.Location = new System.Drawing.Point(63, 42);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(50, 19);
+            this.lblRole.TabIndex = 4;
+            this.lblRole.Text = "Role: ";
             // 
-            // label2
+            // lblWelcome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label2.Location = new System.Drawing.Point(63, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Welcome:";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lblWelcome.Location = new System.Drawing.Point(63, 7);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(87, 19);
+            this.lblWelcome.TabIndex = 3;
+            this.lblWelcome.Text = "Welcome ";
             // 
             // timer1
             // 
@@ -345,7 +345,6 @@ namespace QuanLyNhaSach.Forms
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(1164, 681);
             this.panelControl.TabIndex = 2;
-            this.panelControl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl_Paint);
             // 
             // frmDash_board
             // 
@@ -389,9 +388,9 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button btnNhapsach;
         private System.Windows.Forms.Panel panelSide;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTime;

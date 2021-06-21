@@ -47,12 +47,15 @@ namespace QuanLyNhaSach.Forms
         }
         private void Dash_board_Load(object sender, EventArgs e)
         {
+            lblWelcome.Text += Globals.name;
+            lblRole.Text += Globals.role;
+
             //Khi mới bật thì ở mục tra cứu
             UC_Tracuu uctc = new UC_Tracuu();
             AddControltoPanel(uctc);
             moveSidePanel(btnTracuu);
 
-            string Chucvu = "Quản lí"; // Cần kiểm tra tài khoản login chức vụ gì rồi gán vô đây
+            string Chucvu = Globals.role; // Cần kiểm tra tài khoản login chức vụ gì rồi gán vô đây
             if (Chucvu=="Nhân viên bán hàng")
             {
                 Unable_button(btnBaocao);
@@ -200,15 +203,11 @@ namespace QuanLyNhaSach.Forms
             tdqd.ShowDialog();
         }
 
-        private void panelControl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form_Dangky dk = new Form_Dangky();
             dk.ShowDialog();
         }
+
     }
 }

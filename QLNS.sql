@@ -1,13 +1,14 @@
-﻿create database QLNS
+﻿drop database QLNS
+create database QLNS
 go
 use QLNS
 set dateformat DMY
 
 create table SACH (
 	MaSach char(10) not null,
-	TenSach char(100) ,
-	TheLoai char(50),
-	TacGia char(100),
+	TenSach nvarchar(100) ,
+	TheLoai nvarchar(50),
+	TacGia nvarchar(100),
 	SoLuong int,
 	DonGiaNhap int,
 	Primary key (MaSach)
@@ -24,8 +25,8 @@ create table NHAPSACH(
 go
 create table KHACHHANG(
 	MaKH char(10) not null,
-	TenKH char(100) ,
-	DiaChi char(100),
+	TenKH nvarchar(100) ,
+	DiaChi nvarchar(100),
 	DienThoai char(20),
 	Email char(50),
 	SoTienNo int,
@@ -97,9 +98,12 @@ create table THAMSO(
 	KiemTraSoTienThu bit,
 )
 create table ADMINISTRATORS (
-	HOTEN		varchar(40),
+	HOTEN		nvarchar(100),
 	USERNAME	varchar(20) primary key,
-	PASSWORD	varchar(20)
+	PASSWORD	varchar(20),
+	CHUCVU		nvarchar(50)
 )
 
-insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password') 
+insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password', N'Quản lý') 
+insert into SACH values ('SA01', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 1, 9000)
+insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')

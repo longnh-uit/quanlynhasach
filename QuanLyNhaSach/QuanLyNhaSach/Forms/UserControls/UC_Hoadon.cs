@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms.UserControls
 {
@@ -16,10 +17,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             txtBoxNgay.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void UC_Hoadon_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -118,9 +115,19 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnKiemTra_Click(object sender, EventArgs e)
         {
             bool isEligible = true; // Nếu khách đủ điều kiện thì biến này true, ko thì false (SQL)
+
+            Globals.sqlcon.Open();
+            string query = "select * from KHACHHANG where TenKH = N'" + txtBoxHoten + "' and DienThoai = '" + txtBoxSodienthoai + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
+            DataTable kh = new DataTable();
+            sda.Fill(kh);
+            Globals.sqlcon.Close();
+
+            if (kh.Rows.Count != 0)
+                isEligible = false;
             if (isEligible)
             {
                 txtBoxNgay.ReadOnly = false;
@@ -198,7 +205,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnXacNhan_Click(object sender, EventArgs e)
         {
             using (Form_FinishOrder uf = new Form_FinishOrder())
             {
@@ -326,6 +333,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -53,6 +53,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             button7 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -189,7 +190,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxEmail.Location = new System.Drawing.Point(413, 146);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(182, 32);
+            this.txtBoxEmail.Size = new System.Drawing.Size(182, 27);
             this.txtBoxEmail.TabIndex = 4;
             // 
             // label3
@@ -199,7 +200,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(339, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 23);
+            this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 10;
             this.label3.Text = "Email";
             // 
@@ -207,7 +208,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxSDT.Location = new System.Drawing.Point(151, 143);
             this.txtBoxSDT.Name = "txtBoxSDT";
-            this.txtBoxSDT.Size = new System.Drawing.Size(182, 32);
+            this.txtBoxSDT.Size = new System.Drawing.Size(182, 27);
             this.txtBoxSDT.TabIndex = 3;
             this.txtBoxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSDT_KeyPress);
             // 
@@ -218,7 +219,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(68, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 23);
+            this.label1.Size = new System.Drawing.Size(40, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "SĐT ";
             // 
@@ -226,7 +227,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxDiachi.Location = new System.Drawing.Point(151, 93);
             this.txtBoxDiachi.Name = "txtBoxDiachi";
-            this.txtBoxDiachi.Size = new System.Drawing.Size(444, 32);
+            this.txtBoxDiachi.Size = new System.Drawing.Size(444, 27);
             this.txtBoxDiachi.TabIndex = 2;
             this.txtBoxDiachi.TextChanged += new System.EventHandler(this.txtBoxDiachi_TextChanged);
             // 
@@ -237,7 +238,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(32, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.Size = new System.Drawing.Size(68, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Địa chỉ ";
             // 
@@ -245,7 +246,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txBoxHoten.Location = new System.Drawing.Point(151, 35);
             this.txBoxHoten.Name = "txBoxHoten";
-            this.txBoxHoten.Size = new System.Drawing.Size(444, 32);
+            this.txBoxHoten.Size = new System.Drawing.Size(444, 27);
             this.txBoxHoten.TabIndex = 1;
             this.txBoxHoten.TextChanged += new System.EventHandler(this.txBoxHoten_TextChanged);
             // 
@@ -256,7 +257,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(10, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 23);
+            this.label2.Size = new System.Drawing.Size(86, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ và tên ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -268,7 +269,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(10, 236);
             this.dataGridView1.Name = "dataGridView1";
@@ -305,6 +307,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 250;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số tiền nợ";
+            this.Column5.Name = "Column5";
             // 
             // UC_Phieutratien
             // 
@@ -352,5 +359,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

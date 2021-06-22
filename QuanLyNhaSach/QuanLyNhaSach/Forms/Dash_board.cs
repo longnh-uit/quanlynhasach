@@ -61,7 +61,6 @@ namespace QuanLyNhaSach.Forms
                 Unable_button(btnBaocao);
                 Unable_button(btnDangky);
                 Unable_button(btnThaydoiquydinh);
-                Unable_button(btnNhapsach);
             }
             else if (Chucvu=="Thủ kho")
             {
@@ -121,14 +120,6 @@ namespace QuanLyNhaSach.Forms
             panelSide.Top = btn.Top;
             panelSide.Height = btn.Height;
 
-        }
-
-
-        private void btnNhapsach_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnNhapsach);
-            UC_Nhapsach ucns = new UC_Nhapsach();
-            AddControltoPanel(ucns);
         }
 
         private void btnHoadon_Click(object sender, EventArgs e)

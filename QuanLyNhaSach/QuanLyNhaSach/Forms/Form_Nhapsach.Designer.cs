@@ -159,7 +159,7 @@ namespace QuanLyNhaSach.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(52, 300);
+            this.label6.Location = new System.Drawing.Point(52, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 19);
             this.label6.TabIndex = 65;
@@ -168,7 +168,7 @@ namespace QuanLyNhaSach.Forms
             // txtBoxSoluong
             // 
             this.txtBoxSoluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSoluong.Location = new System.Drawing.Point(186, 254);
+            this.txtBoxSoluong.Location = new System.Drawing.Point(186, 256);
             this.txtBoxSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxSoluong.Name = "txtBoxSoluong";
             this.txtBoxSoluong.Size = new System.Drawing.Size(205, 23);
@@ -182,7 +182,7 @@ namespace QuanLyNhaSach.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(52, 257);
+            this.label3.Location = new System.Drawing.Point(52, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 19);
             this.label3.TabIndex = 63;
@@ -194,7 +194,7 @@ namespace QuanLyNhaSach.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label2.Location = new System.Drawing.Point(52, 218);
+            this.label2.Location = new System.Drawing.Point(52, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 61;
@@ -203,7 +203,7 @@ namespace QuanLyNhaSach.Forms
             // txtBoxTheloai
             // 
             this.txtBoxTheloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxTheloai.Location = new System.Drawing.Point(186, 175);
+            this.txtBoxTheloai.Location = new System.Drawing.Point(186, 176);
             this.txtBoxTheloai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxTheloai.Name = "txtBoxTheloai";
             this.txtBoxTheloai.Size = new System.Drawing.Size(205, 23);
@@ -228,7 +228,7 @@ namespace QuanLyNhaSach.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(52, 178);
+            this.label4.Location = new System.Drawing.Point(52, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 19);
             this.label4.TabIndex = 57;
@@ -260,7 +260,7 @@ namespace QuanLyNhaSach.Forms
             // txtBoxDongianhap
             // 
             this.txtBoxDongianhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxDongianhap.Location = new System.Drawing.Point(186, 297);
+            this.txtBoxDongianhap.Location = new System.Drawing.Point(186, 296);
             this.txtBoxDongianhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxDongianhap.Name = "txtBoxDongianhap";
             this.txtBoxDongianhap.Size = new System.Drawing.Size(205, 23);
@@ -280,7 +280,7 @@ namespace QuanLyNhaSach.Forms
             // txtBoxTacgia
             // 
             this.txtBoxTacgia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxTacgia.Location = new System.Drawing.Point(186, 218);
+            this.txtBoxTacgia.Location = new System.Drawing.Point(186, 216);
             this.txtBoxTacgia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxTacgia.Name = "txtBoxTacgia";
             this.txtBoxTacgia.Size = new System.Drawing.Size(205, 23);
@@ -295,7 +295,7 @@ namespace QuanLyNhaSach.Forms
             this.btnNhap.Location = new System.Drawing.Point(396, 175);
             this.btnNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(75, 63);
+            this.btnNhap.Size = new System.Drawing.Size(40, 39);
             this.btnNhap.TabIndex = 75;
             this.btnNhap.Text = "=>";
             this.btnNhap.UseVisualStyleBackColor = false;
@@ -314,10 +314,10 @@ namespace QuanLyNhaSach.Forms
             this.lv_nhapSach.FullRowSelect = true;
             this.lv_nhapSach.GridLines = true;
             this.lv_nhapSach.HideSelection = false;
-            this.lv_nhapSach.Location = new System.Drawing.Point(476, 68);
+            this.lv_nhapSach.Location = new System.Drawing.Point(442, 69);
             this.lv_nhapSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lv_nhapSach.Name = "lv_nhapSach";
-            this.lv_nhapSach.Size = new System.Drawing.Size(407, 258);
+            this.lv_nhapSach.Size = new System.Drawing.Size(441, 258);
             this.lv_nhapSach.TabIndex = 80;
             this.lv_nhapSach.UseCompatibleStateImageBehavior = false;
             this.lv_nhapSach.View = System.Windows.Forms.View.Details;
@@ -326,27 +326,26 @@ namespace QuanLyNhaSach.Forms
             // tenSach
             // 
             this.tenSach.Text = "Tên sách";
-            this.tenSach.Width = 300;
+            this.tenSach.Width = 220;
             // 
             // theLoai
             // 
-            this.theLoai.DisplayIndex = 2;
             this.theLoai.Text = "Thể loại";
+            this.theLoai.Width = 80;
             // 
             // tacGia
             // 
-            this.tacGia.DisplayIndex = 3;
             this.tacGia.Text = "Tác giả";
+            this.tacGia.Width = 130;
             // 
             // soLuong
             // 
-            this.soLuong.DisplayIndex = 1;
             this.soLuong.Text = "Số lượng";
-            this.soLuong.Width = 160;
             // 
             // donGia
             // 
             this.donGia.Text = "Đơn giá nhập";
+            this.donGia.Width = 100;
             // 
             // button8
             // 

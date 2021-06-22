@@ -38,7 +38,6 @@ namespace QuanLyNhaSach.Forms
             this.btnThutien = new System.Windows.Forms.Button();
             this.btnTracuu = new System.Windows.Forms.Button();
             this.btnHoadon = new System.Windows.Forms.Button();
-            this.btnNhapsach = new System.Windows.Forms.Button();
             this.panelSide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.Controls.Add(this.btnThutien);
             this.panelLeft.Controls.Add(this.btnTracuu);
             this.panelLeft.Controls.Add(this.btnHoadon);
-            this.panelLeft.Controls.Add(this.btnNhapsach);
             this.panelLeft.Controls.Add(this.panelSide);
             this.panelLeft.Controls.Add(this.panel2);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -87,7 +85,7 @@ namespace QuanLyNhaSach.Forms
             this.btnDangky.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnDangky.Image = ((System.Drawing.Image)(resources.GetObject("btnDangky.Image")));
             this.btnDangky.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangky.Location = new System.Drawing.Point(14, 545);
+            this.btnDangky.Location = new System.Drawing.Point(14, 476);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(234, 63);
             this.btnDangky.TabIndex = 9;
@@ -104,7 +102,7 @@ namespace QuanLyNhaSach.Forms
             this.btnThaydoiquydinh.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnThaydoiquydinh.Image = ((System.Drawing.Image)(resources.GetObject("btnThaydoiquydinh.Image")));
             this.btnThaydoiquydinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThaydoiquydinh.Location = new System.Drawing.Point(14, 476);
+            this.btnThaydoiquydinh.Location = new System.Drawing.Point(14, 407);
             this.btnThaydoiquydinh.Name = "btnThaydoiquydinh";
             this.btnThaydoiquydinh.Size = new System.Drawing.Size(234, 63);
             this.btnThaydoiquydinh.TabIndex = 8;
@@ -121,7 +119,7 @@ namespace QuanLyNhaSach.Forms
             this.btnBaocao.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnBaocao.Image = ((System.Drawing.Image)(resources.GetObject("btnBaocao.Image")));
             this.btnBaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaocao.Location = new System.Drawing.Point(14, 407);
+            this.btnBaocao.Location = new System.Drawing.Point(14, 338);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.Size = new System.Drawing.Size(234, 63);
             this.btnBaocao.TabIndex = 7;
@@ -138,7 +136,7 @@ namespace QuanLyNhaSach.Forms
             this.btnThutien.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnThutien.Image = ((System.Drawing.Image)(resources.GetObject("btnThutien.Image")));
             this.btnThutien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThutien.Location = new System.Drawing.Point(14, 338);
+            this.btnThutien.Location = new System.Drawing.Point(14, 269);
             this.btnThutien.Name = "btnThutien";
             this.btnThutien.Size = new System.Drawing.Size(234, 63);
             this.btnThutien.TabIndex = 6;
@@ -155,7 +153,7 @@ namespace QuanLyNhaSach.Forms
             this.btnTracuu.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnTracuu.Image = ((System.Drawing.Image)(resources.GetObject("btnTracuu.Image")));
             this.btnTracuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTracuu.Location = new System.Drawing.Point(14, 269);
+            this.btnTracuu.Location = new System.Drawing.Point(14, 125);
             this.btnTracuu.Name = "btnTracuu";
             this.btnTracuu.Size = new System.Drawing.Size(234, 63);
             this.btnTracuu.TabIndex = 5;
@@ -180,23 +178,6 @@ namespace QuanLyNhaSach.Forms
             this.btnHoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHoadon.UseVisualStyleBackColor = true;
             this.btnHoadon.Click += new System.EventHandler(this.btnHoadon_Click);
-            // 
-            // btnNhapsach
-            // 
-            this.btnNhapsach.FlatAppearance.BorderSize = 0;
-            this.btnNhapsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapsach.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNhapsach.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnNhapsach.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapsach.Image")));
-            this.btnNhapsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapsach.Location = new System.Drawing.Point(14, 131);
-            this.btnNhapsach.Name = "btnNhapsach";
-            this.btnNhapsach.Size = new System.Drawing.Size(234, 63);
-            this.btnNhapsach.TabIndex = 3;
-            this.btnNhapsach.Text = "    Nhập sách";
-            this.btnNhapsach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapsach.UseVisualStyleBackColor = true;
-            this.btnNhapsach.Click += new System.EventHandler(this.btnNhapsach_Click);
             // 
             // panelSide
             // 
@@ -385,7 +366,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button btnThutien;
         private System.Windows.Forms.Button btnTracuu;
         private System.Windows.Forms.Button btnHoadon;
-        private System.Windows.Forms.Button btnNhapsach;
         private System.Windows.Forms.Panel panelSide;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblWelcome;

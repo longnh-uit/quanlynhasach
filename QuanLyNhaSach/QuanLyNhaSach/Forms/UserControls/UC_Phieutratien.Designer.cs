@@ -36,6 +36,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnXuat = new System.Windows.Forms.Button();
+            this.btnHoanTac = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnTracuu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,18 +49,18 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxDiachi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txBoxHoten = new System.Windows.Forms.TextBox();
+            this.txtBoxHoten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             button7 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -116,6 +119,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel8.Controls.Add(this.btnXuat);
+            this.panel8.Controls.Add(this.btnHoanTac);
+            this.panel8.Controls.Add(this.btnLuu);
             this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.btnTracuu);
             this.panel8.Controls.Add(this.panel1);
@@ -125,7 +131,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel8.Controls.Add(this.label1);
             this.panel8.Controls.Add(this.txtBoxDiachi);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.txBoxHoten);
+            this.panel8.Controls.Add(this.txtBoxHoten);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(10, 10);
@@ -134,13 +140,60 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel8.TabIndex = 8;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
+            // btnXuat
+            // 
+            this.btnXuat.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
+            this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuat.Location = new System.Drawing.Point(380, 166);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(141, 44);
+            this.btnXuat.TabIndex = 39;
+            this.btnXuat.Text = "      Xuất Excel";
+            this.btnXuat.UseVisualStyleBackColor = false;
+            // 
+            // btnHoanTac
+            // 
+            this.btnHoanTac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHoanTac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnHoanTac.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHoanTac.ForeColor = System.Drawing.Color.White;
+            this.btnHoanTac.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.Image")));
+            this.btnHoanTac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoanTac.Location = new System.Drawing.Point(195, 166);
+            this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.Size = new System.Drawing.Size(141, 44);
+            this.btnHoanTac.TabIndex = 16;
+            this.btnHoanTac.Text = "       Hoàn tác";
+            this.btnHoanTac.UseVisualStyleBackColor = false;
+            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnLuu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(10, 166);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(141, 44);
+            this.btnLuu.TabIndex = 15;
+            this.btnLuu.Text = "     Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(635, 131);
+            this.button1.Location = new System.Drawing.Point(635, 98);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 53);
             this.button1.TabIndex = 14;
@@ -154,7 +207,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnTracuu.BackColor = System.Drawing.Color.SeaGreen;
             this.btnTracuu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTracuu.ForeColor = System.Drawing.Color.White;
-            this.btnTracuu.Location = new System.Drawing.Point(635, 35);
+            this.btnTracuu.Location = new System.Drawing.Point(635, 11);
             this.btnTracuu.Name = "btnTracuu";
             this.btnTracuu.Size = new System.Drawing.Size(150, 53);
             this.btnTracuu.TabIndex = 5;
@@ -188,9 +241,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(413, 146);
+            this.txtBoxEmail.Location = new System.Drawing.Point(413, 122);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(182, 27);
+            this.txtBoxEmail.Size = new System.Drawing.Size(182, 29);
             this.txtBoxEmail.TabIndex = 4;
             // 
             // label3
@@ -198,7 +251,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(339, 146);
+            this.label3.Location = new System.Drawing.Point(339, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 10;
@@ -206,9 +259,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxSDT
             // 
-            this.txtBoxSDT.Location = new System.Drawing.Point(151, 143);
+            this.txtBoxSDT.Location = new System.Drawing.Point(151, 119);
             this.txtBoxSDT.Name = "txtBoxSDT";
-            this.txtBoxSDT.Size = new System.Drawing.Size(182, 27);
+            this.txtBoxSDT.Size = new System.Drawing.Size(182, 29);
             this.txtBoxSDT.TabIndex = 3;
             this.txtBoxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSDT_KeyPress);
             // 
@@ -217,7 +270,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(68, 146);
+            this.label1.Location = new System.Drawing.Point(68, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 19);
             this.label1.TabIndex = 8;
@@ -225,9 +278,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxDiachi
             // 
-            this.txtBoxDiachi.Location = new System.Drawing.Point(151, 93);
+            this.txtBoxDiachi.Location = new System.Drawing.Point(151, 69);
             this.txtBoxDiachi.Name = "txtBoxDiachi";
-            this.txtBoxDiachi.Size = new System.Drawing.Size(444, 27);
+            this.txtBoxDiachi.Size = new System.Drawing.Size(444, 29);
             this.txtBoxDiachi.TabIndex = 2;
             this.txtBoxDiachi.TextChanged += new System.EventHandler(this.txtBoxDiachi_TextChanged);
             // 
@@ -236,94 +289,103 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(32, 90);
+            this.label4.Location = new System.Drawing.Point(32, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Địa chỉ ";
             // 
-            // txBoxHoten
+            // txtBoxHoten
             // 
-            this.txBoxHoten.Location = new System.Drawing.Point(151, 35);
-            this.txBoxHoten.Name = "txBoxHoten";
-            this.txBoxHoten.Size = new System.Drawing.Size(444, 27);
-            this.txBoxHoten.TabIndex = 1;
-            this.txBoxHoten.TextChanged += new System.EventHandler(this.txBoxHoten_TextChanged);
+            this.txtBoxHoten.Location = new System.Drawing.Point(151, 11);
+            this.txtBoxHoten.Name = "txtBoxHoten";
+            this.txtBoxHoten.Size = new System.Drawing.Size(444, 29);
+            this.txtBoxHoten.TabIndex = 1;
+            this.txtBoxHoten.TextChanged += new System.EventHandler(this.txBoxHoten_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(10, 35);
+            this.label2.Location = new System.Drawing.Point(10, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ và tên ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dataGridView1
+            // dgvKhachHang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 236);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 435);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvKhachHang.AllowUserToAddRows = false;
+            this.dgvKhachHang.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenKH,
+            this.DiaChi,
+            this.DienThoai,
+            this.Email,
+            this.SoTienNo});
+            this.dgvKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvKhachHang.Location = new System.Drawing.Point(10, 236);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.RowHeadersWidth = 51;
+            this.dgvKhachHang.RowTemplate.Height = 29;
+            this.dgvKhachHang.Size = new System.Drawing.Size(1144, 435);
+            this.dgvKhachHang.TabIndex = 9;
+            this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
+            // TenKH
             // 
-            this.Column1.HeaderText = "Họ tên";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Họ tên";
+            this.TenKH.MinimumWidth = 6;
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Width = 250;
             // 
-            // Column2
+            // DiaChi
             // 
-            this.Column2.HeaderText = "Địa chỉ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 340;
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 340;
             // 
-            // Column3
+            // DienThoai
             // 
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
+            this.DienThoai.DataPropertyName = "DienThoai";
+            this.DienThoai.HeaderText = "Số điện thoại";
+            this.DienThoai.MinimumWidth = 6;
+            this.DienThoai.Name = "DienThoai";
+            this.DienThoai.Width = 140;
             // 
-            // Column4
+            // Email
             // 
-            this.Column4.HeaderText = "Email";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 250;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 250;
             // 
-            // Column5
+            // SoTienNo
             // 
-            this.Column5.HeaderText = "Số tiền nợ";
-            this.Column5.Name = "Column5";
+            this.SoTienNo.DataPropertyName = "SoTienNo";
+            this.SoTienNo.HeaderText = "Số tiền nợ";
+            this.SoTienNo.Name = "SoTienNo";
+            this.SoTienNo.ReadOnly = true;
+            this.SoTienNo.Width = 120;
             // 
             // UC_Phieutratien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UC_Phieutratien";
             this.Size = new System.Drawing.Size(1164, 681);
@@ -331,7 +393,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,7 +404,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txBoxHoten;
+        private System.Windows.Forms.TextBox txtBoxHoten;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxDiachi;
         private System.Windows.Forms.Label label4;
@@ -354,11 +416,14 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnTracuu;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnHoanTac;
+        private System.Windows.Forms.Button btnXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienNo;
     }
 }

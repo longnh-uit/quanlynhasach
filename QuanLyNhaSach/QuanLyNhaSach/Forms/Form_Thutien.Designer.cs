@@ -31,15 +31,15 @@ namespace QuanLyNhaSach.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Thutien));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXong = new System.Windows.Forms.Button();
             this.lblSotienthua = new System.Windows.Forms.Label();
-            this.txtBoxSotiennhan = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBoxSotienphaitra = new System.Windows.Forms.TextBox();
+            this.txtBoxDienthoai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxGiamgia = new System.Windows.Forms.TextBox();
-            this.txtBoxSoluong = new System.Windows.Forms.TextBox();
+            this.txtBoxDiachi = new System.Windows.Forms.TextBox();
+            this.txtBoxHoten = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.logo2 = new System.Windows.Forms.PictureBox();
@@ -48,10 +48,10 @@ namespace QuanLyNhaSach.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxTiennomoi = new System.Windows.Forms.TextBox();
+            this.txtBoxTienno = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBoxTienthu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,7 @@ namespace QuanLyNhaSach.Forms
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.checkBox1.Location = new System.Drawing.Point(519, 302);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
@@ -68,34 +69,34 @@ namespace QuanLyNhaSach.Forms
             this.checkBox1.Text = "Xuất phiếu thu";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnHuy
             // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(105, 338);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 40);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Hủy";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(105, 338);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(148, 40);
+            this.btnHuy.TabIndex = 10;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button3
+            // btnXong
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.SeaGreen;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(519, 338);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 40);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Hoàn tất";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnXong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXong.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnXong.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXong.ForeColor = System.Drawing.Color.White;
+            this.btnXong.Location = new System.Drawing.Point(519, 338);
+            this.btnXong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXong.Name = "btnXong";
+            this.btnXong.Size = new System.Drawing.Size(148, 40);
+            this.btnXong.TabIndex = 9;
+            this.btnXong.Text = "Hoàn tất";
+            this.btnXong.UseVisualStyleBackColor = false;
+            this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
             // 
             // lblSotienthua
             // 
@@ -109,15 +110,15 @@ namespace QuanLyNhaSach.Forms
             this.lblSotienthua.TabIndex = 52;
             this.lblSotienthua.Text = "Số tiền nợ còn lại";
             // 
-            // txtBoxSotiennhan
+            // txtBoxEmail
             // 
-            this.txtBoxSotiennhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotiennhan.Location = new System.Drawing.Point(295, 185);
-            this.txtBoxSotiennhan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxSotiennhan.Name = "txtBoxSotiennhan";
-            this.txtBoxSotiennhan.ReadOnly = true;
-            this.txtBoxSotiennhan.Size = new System.Drawing.Size(205, 23);
-            this.txtBoxSotiennhan.TabIndex = 4;
+            this.txtBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxEmail.Location = new System.Drawing.Point(295, 185);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.ReadOnly = true;
+            this.txtBoxEmail.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxEmail.TabIndex = 4;
             // 
             // label3
             // 
@@ -131,15 +132,15 @@ namespace QuanLyNhaSach.Forms
             this.label3.TabIndex = 51;
             this.label3.Text = "Email";
             // 
-            // txtBoxSotienphaitra
+            // txtBoxDienthoai
             // 
-            this.txtBoxSotienphaitra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotienphaitra.Location = new System.Drawing.Point(295, 146);
-            this.txtBoxSotienphaitra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxSotienphaitra.Name = "txtBoxSotienphaitra";
-            this.txtBoxSotienphaitra.ReadOnly = true;
-            this.txtBoxSotienphaitra.Size = new System.Drawing.Size(205, 23);
-            this.txtBoxSotienphaitra.TabIndex = 3;
+            this.txtBoxDienthoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxDienthoai.Location = new System.Drawing.Point(295, 146);
+            this.txtBoxDienthoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxDienthoai.Name = "txtBoxDienthoai";
+            this.txtBoxDienthoai.ReadOnly = true;
+            this.txtBoxDienthoai.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxDienthoai.TabIndex = 3;
             // 
             // label2
             // 
@@ -153,25 +154,25 @@ namespace QuanLyNhaSach.Forms
             this.label2.TabIndex = 49;
             this.label2.Text = "Điện thoại";
             // 
-            // txtBoxGiamgia
+            // txtBoxDiachi
             // 
-            this.txtBoxGiamgia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxGiamgia.Location = new System.Drawing.Point(295, 107);
-            this.txtBoxGiamgia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxGiamgia.Name = "txtBoxGiamgia";
-            this.txtBoxGiamgia.ReadOnly = true;
-            this.txtBoxGiamgia.Size = new System.Drawing.Size(205, 23);
-            this.txtBoxGiamgia.TabIndex = 2;
+            this.txtBoxDiachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxDiachi.Location = new System.Drawing.Point(295, 107);
+            this.txtBoxDiachi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxDiachi.Name = "txtBoxDiachi";
+            this.txtBoxDiachi.ReadOnly = true;
+            this.txtBoxDiachi.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxDiachi.TabIndex = 2;
             // 
-            // txtBoxSoluong
+            // txtBoxHoten
             // 
-            this.txtBoxSoluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSoluong.Location = new System.Drawing.Point(295, 68);
-            this.txtBoxSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxSoluong.Name = "txtBoxSoluong";
-            this.txtBoxSoluong.ReadOnly = true;
-            this.txtBoxSoluong.Size = new System.Drawing.Size(205, 23);
-            this.txtBoxSoluong.TabIndex = 1;
+            this.txtBoxHoten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxHoten.Location = new System.Drawing.Point(295, 68);
+            this.txtBoxHoten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxHoten.Name = "txtBoxHoten";
+            this.txtBoxHoten.ReadOnly = true;
+            this.txtBoxHoten.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxHoten.TabIndex = 1;
             // 
             // label5
             // 
@@ -261,25 +262,25 @@ namespace QuanLyNhaSach.Forms
             this.panel1.Size = new System.Drawing.Size(9, 427);
             this.panel1.TabIndex = 37;
             // 
-            // textBox1
+            // txtBoxTiennomoi
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(295, 302);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(205, 23);
-            this.textBox1.TabIndex = 7;
+            this.txtBoxTiennomoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTiennomoi.Location = new System.Drawing.Point(295, 302);
+            this.txtBoxTiennomoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxTiennomoi.Name = "txtBoxTiennomoi";
+            this.txtBoxTiennomoi.ReadOnly = true;
+            this.txtBoxTiennomoi.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxTiennomoi.TabIndex = 7;
             // 
-            // textBox2
+            // txtBoxTienno
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(295, 224);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(205, 23);
-            this.textBox2.TabIndex = 5;
+            this.txtBoxTienno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTienno.Location = new System.Drawing.Point(295, 224);
+            this.txtBoxTienno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxTienno.Name = "txtBoxTienno";
+            this.txtBoxTienno.ReadOnly = true;
+            this.txtBoxTienno.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxTienno.TabIndex = 5;
             // 
             // label6
             // 
@@ -293,15 +294,16 @@ namespace QuanLyNhaSach.Forms
             this.label6.TabIndex = 58;
             this.label6.Text = "Số tiền nợ";
             // 
-            // textBox3
+            // txtBoxTienthu
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(295, 263);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(205, 23);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.txtBoxTienthu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTienthu.Location = new System.Drawing.Point(295, 263);
+            this.txtBoxTienthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxTienthu.Name = "txtBoxTienthu";
+            this.txtBoxTienthu.Size = new System.Drawing.Size(205, 23);
+            this.txtBoxTienthu.TabIndex = 6;
+            this.txtBoxTienthu.TextChanged += new System.EventHandler(this.txtBoxTienthu_TextChanged);
+            this.txtBoxTienthu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label7
             // 
@@ -321,21 +323,21 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(719, 427);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtBoxTienthu);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtBoxTienno);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxTiennomoi);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnXong);
             this.Controls.Add(this.lblSotienthua);
-            this.Controls.Add(this.txtBoxSotiennhan);
+            this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtBoxSotienphaitra);
+            this.Controls.Add(this.txtBoxDienthoai);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtBoxGiamgia);
-            this.Controls.Add(this.txtBoxSoluong);
+            this.Controls.Add(this.txtBoxDiachi);
+            this.Controls.Add(this.txtBoxHoten);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.logo2);
@@ -359,15 +361,15 @@ namespace QuanLyNhaSach.Forms
         #endregion
 
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnXong;
         private System.Windows.Forms.Label lblSotienthua;
-        private System.Windows.Forms.TextBox txtBoxSotiennhan;
+        private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBoxSotienphaitra;
+        private System.Windows.Forms.TextBox txtBoxDienthoai;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxGiamgia;
-        private System.Windows.Forms.TextBox txtBoxSoluong;
+        private System.Windows.Forms.TextBox txtBoxDiachi;
+        private System.Windows.Forms.TextBox txtBoxHoten;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox logo2;
@@ -376,10 +378,10 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxTiennomoi;
+        private System.Windows.Forms.TextBox txtBoxTienno;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBoxTienthu;
         private System.Windows.Forms.Label label7;
     }
 }

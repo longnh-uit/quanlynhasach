@@ -174,7 +174,7 @@ namespace QuanLyNhaSach.Forms
         private void timerTime_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-            lblTime.Text = dt.ToString("HH:MM:ss");
+            lblTime.Text = dt.ToString("HH:mm:ss");
         }
 
         private void panelLeft_Paint(object sender, PaintEventArgs e)

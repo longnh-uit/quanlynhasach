@@ -262,7 +262,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxLonnhat.Location = new System.Drawing.Point(629, 104);
             this.txtBoxLonnhat.Name = "txtBoxLonnhat";
-            this.txtBoxLonnhat.Size = new System.Drawing.Size(77, 27);
+            this.txtBoxLonnhat.Size = new System.Drawing.Size(77, 29);
             this.txtBoxLonnhat.TabIndex = 5;
             this.txtBoxLonnhat.TextChanged += new System.EventHandler(this.txtBoxLonnhat_TextChanged);
             this.txtBoxLonnhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxLonnhat_KeyPress);
@@ -271,7 +271,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxNhonhat.Location = new System.Drawing.Point(629, 62);
             this.txtBoxNhonhat.Name = "txtBoxNhonhat";
-            this.txtBoxNhonhat.Size = new System.Drawing.Size(77, 27);
+            this.txtBoxNhonhat.Size = new System.Drawing.Size(77, 29);
             this.txtBoxNhonhat.TabIndex = 4;
             this.txtBoxNhonhat.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.txtBoxNhonhat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxNhonhat_KeyPress);
@@ -291,7 +291,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTheloai.Location = new System.Drawing.Point(521, 12);
             this.txtBoxTheloai.Name = "txtBoxTheloai";
-            this.txtBoxTheloai.Size = new System.Drawing.Size(196, 27);
+            this.txtBoxTheloai.Size = new System.Drawing.Size(196, 29);
             this.txtBoxTheloai.TabIndex = 3;
             // 
             // label3
@@ -309,7 +309,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTacgia.Location = new System.Drawing.Point(120, 62);
             this.txtBoxTacgia.Name = "txtBoxTacgia";
-            this.txtBoxTacgia.Size = new System.Drawing.Size(196, 27);
+            this.txtBoxTacgia.Size = new System.Drawing.Size(196, 29);
             this.txtBoxTacgia.TabIndex = 2;
             // 
             // label2
@@ -327,7 +327,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.txtBoxTensach.Location = new System.Drawing.Point(120, 12);
             this.txtBoxTensach.Name = "txtBoxTensach";
-            this.txtBoxTensach.Size = new System.Drawing.Size(196, 27);
+            this.txtBoxTensach.Size = new System.Drawing.Size(196, 29);
             this.txtBoxTensach.TabIndex = 1;
             this.txtBoxTensach.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -394,7 +394,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "UC_Tracuu";
             this.Size = new System.Drawing.Size(1164, 681);
             this.Load += new System.EventHandler(this.UC_Tracuu_Load);

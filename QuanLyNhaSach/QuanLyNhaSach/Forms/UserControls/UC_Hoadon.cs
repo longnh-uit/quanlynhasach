@@ -15,7 +15,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         DataSet sach;
         DataView dv;
         bool dontHandle = false;
-        int tongTien;
+        int tongTien, maHD;
         DateTime fromDateValue;
 
         public class cSach
@@ -163,10 +163,11 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnKiemTra_Click(object sender, EventArgs e)
         {
-            bool isEligible = true; // Nếu khách đủ điều kiện thì biến này true, ko thì false (SQL)
-
+            bool isEligible = true; // Biến kiểm tra điều kiện khách hàng
             Globals.sqlcon.Open();
-            string query = "select * from KHACHHANG where TenKH = N'" + txtBoxHoten + "' and DienThoai = '" + txtBoxSodienthoai + "'";
+            // Kiểm tra nợ của khách hàng
+
+            string query = "select * from KHACHHANG where TenKH = N'" + txtBoxHoten.Text + "' and DienThoai = '" + txtBoxSodienthoai.Text + "' and SoTienNo > " + Globals.Nomax.ToString();
             SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
             DataTable kh = new DataTable();
             sda.Fill(kh);
@@ -296,6 +297,11 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            if (listView1.Items.Count == 0)
+            {
+                MessageBox.Show("Vui lòng thêm sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
@@ -304,7 +310,42 @@ namespace QuanLyNhaSach.Forms.UserControls
             using (Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, fromDateValue))
             {
                 uf.ShowDialog();
+                maHD = uf.maHD;
+                if (maHD != -1) VietCTHD();
+            }
+        }
 
+        private void VietCTHD()
+        {
+            using (SqlConnection con = new SqlConnection(Globals.sqlcon.ConnectionString))
+            using (SqlCommand command = con.CreateCommand())
+            {
+                string insert = "insert into CTHD values(@mahd, @masach, @sl, @dongia)",
+                    modify = "update SACH " +
+                    "set SoLuong = SoLuong - @sl where MaSach = @masach";
+
+                // định nghĩa các tham số trước
+                command.Parameters.Add("@mahd", SqlDbType.Int);
+                command.Parameters.Add("@masach", SqlDbType.Int);
+                command.Parameters.Add("@sl", SqlDbType.Int);
+                command.Parameters.Add("@dongia", SqlDbType.Int);
+
+                con.Open();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    command.CommandText = insert;
+                    command.Parameters["@mahd"].Value = maHD;
+                    command.Parameters["@masach"].Value = int.Parse(item.SubItems[5].Text);
+                    command.Parameters["@sl"].Value = int.Parse(item.SubItems[3].Text);
+                    command.Parameters["@dongia"].Value = int.Parse(item.SubItems[4].Text);
+
+                    command.ExecuteNonQuery();
+
+                    command.CommandText = modify;
+                    command.ExecuteNonQuery();
+
+                }
+                con.Close();
             }
         }
 

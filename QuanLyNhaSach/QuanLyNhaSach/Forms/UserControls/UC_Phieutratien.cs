@@ -5,19 +5,37 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms.UserControls
 {
     public partial class UC_Phieutratien : UserControl
     {
+        SqlDataAdapter sda;
+        DataSet kh;
+        SqlCommandBuilder scb;
         public UC_Phieutratien()
         {
             InitializeComponent();
         }
 
+        private void LoadKH()
+        {
+            Globals.sqlcon.Open();
+            string query = "select MaKH, TenKH, DiaChi, DienThoai, Email, SoTienNo from KHACHHANG";
+            SqlCommand com = new SqlCommand(query, Globals.sqlcon);
+            com.CommandType = CommandType.Text;
+            sda = new SqlDataAdapter(com);
+            kh = new DataSet();
+            sda.Fill(kh, "KhachHang_Details");
+            Globals.sqlcon.Close();
+            dgvKhachHang.DataSource = kh.Tables[0];
+            dgvKhachHang.Columns["MaKH"].Visible = false;
+        }
+
         private void UC_Phieutratien_Load(object sender, EventArgs e)
         {
-
+            LoadKH();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -72,11 +90,10 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button7_Click(object sender, EventArgs e)
         {
-            bool isSelected = true; //Phải chọn ở bảng bên trái thì mới được thu tiền ko chọn thì -> false;
-            //Thông tin khách hàng được chọn được đưa vào Form_Thutien sẵn, người dùng chỉ cần nhấn vào thêm tiền thu
-            if (isSelected)
+            // Thực hiện nếu có item được chọn ở bảng khách hàng
+            if (dgvKhachHang.SelectedCells.Count > 0)
             {
-                using (Form_Thutien uf = new Form_Thutien())
+                using (Form_Thutien uf = new Form_Thutien(dgvKhachHang.Rows[dgvKhachHang.SelectedCells[0].RowIndex]))
                 {
                     uf.ShowDialog();
                 }
@@ -104,16 +121,17 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnTracuu_Click_1(object sender, EventArgs e)
         {
-            if (txtBoxDiachi.TextLength == 0 && txBoxHoten.TextLength == 0 && txtBoxEmail.TextLength == 0 && txtBoxSDT.TextLength == 0)
-            {
-                MessageBox.Show("Cần điền ít nhất một mục");
-            }
-            else
-            {
-                //SQL
-                //LỌC THEO TEXTBOX RỒI CHO VÀO DATAGRID
-                MessageBox.Show("Thành công!");
-            }
+            //SQL
+            //LỌC THEO TEXTBOX RỒI CHO VÀO DATAGRID
+
+            string searchStr = "";
+            if (txtBoxHoten.Text != "") searchStr += "TenKH LIKE '%" + txtBoxHoten.Text + "%' AND ";
+            if (txtBoxDiachi.Text != "") searchStr += "DiaChi LIKE '%" + txtBoxDiachi.Text + "%' AND ";
+            if (txtBoxSDT.Text != "") searchStr += "DienThoai LIKE '%" + txtBoxSDT.Text + "%' AND ";
+            if (txtBoxEmail.Text != "") searchStr += "Email LIKE '%" + txtBoxEmail.Text + "%' AND ";
+            if (searchStr.Length != 0) searchStr = searchStr.Substring(0, searchStr.Length - 5);
+            kh.Tables[0].DefaultView.RowFilter = searchStr;
+
         }
 
         private void txtBoxSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -127,7 +145,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void button1_Click_1(object sender, EventArgs e)
         {
             txtBoxEmail.Text = "";
-            txBoxHoten.Text = "";
+            txtBoxHoten.Text = "";
             txtBoxDiachi.Text = "";
             txtBoxSDT.Text = "";
         }
@@ -145,6 +163,29 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void txtBoxDiachi_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Globals.sqlcon.Open();
+                scb = new SqlCommandBuilder(sda);
+                sda.Update(kh, "Khachhang_Details");
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Globals.sqlcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnHoanTac_Click(object sender, EventArgs e)
+        {
+            LoadKH();
         }
     }
 }

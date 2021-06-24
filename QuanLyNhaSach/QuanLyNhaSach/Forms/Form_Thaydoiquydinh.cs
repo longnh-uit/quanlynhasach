@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -82,7 +83,12 @@ namespace QuanLyNhaSach.Forms
 
         private void Form_Thaydoiquydinh_Load(object sender, EventArgs e)
         {
-
+            txtSlmin.Text = Globals.Slmin.ToString();
+            txtLuongtonmax.Text = Globals.Luongtonmax.ToString();
+            txtBoxNomax.Text = Globals.Nomax.ToString();
+            txtBoxTonbanmin.Text = Globals.Tonbanmin.ToString();
+            if (Globals.tienthuvuottienno) cbVuotTienNo.CheckState = CheckState.Checked;
+            else cbVuotTienNo.CheckState = CheckState.Unchecked;
         }
 
         private void logo2_Click(object sender, EventArgs e)
@@ -162,24 +168,22 @@ namespace QuanLyNhaSach.Forms
 
         private bool isEmpty()
         {
-            if (cbNomin.Checked && txtBoxNomin.TextLength==0)
+            if (txtBoxNomax.TextLength==0)
             {
                 return false;
             }
-            if (cbSlmin.Checked && txtSlmin.TextLength == 0)
+            if (txtSlmin.TextLength == 0)
             {
                 return false;
             }
-            if (cbLuongtonmax.Checked && txtLuongtonmax.TextLength==0)
+            if (txtLuongtonmax.TextLength==0)
             {
                 return false;
             }
-            if (cbTonbanmin.Checked && txtBoxTonbanmin.TextLength==0)
+            if (txtBoxTonbanmin.TextLength==0)
             {
                 return false;
             }
-            if (txtBoxDongia.TextLength == 0)
-                return false;
             return true;
         }
         private void button3_Click(object sender, EventArgs e)
@@ -190,78 +194,37 @@ namespace QuanLyNhaSach.Forms
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn?", "", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    Globals.Slmin = int.Parse(txtSlmin.Text);
+                    Globals.Luongtonmax = int.Parse(txtLuongtonmax.Text);
+                    Globals.Nomax = int.Parse(txtBoxNomax.Text);
+                    Globals.Tonbanmin = int.Parse(txtBoxTonbanmin.Text);
+                    if (cbVuotTienNo.CheckState == CheckState.Checked) Globals.tienthuvuottienno = true;
+                    else Globals.tienthuvuottienno = false;
+
                     //Ghi vào DATABASE;
+                    using (SqlConnection con = new SqlConnection(Globals.sqlcon.ConnectionString))
+                        using (SqlCommand command = con.CreateCommand())
+                    {
+                        command.CommandText = "update THAMSO " +
+                            "set LuongNhapItNhat = @Slmin, LuongTonToiDa = @Luongtonmax, NoToiDa = @Nomax, LuongTonToiThieu = @Tonbanmin, KiemTraSoTienThu = @Vuottienthu";
+                        command.Parameters.AddWithValue("@Slmin", Globals.Slmin.ToString());
+                        command.Parameters.AddWithValue("@Luongtonmax", Globals.Luongtonmax.ToString());
+                        command.Parameters.AddWithValue("@Nomax", Globals.Nomax.ToString());
+                        command.Parameters.AddWithValue("@Tonbanmin", Globals.Tonbanmin.ToString());
+                        if (Globals.tienthuvuottienno) command.Parameters.AddWithValue("@Vuottienthu", "1");
+                        else command.Parameters.AddWithValue("@Vuottienthu", "0");
+
+                        con.Open();
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+
                     this.Dispose();
                 }
 
-            }
-        }
-
-        private void cbSlmin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSlmin.Checked)
-            {
-                Color cl = Color.FromArgb(0, 71, 160);
-                txtSlmin.ReadOnly = false;
-                cbSlmin.ForeColor = cl;
-            }
-            else
-            {
-                Color cl = Color.FromName("Red");
-                txtSlmin.ReadOnly = true;
-                cbSlmin.ForeColor = cl;
-            }
-        }
-
-        private void cbLuongtonmax_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbLuongtonmax.Checked)
-            {
-                txtLuongtonmax.ReadOnly = false;
-                Color cl = Color.FromArgb(0, 71, 160);
-                cbLuongtonmax.ForeColor = cl;
-
-            }
-            else
-            {
-                Color cl = Color.FromName("Red");
-                txtLuongtonmax.ReadOnly = true;
-                cbLuongtonmax.ForeColor = cl;
-            }
-        }
-
-        private void cbNomin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbNomin.Checked)
-            {
-                txtBoxNomin.ReadOnly = false;
-                Color cl = Color.FromArgb(0, 71, 160);
-                cbNomin.ForeColor = cl;
-            }
-            else
-            {
-                txtBoxNomin.ReadOnly = true;
-                Color cl = Color.FromName("Red");
-                cbNomin.ForeColor = cl;
-            }
-        }
-
-        private void cbTonbanmin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbTonbanmin.Checked)
-            {
-                txtBoxTonbanmin.ReadOnly = false;
-                Color cl = Color.FromArgb(0, 71, 160);
-                cbTonbanmin.ForeColor = cl;
-            }
-            else
-            {
-                txtBoxTonbanmin.ReadOnly = true;
-                Color cl = Color.FromName("Red");
-                cbTonbanmin.ForeColor = cl;
             }
         }
 

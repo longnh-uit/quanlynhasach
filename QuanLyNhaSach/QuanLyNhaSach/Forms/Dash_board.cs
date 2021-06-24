@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -49,6 +50,20 @@ namespace QuanLyNhaSach.Forms
         {
             lblWelcome.Text += Globals.name;
             lblRole.Text += Globals.role;
+
+            // Kiểm tra các quy định
+            Globals.sqlcon.Open();
+            string query = "select * from THAMSO";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
+            DataTable thamso = new DataTable();
+            sda.Fill(thamso);
+            Globals.sqlcon.Close();
+
+            Globals.Slmin = thamso.Rows[0].Field<int>("LuongNhapItNhat");
+            Globals.Tonbanmin = thamso.Rows[0].Field<int>("LuongTonToiThieu");
+            Globals.Luongtonmax = thamso.Rows[0].Field<int>("LuongTonToiDa");
+            Globals.Nomax = thamso.Rows[0].Field<int>("NoToiDa");
+            Globals.tienthuvuottienno = thamso.Rows[0].Field<bool>("KiemTraSoTienThu");
 
             //Khi mới bật thì ở mục tra cứu
             UC_Tracuu uctc = new UC_Tracuu();

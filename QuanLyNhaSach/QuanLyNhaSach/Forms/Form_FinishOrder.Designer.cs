@@ -37,7 +37,7 @@ namespace QuanLyNhaSach.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.logo2 = new System.Windows.Forms.PictureBox();
             this.txtBoxGiamgia = new System.Windows.Forms.TextBox();
-            this.txtBoxSoluong = new System.Windows.Forms.TextBox();
+            this.txtBoxTongtien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxSotienphaitra = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxSotiennhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSotienthua = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblGiatritienthua = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -94,7 +94,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(278, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 23);
+            this.label1.Size = new System.Drawing.Size(154, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Xác nhận hóa đơn";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -114,21 +114,21 @@ namespace QuanLyNhaSach.Forms
             // txtBoxGiamgia
             // 
             this.txtBoxGiamgia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxGiamgia.Location = new System.Drawing.Point(315, 142);
+            this.txtBoxGiamgia.Location = new System.Drawing.Point(315, 143);
             this.txtBoxGiamgia.Name = "txtBoxGiamgia";
-            this.txtBoxGiamgia.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxGiamgia.Size = new System.Drawing.Size(234, 27);
             this.txtBoxGiamgia.TabIndex = 1;
             this.txtBoxGiamgia.TextChanged += new System.EventHandler(this.txtBoxGiamgia_TextChanged);
             this.txtBoxGiamgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxGiamgia_KeyPress);
             // 
-            // txtBoxSoluong
+            // txtBoxTongtien
             // 
-            this.txtBoxSoluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSoluong.Location = new System.Drawing.Point(315, 90);
-            this.txtBoxSoluong.Name = "txtBoxSoluong";
-            this.txtBoxSoluong.ReadOnly = true;
-            this.txtBoxSoluong.Size = new System.Drawing.Size(234, 32);
-            this.txtBoxSoluong.TabIndex = 27;
+            this.txtBoxTongtien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTongtien.Location = new System.Drawing.Point(315, 90);
+            this.txtBoxTongtien.Name = "txtBoxTongtien";
+            this.txtBoxTongtien.ReadOnly = true;
+            this.txtBoxTongtien.Size = new System.Drawing.Size(234, 27);
+            this.txtBoxTongtien.TabIndex = 27;
             // 
             // label5
             // 
@@ -136,9 +136,9 @@ namespace QuanLyNhaSach.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(164, 94);
+            this.label5.Location = new System.Drawing.Point(163, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 23);
+            this.label5.Size = new System.Drawing.Size(78, 19);
             this.label5.TabIndex = 26;
             this.label5.Text = "Tổng tiền";
             // 
@@ -148,19 +148,19 @@ namespace QuanLyNhaSach.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(163, 146);
+            this.label4.Location = new System.Drawing.Point(163, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 23);
+            this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 25;
             this.label4.Text = "Giảm giá (%)";
             // 
             // txtBoxSotienphaitra
             // 
             this.txtBoxSotienphaitra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotienphaitra.Location = new System.Drawing.Point(315, 195);
+            this.txtBoxSotienphaitra.Location = new System.Drawing.Point(315, 196);
             this.txtBoxSotienphaitra.Name = "txtBoxSotienphaitra";
             this.txtBoxSotienphaitra.ReadOnly = true;
-            this.txtBoxSotienphaitra.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxSotienphaitra.Size = new System.Drawing.Size(234, 27);
             this.txtBoxSotienphaitra.TabIndex = 30;
             // 
             // label2
@@ -169,19 +169,20 @@ namespace QuanLyNhaSach.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label2.Location = new System.Drawing.Point(163, 199);
+            this.label2.Location = new System.Drawing.Point(163, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 23);
+            this.label2.Size = new System.Drawing.Size(118, 19);
             this.label2.TabIndex = 29;
             this.label2.Text = "Số tiền phải trả";
             // 
             // txtBoxSotiennhan
             // 
             this.txtBoxSotiennhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxSotiennhan.Location = new System.Drawing.Point(315, 248);
+            this.txtBoxSotiennhan.Location = new System.Drawing.Point(315, 249);
             this.txtBoxSotiennhan.Name = "txtBoxSotiennhan";
-            this.txtBoxSotiennhan.Size = new System.Drawing.Size(234, 32);
+            this.txtBoxSotiennhan.Size = new System.Drawing.Size(234, 27);
             this.txtBoxSotiennhan.TabIndex = 2;
+            this.txtBoxSotiennhan.TextChanged += new System.EventHandler(this.txtBoxSotiennhan_TextChanged);
             this.txtBoxSotiennhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotiennhan_KeyPress);
             // 
             // label3
@@ -190,9 +191,9 @@ namespace QuanLyNhaSach.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(163, 252);
+            this.label3.Location = new System.Drawing.Point(163, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 23);
+            this.label3.Size = new System.Drawing.Size(101, 19);
             this.label3.TabIndex = 31;
             this.label3.Text = "Số tiền nhận";
             // 
@@ -202,23 +203,23 @@ namespace QuanLyNhaSach.Forms
             this.lblSotienthua.AutoSize = true;
             this.lblSotienthua.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSotienthua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.lblSotienthua.Location = new System.Drawing.Point(163, 309);
+            this.lblSotienthua.Location = new System.Drawing.Point(163, 302);
             this.lblSotienthua.Name = "lblSotienthua";
-            this.lblSotienthua.Size = new System.Drawing.Size(116, 23);
+            this.lblSotienthua.Size = new System.Drawing.Size(96, 19);
             this.lblSotienthua.TabIndex = 33;
             this.lblSotienthua.Text = "Số tiền thừa";
             // 
-            // label7
+            // lblGiatritienthua
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label7.Location = new System.Drawing.Point(315, 309);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 23);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "1000";
+            this.lblGiatritienthua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGiatritienthua.AutoSize = true;
+            this.lblGiatritienthua.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGiatritienthua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.lblGiatritienthua.Location = new System.Drawing.Point(315, 302);
+            this.lblGiatritienthua.Name = "lblGiatritienthua";
+            this.lblGiatritienthua.Size = new System.Drawing.Size(18, 19);
+            this.lblGiatritienthua.TabIndex = 34;
+            this.lblGiatritienthua.Text = "0";
             // 
             // button3
             // 
@@ -251,9 +252,9 @@ namespace QuanLyNhaSach.Forms
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(411, 305);
+            this.checkBox1.Location = new System.Drawing.Point(417, 301);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(159, 27);
+            this.checkBox1.Size = new System.Drawing.Size(132, 23);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Xuất hóa đơn";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -266,14 +267,14 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblGiatritienthua);
             this.Controls.Add(this.lblSotienthua);
             this.Controls.Add(this.txtBoxSotiennhan);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBoxSotienphaitra);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxGiamgia);
-            this.Controls.Add(this.txtBoxSoluong);
+            this.Controls.Add(this.txtBoxTongtien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.logo2);
@@ -305,7 +306,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.TextBox txtBoxGiamgia;
-        private System.Windows.Forms.TextBox txtBoxSoluong;
+        private System.Windows.Forms.TextBox txtBoxTongtien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBoxSotienphaitra;
@@ -313,7 +314,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.TextBox txtBoxSotiennhan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSotienthua;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblGiatritienthua;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox1;

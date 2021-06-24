@@ -12,6 +12,8 @@ public static class Globals
     public static string ServerPath = System.IO.Path.Combine(@"D:\Courses\NhaSach\server\");
     public static SqlConnection sqlcon;
     public static string name, role;
+    public static int Slmin, Luongtonmax, Nomax, Tonbanmin;
+    public static bool tienthuvuottienno;
 }
 
 namespace QuanLyNhaSach

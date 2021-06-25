@@ -1,4 +1,5 @@
-﻿drop database QLNS
+﻿use master
+drop database QLNS
 create database QLNS
 go
 use QLNS
@@ -103,10 +104,62 @@ create table ADMINISTRATORS (
 	CHUCVU		nvarchar(50)
 )
 
-insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password', N'Quản lý') 
-insert into SACH values (N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 90, 9000)
-insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')
-insert into SACH values (N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 90, 9000)
-insert into SACH values (N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 90, 9000)
+
+
+----------------------------------------
+go
+create procedure InsertNhapSach
+@NgayNhap datetime, @TenSach nvarchar(100),@TheLoai nvarchar(50),@TacGia nvarchar(100),@SoLuong int,@DonGiaNhap int
+as
+begin
+	declare @LuongNhapItNhat int
+	set @LuongNhapItNhat = (select LuongNhapItNhat from THAMSO )
+	if @SoLuong < @LuongNhapItNhat 
+	begin
+		print N'Số lượng sách nhập phải lớn hơn hoặc bằng ' + CAST(@LuongNhapItNhat as varchar)
+		return
+	end
+	declare @MaSach int 
+	set @MaSach = (select MaSach from SACH where TenSach =@TenSach and TheLoai= @TheLoai and TacGia=@TacGia)
+	if @MaSach is NULL
+	begin
+		insert into SACH (TenSach,TacGia,TheLoai,SoLuong,DonGiaNhap) values (@TenSach,@TacGia,@TheLoai,@SoLuong,@DonGiaNhap)
+		set @MaSach = (select MaSach from SACH where TenSach =@TenSach and TheLoai= @TheLoai and TacGia=@TacGia)
+		insert into NHAPSACH (MaSach,NgayNhap,SoLuong) values (@MaSach,@NgayNhap,@SoLuong)
+		print N'Nhập sách thành công'
+
+	end
+	else
+	begin
+		declare @LuongTonToiDa int
+		set @LuongTonToiDa = (select LuongTonToiDa from THAMSO )
+		declare @SoLuongSach int
+		set @SoLuongSach = (select SoLuong from SACH where MaSach=@MaSach)
+		if @SoLuongSach <= @LuongTonToiDa
+			begin
+				if exists(select * from NHAPSACH where MaSach = @MaSach and NgayNhap = @NgayNhap) 
+					update NHAPSACH set SoLuong = SoLuong + @SoLuong where MaSach = @MaSach and NgayNhap = @NgayNhap
+				else
+					insert into NHAPSACH (MaSach,NgayNhap,SoLuong) values (@MaSach,@NgayNhap,@SoLuong)
+				update SACH
+				set SoLuong = SoLuong + @SoLuong , DonGiaNhap = @DonGiaNhap
+				where MaSach=@MaSach
+				print N'Nhập sách thành công'
+			end
+		else 
+		begin
+		print N'Không thể nhập sách có lượng tồn nhiều hơn ' + CAST(@LuongTonToiDa as varchar)
+		return
+		end
+	end
+end
+go
 
 insert into THAMSO values(150, 300, 20000, 20, 1)
+
+insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password', N'Quản lý') 
+exec InsertNhapSach '25/6/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 180, 9000
+insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')
+exec InsertNhapSach '25/6/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
+exec InsertNhapSach '25/6/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000
+

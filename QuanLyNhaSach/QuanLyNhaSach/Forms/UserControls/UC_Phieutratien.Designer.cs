@@ -57,6 +57,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chonDuongDan = new System.Windows.Forms.SaveFileDialog();
             button7 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -154,6 +155,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnXuat.TabIndex = 39;
             this.btnXuat.Text = "      Xuất Excel";
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnHoanTac
             // 
@@ -375,6 +377,12 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.SoTienNo.ReadOnly = true;
             this.SoTienNo.Width = 120;
             // 
+            // chonDuongDan
+            // 
+            this.chonDuongDan.DefaultExt = "xlsx";
+            this.chonDuongDan.FileName = "Khach Hang";
+            this.chonDuongDan.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            // 
             // UC_Phieutratien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -425,5 +433,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienNo;
+        private System.Windows.Forms.SaveFileDialog chonDuongDan;
     }
 }

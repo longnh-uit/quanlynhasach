@@ -117,14 +117,14 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxDiachi.Location = new System.Drawing.Point(225, 139);
             this.txtBoxDiachi.Name = "txtBoxDiachi";
             this.txtBoxDiachi.Size = new System.Drawing.Size(182, 23);
-            this.txtBoxDiachi.TabIndex = 4;
+            this.txtBoxDiachi.TabIndex = 1;
             // 
             // txtBoxEmail
             // 
             this.txtBoxEmail.Location = new System.Drawing.Point(225, 181);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(182, 23);
-            this.txtBoxEmail.TabIndex = 4;
+            this.txtBoxEmail.TabIndex = 2;
             // 
             // logo2
             // 
@@ -147,7 +147,7 @@ namespace QuanLyNhaSach.Forms
             this.btnHoanTat.Location = new System.Drawing.Point(394, 246);
             this.btnHoanTat.Name = "btnHoanTat";
             this.btnHoanTat.Size = new System.Drawing.Size(169, 53);
-            this.btnHoanTat.TabIndex = 36;
+            this.btnHoanTat.TabIndex = 3;
             this.btnHoanTat.Text = "Hoàn tất";
             this.btnHoanTat.UseVisualStyleBackColor = false;
             this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
@@ -160,7 +160,7 @@ namespace QuanLyNhaSach.Forms
             this.button4.Location = new System.Drawing.Point(29, 246);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 53);
-            this.button4.TabIndex = 37;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Hủy";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -185,6 +185,7 @@ namespace QuanLyNhaSach.Forms
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongTinThem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThongTinThem";
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             this.ResumeLayout(false);

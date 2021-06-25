@@ -337,6 +337,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             using (Form_Nhapsach ns = new Form_Nhapsach())
             {
                 ns.ShowDialog();
+                LoadSach();
             }
         }
     }

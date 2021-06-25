@@ -14,6 +14,7 @@ namespace QuanLyNhaSach.Forms
         private string hoTen, diaChi, dienThoai, email;
         private int soTienNo;
         private readonly int maKH;
+        private DateTime ngay;
 
         public Form_Thutien(DataGridViewRow kh)
         {
@@ -33,6 +34,9 @@ namespace QuanLyNhaSach.Forms
             txtBoxDienthoai.Text = dienThoai;
             txtBoxEmail.Text = email;
             txtBoxTienno.Text = soTienNo.ToString();
+
+            // Tự động lấy ngày hiện tại
+            txtBoxNgay.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void txtBoxTienthu_TextChanged(object sender, EventArgs e)
@@ -46,6 +50,19 @@ namespace QuanLyNhaSach.Forms
 
         }
 
+        private bool IsDate(string tempDate, ref DateTime date)
+        {
+            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd", "d/M/yyyy", "d/MM/yyyy", "dd/M/yyyy" };
+            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out date))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -53,6 +70,11 @@ namespace QuanLyNhaSach.Forms
 
         private void btnXong_Click(object sender, EventArgs e)
         {
+            if (!IsDate(txtBoxNgay.Text, ref ngay))
+            {
+                MessageBox.Show("Ngày không hợp lệ", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             if (txtBoxTienthu.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập số tiền thu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -66,9 +88,18 @@ namespace QuanLyNhaSach.Forms
             //Cập nhật CSDl
             Globals.sqlcon.Open();
             using SqlCommand command = Globals.sqlcon.CreateCommand();
+            // Cập nhật bảng KHACHHANG
             command.CommandText = "update KHACHHANG " +
                 "set SoTienNo = SoTienNo - " + txtBoxTienthu.Text;
             command.ExecuteNonQuery();
+
+            // thêm vào bảng PHIEUTHUTIEN
+            command.CommandText = "insert into PHIEUTHUTIEN values(@makh, @ngay, @tienthu)";
+            command.Parameters.AddWithValue("@makh", maKH);
+            command.Parameters.AddWithValue("@ngay", ngay);
+            command.Parameters.AddWithValue("@tienthu", int.Parse(txtBoxTienthu.Text));
+            command.ExecuteNonQuery();
+
             Globals.sqlcon.Close();
             MessageBox.Show("Thu tiền thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();

@@ -11,6 +11,7 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class Form_Nhapsach : Form
     {
+        private DateTime ngay;
         public Form_Nhapsach()
         {
             InitializeComponent();
@@ -41,12 +42,35 @@ namespace QuanLyNhaSach.Forms
         {
             if (lv_nhapSach.Items.Count > 0)
             {
-                if (IsDate(txtBoxNgaynhap.Text))
+                if (IsDate(txtBoxNgaynhap.Text, ref ngay))
                 {
- //                   ListViewItem item = lv_nhapSach.Items[0];
+                    // Ghi vào CSDL
+                    Globals.sqlcon.Open();
+                    using (SqlCommand command = new SqlCommand("dbo.InsertNhapSach", Globals.sqlcon))
+                    {
+                        command.Parameters.AddWithValue("@NgayNhap", ngay);
+                        command.Parameters.Add("@TenSach", SqlDbType.NVarChar);
+                        command.Parameters.Add("@TheLoai", SqlDbType.NVarChar);
+                        command.Parameters.Add("@TacGia", SqlDbType.NVarChar);
+                        command.Parameters.Add("@SoLuong", SqlDbType.Int);
+                        command.Parameters.Add("@DonGiaNhap", SqlDbType.Int);
 
- //                   string transaction = "set  ";
- //                   SqlDataAdapter sda = new SqlDataAdapter(transaction, Globals.sqlcon);
+                        foreach (ListViewItem item in lv_nhapSach.Items)
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters["@TenSach"].Value = item.SubItems[0].Text;
+                            command.Parameters["@TheLoai"].Value = item.SubItems[1].Text;
+                            command.Parameters["@TacGia"].Value = item.SubItems[2].Text;
+                            command.Parameters["@SoLuong"].Value = int.Parse(item.SubItems[3].Text);
+                            command.Parameters["@DonGiaNhap"].Value = int.Parse(item.SubItems[4].Text);
+                        }
+                        command.ExecuteNonQuery();
+
+                    }
+                    Globals.sqlcon.Close();
+
+                    MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lv_nhapSach.Items.Clear();
                 }
                 else
                 {
@@ -95,11 +119,10 @@ namespace QuanLyNhaSach.Forms
             }
 
         }
-        private bool IsDate(string tempDate)
+        private bool IsDate(string tempDate, ref DateTime ngay)
         {
-            DateTime fromDateValue;
             var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd", "d/M/yyyy", "d/MM/yyyy", "dd/M/yyyy" };
-            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
+            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ngay))
             {
                 return true;
             }
@@ -115,6 +138,41 @@ namespace QuanLyNhaSach.Forms
             {
                 string[] arr = new string[5];
                 ListViewItem itm;
+                int soLuongTon;
+
+                Globals.sqlcon.Open();
+                using (SqlCommand command = Globals.sqlcon.CreateCommand())
+                {
+                    command.CommandText = "Select SoLuong from SACH " +
+                        "where TenSach = @tensach and TheLoai = @theloai and TacGia = @tacgia";
+                    command.Parameters.AddWithValue("@tensach", txtBoxTensach.Text);
+                    command.Parameters.AddWithValue("@theloai", txtBoxTheloai.Text);
+                    command.Parameters.AddWithValue("@tacgia", txtBoxTacgia.Text);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            soLuongTon = Convert.ToInt32(reader[0]);
+                        }
+                        else soLuongTon = 0;
+                    }
+                }
+                Globals.sqlcon.Close();
+
+                // Kiểm tra số lượng tồn có đạt tiêu chuẩn
+                if (soLuongTon > Globals.Luongtonmax)
+                {
+                    MessageBox.Show("Không thể nhập sách có lượng tồn trên " + Globals.Luongtonmax.ToString(), "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Kiểm tra số lượng nhập có đạt tiêu chuẩn
+                if (int.Parse(txtBoxSoluong.Text) < Globals.Slmin)
+                {
+                    MessageBox.Show("Số lượng sách nhập phải lớn hơn hoặc bằng " + Globals.Slmin.ToString(), "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // them Item vao ListView
                 arr[0] = txtBoxTensach.Text;
                 arr[1] = txtBoxTheloai.Text;

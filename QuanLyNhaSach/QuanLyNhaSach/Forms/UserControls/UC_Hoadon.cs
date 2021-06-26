@@ -16,7 +16,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         DataView dv;
         bool dontHandle = false;
         int tongTien, maHD;
-        DateTime fromDateValue;
 
         public class cSach
         {
@@ -48,16 +47,18 @@ namespace QuanLyNhaSach.Forms.UserControls
         public UC_Hoadon()
         {
             InitializeComponent();
-            txtBoxNgay.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgay.Value = System.DateTime.Now;
 
             txtBoxHoten.Font = new Font("Segoe UI", 10);
             txtBoxSodienthoai.Font = new Font("Segoe UI", 10);
-            txtBoxNgay.Font = new Font("Segoe UI", 10);
+            dtpNgay.Font = new Font("Segoe UI", 10);
             cbTenSach.Font = new Font("Segoe UI", 10);
             cbTacGia.Font = new Font("Segoe UI", 10);
             cbTheLoai.Font = new Font("Segoe UI", 10);
             txtBoxSoluong.Font = new Font("Segoe UI", 10);
             txtBoxSotientra.Font = new Font("Segoe UI", 10);
+            txtBoxSodienthoai.GotFocus += txtBoxSodienthoai_GotFocus;
+            dtpNgay.MaxDate = System.DateTime.Now;
 
         }
 
@@ -163,7 +164,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnKiemTra_Click(object sender, EventArgs e)
         {
-            bool isEligible = true; // Biến kiểm tra điều kiện khách hàng
+            bool isEligible = true, isFilled = true; // Biến kiểm tra điều kiện khách hàng
             Globals.sqlcon.Open();
             // Kiểm tra nợ của khách hàng
 
@@ -175,9 +176,13 @@ namespace QuanLyNhaSach.Forms.UserControls
 
             if (kh.Rows.Count != 0)
                 isEligible = false;
-            if (isEligible)
+
+            if (txtBoxHoten.Text == "" || txtBoxSodienthoai.Text == "")
+                isFilled = false;
+
+            if (isEligible && isFilled)
             {
-                txtBoxNgay.ReadOnly = false;
+                dtpNgay.Enabled = true;
                 cbTenSach.Enabled = true;
                 cbTheLoai.Enabled = true;
                 cbTacGia.Enabled = true;
@@ -189,6 +194,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             }
             else
             {
+                if (!isFilled)
+                    lblCheck.Text = "Vui lòng nhập đủ các trường trên";
+                else lblCheck.Text = "Khách hàng không đủ điều kiện để mua hàng";
                 lblCheck.Visible = true; // Hiện "khách ko đủ đk"
             }
         }
@@ -207,25 +215,12 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
 
         }
-        private bool IsDate(string tempDate)
-        {
-            var formats = new[] { "dd/MM/yyyy", "dd/M/yyyy","d/M/yyyy","d/MM/yyyy" };
-            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             int soLuongBan, soLuongTon;
-            if (txtBoxNgay.TextLength > 0 && cbTenSach.SelectedItem != null && cbTheLoai.SelectedItem != null && txtBoxHoten.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxSotientra.TextLength > 0 && txtBoxSodienthoai.TextLength > 0)
+            if (cbTenSach.SelectedItem != null && cbTheLoai.SelectedItem != null && txtBoxHoten.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxSotientra.TextLength > 0 && txtBoxSodienthoai.TextLength > 0)
             {
-                if (IsDate(txtBoxNgay.Text))
-                {
+                
                     // Nếu đã có sách trong list view thì tăng số lượng
                     foreach (ListViewItem item in listView1.Items)
                     {
@@ -277,12 +272,6 @@ namespace QuanLyNhaSach.Forms.UserControls
                     dontHandle = false;
                     cbTenSach.DataSource = CSachList(sach.Tables[0]);
                     cbTenSach.SelectedItem = null;
-
-                }
-                else
-                {
-                    MessageBox.Show("Ngày không hợp lệ !");
-                }
             }
             else
             {
@@ -307,46 +296,42 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            using (Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, fromDateValue))
-            {
-                uf.ShowDialog();
-                maHD = uf.maHD;
-                if (maHD != -1) VietCTHD();
-            }
+            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value);
+            uf.ShowDialog();
+            maHD = uf.maHD;
+            if (maHD != -1) VietCTHD();
         }
 
         private void VietCTHD()
         {
-            using (SqlConnection con = new SqlConnection(Globals.sqlcon.ConnectionString))
-            using (SqlCommand command = con.CreateCommand())
+            using SqlConnection con = new SqlConnection(Globals.sqlcon.ConnectionString);
+            using SqlCommand command = con.CreateCommand();
+            string insert = "insert into CTHD values(@mahd, @masach, @sl, @dongia)",
+                modify = "update SACH " +
+                "set SoLuong = SoLuong - @sl where MaSach = @masach";
+
+            // định nghĩa các tham số trước
+            command.Parameters.Add("@mahd", SqlDbType.Int);
+            command.Parameters.Add("@masach", SqlDbType.Int);
+            command.Parameters.Add("@sl", SqlDbType.Int);
+            command.Parameters.Add("@dongia", SqlDbType.Int);
+
+            con.Open();
+            foreach (ListViewItem item in listView1.Items)
             {
-                string insert = "insert into CTHD values(@mahd, @masach, @sl, @dongia)",
-                    modify = "update SACH " +
-                    "set SoLuong = SoLuong - @sl where MaSach = @masach";
+                command.CommandText = insert;
+                command.Parameters["@mahd"].Value = maHD;
+                command.Parameters["@masach"].Value = int.Parse(item.SubItems[5].Text);
+                command.Parameters["@sl"].Value = int.Parse(item.SubItems[3].Text);
+                command.Parameters["@dongia"].Value = int.Parse(item.SubItems[4].Text);
 
-                // định nghĩa các tham số trước
-                command.Parameters.Add("@mahd", SqlDbType.Int);
-                command.Parameters.Add("@masach", SqlDbType.Int);
-                command.Parameters.Add("@sl", SqlDbType.Int);
-                command.Parameters.Add("@dongia", SqlDbType.Int);
+                command.ExecuteNonQuery();
 
-                con.Open();
-                foreach (ListViewItem item in listView1.Items)
-                {
-                    command.CommandText = insert;
-                    command.Parameters["@mahd"].Value = maHD;
-                    command.Parameters["@masach"].Value = int.Parse(item.SubItems[5].Text);
-                    command.Parameters["@sl"].Value = int.Parse(item.SubItems[3].Text);
-                    command.Parameters["@dongia"].Value = int.Parse(item.SubItems[4].Text);
+                command.CommandText = modify;
+                command.ExecuteNonQuery();
 
-                    command.ExecuteNonQuery();
-
-                    command.CommandText = modify;
-                    command.ExecuteNonQuery();
-
-                }
-                con.Close();
             }
+            con.Close();
         }
 
         private void lblCheck_Click(object sender, EventArgs e)
@@ -390,7 +375,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void txtBoxHoten_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            lblCheck.Visible = false;
         }
 
         private void txtBoxHoten_TextChanged(object sender, EventArgs e)
@@ -416,7 +401,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void txtBoxSodienthoai_TextChanged(object sender, EventArgs e)
         {
-
+            lblCheck.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -493,6 +478,22 @@ namespace QuanLyNhaSach.Forms.UserControls
                     cbTacGia.Items.Add(val);
             }
 
+            // Autofill khach hang va so dien thoai
+            AutoCompleteStringCollection ascs = new AutoCompleteStringCollection();
+            Globals.sqlcon.Open();
+            using (SqlCommand command = Globals.sqlcon.CreateCommand())
+            {
+                command.CommandText = "select TenKH, DienThoai from KHACHHANG";
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    ascs.Add(dr["TenKH"].ToString());
+                }
+            }
+            txtBoxHoten.AutoCompleteCustomSource = ascs;
+            Globals.sqlcon.Close();
+
+
         }
 
         private void cbTenSach_SelectionChangeCommitted(object sender, EventArgs e)
@@ -500,9 +501,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             string strDonGiaNhap = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["DonGiaNhap"].ToString();
             int DonGiaBan = (int)(int.Parse(strDonGiaNhap) * 1.05f);
             dontHandle = true;
-            if (cbTheLoai.SelectedIndex == -1)
+            if (cbTheLoai.SelectedIndex == -1 || cbTheLoai.Text == "Tất cả")
                 cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
-            if (cbTacGia.SelectedIndex == -1)
+            if (cbTacGia.SelectedIndex == -1 || cbTacGia.Text == "Tất cả")
                 cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
             txtBoxSotientra.Text = DonGiaBan.ToString();
             dontHandle = false;
@@ -566,10 +567,29 @@ namespace QuanLyNhaSach.Forms.UserControls
             txtBoxSotientra.Text = null;
         }
 
+        private void txtBoxSodienthoai_GotFocus(object sender, EventArgs e)
+        {
+            Globals.sqlcon.Open();
+            using (SqlCommand command = Globals.sqlcon.CreateCommand())
+            {
+                command.CommandText = "select DienThoai from KHACHHANG where TenKH = N'" + txtBoxHoten.Text + "'";
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.Read())
+                    txtBoxSodienthoai.Text = dr[0].ToString();
+            }
+            Globals.sqlcon.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using frmDSHoaDon ds = new frmDSHoaDon();
+            ds.ShowDialog();
+        }
+
         private void btnDoiThongTin_Click(object sender, EventArgs e)
         {
             dontHandle = true;
-            txtBoxNgay.ReadOnly = true;
+            dtpNgay.Enabled = false;
             cbTenSach.Enabled = false;
             cbTheLoai.Enabled = false;
             cbTacGia.Enabled = false;

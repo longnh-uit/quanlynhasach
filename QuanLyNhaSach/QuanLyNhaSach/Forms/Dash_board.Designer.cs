@@ -27,12 +27,15 @@ namespace QuanLyNhaSach.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDash_board));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.btnDangky = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblDangXuat = new System.Windows.Forms.Label();
+            this.btnNhansu = new System.Windows.Forms.Button();
             this.btnThaydoiquydinh = new System.Windows.Forms.Button();
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnThutien = new System.Windows.Forms.Button();
@@ -49,9 +52,8 @@ namespace QuanLyNhaSach.Forms
             this.lblTime = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
-            this.panelControl = new System.Windows.Forms.Panel();
+            this.lblDoiThongTin = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +64,9 @@ namespace QuanLyNhaSach.Forms
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panelLeft.Controls.Add(this.btnDangky);
+            this.panelLeft.Controls.Add(this.label4);
+            this.panelLeft.Controls.Add(this.lblDangXuat);
+            this.panelLeft.Controls.Add(this.btnNhansu);
             this.panelLeft.Controls.Add(this.btnThaydoiquydinh);
             this.panelLeft.Controls.Add(this.btnBaocao);
             this.panelLeft.Controls.Add(this.btnThutien);
@@ -77,22 +81,48 @@ namespace QuanLyNhaSach.Forms
             this.panelLeft.TabIndex = 0;
             this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
-            // btnDangky
+            // label4
             // 
-            this.btnDangky.FlatAppearance.BorderSize = 0;
-            this.btnDangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangky.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangky.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnDangky.Image = ((System.Drawing.Image)(resources.GetObject("btnDangky.Image")));
-            this.btnDangky.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangky.Location = new System.Drawing.Point(14, 476);
-            this.btnDangky.Name = "btnDangky";
-            this.btnDangky.Size = new System.Drawing.Size(234, 63);
-            this.btnDangky.TabIndex = 9;
-            this.btnDangky.Text = "    Đăng ký";
-            this.btnDangky.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDangky.UseVisualStyleBackColor = true;
-            this.btnDangky.Click += new System.EventHandler(this.button1_Click);
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(65, 725);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 19);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Đổi thông tin";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lblDangXuat
+            // 
+            this.lblDangXuat.AutoSize = true;
+            this.lblDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDangXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDangXuat.ForeColor = System.Drawing.Color.White;
+            this.lblDangXuat.Location = new System.Drawing.Point(72, 754);
+            this.lblDangXuat.Name = "lblDangXuat";
+            this.lblDangXuat.Size = new System.Drawing.Size(89, 19);
+            this.lblDangXuat.TabIndex = 4;
+            this.lblDangXuat.Text = "Đăng xuất";
+            this.lblDangXuat.Click += new System.EventHandler(this.lblDangXuat_Click);
+            // 
+            // btnNhansu
+            // 
+            this.btnNhansu.FlatAppearance.BorderSize = 0;
+            this.btnNhansu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhansu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNhansu.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnNhansu.Image = ((System.Drawing.Image)(resources.GetObject("btnNhansu.Image")));
+            this.btnNhansu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhansu.Location = new System.Drawing.Point(14, 407);
+            this.btnNhansu.Name = "btnNhansu";
+            this.btnNhansu.Size = new System.Drawing.Size(234, 63);
+            this.btnNhansu.TabIndex = 9;
+            this.btnNhansu.Text = "    Nhân viên";
+            this.btnNhansu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhansu.UseVisualStyleBackColor = true;
+            this.btnNhansu.Click += new System.EventHandler(this.btnNhansu_Click);
             // 
             // btnThaydoiquydinh
             // 
@@ -102,11 +132,11 @@ namespace QuanLyNhaSach.Forms
             this.btnThaydoiquydinh.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnThaydoiquydinh.Image = ((System.Drawing.Image)(resources.GetObject("btnThaydoiquydinh.Image")));
             this.btnThaydoiquydinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThaydoiquydinh.Location = new System.Drawing.Point(14, 407);
+            this.btnThaydoiquydinh.Location = new System.Drawing.Point(14, 476);
             this.btnThaydoiquydinh.Name = "btnThaydoiquydinh";
             this.btnThaydoiquydinh.Size = new System.Drawing.Size(234, 63);
             this.btnThaydoiquydinh.TabIndex = 8;
-            this.btnThaydoiquydinh.Text = "  Thay đổi quy định";
+            this.btnThaydoiquydinh.Text = "    Thay đổi quy định";
             this.btnThaydoiquydinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThaydoiquydinh.UseVisualStyleBackColor = true;
             this.btnThaydoiquydinh.Click += new System.EventHandler(this.btnThaydoiquydinh_Click);
@@ -204,7 +234,7 @@ namespace QuanLyNhaSach.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.Location = new System.Drawing.Point(67, 77);
+            this.label1.Location = new System.Drawing.Point(81, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 2;
@@ -232,6 +262,9 @@ namespace QuanLyNhaSach.Forms
             this.panel4.Size = new System.Drawing.Size(1164, 44);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
+            this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseUp);
             // 
             // button8
             // 
@@ -258,10 +291,9 @@ namespace QuanLyNhaSach.Forms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.label3.Location = new System.Drawing.Point(63, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 19);
+            this.label3.Size = new System.Drawing.Size(215, 19);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Book Shop Management System";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Text = "Hệ thống quản lý nhà sách";
             // 
             // panel5
             // 
@@ -282,7 +314,7 @@ namespace QuanLyNhaSach.Forms
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.lblTime.Location = new System.Drawing.Point(970, 7);
+            this.lblTime.Location = new System.Drawing.Point(995, 7);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(83, 19);
             this.lblTime.TabIndex = 4;
@@ -295,9 +327,9 @@ namespace QuanLyNhaSach.Forms
             this.lblRole.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblRole.Location = new System.Drawing.Point(63, 42);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(50, 19);
+            this.lblRole.Size = new System.Drawing.Size(84, 19);
             this.lblRole.TabIndex = 4;
-            this.lblRole.Text = "Role: ";
+            this.lblRole.Text = "Chức vụ:  ";
             // 
             // lblWelcome
             // 
@@ -306,33 +338,28 @@ namespace QuanLyNhaSach.Forms
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblWelcome.Location = new System.Drawing.Point(63, 7);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(87, 19);
+            this.lblWelcome.Size = new System.Drawing.Size(83, 19);
             this.lblWelcome.TabIndex = 3;
-            this.lblWelcome.Text = "Welcome ";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.lblWelcome.Text = "Xin chào ";
             // 
             // timerTime
             // 
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
-            // panelControl
+            // lblDoiThongTin
             // 
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl.Location = new System.Drawing.Point(248, 125);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(1164, 681);
-            this.panelControl.TabIndex = 2;
+            this.lblDoiThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDoiThongTin.Location = new System.Drawing.Point(248, 125);
+            this.lblDoiThongTin.Name = "lblDoiThongTin";
+            this.lblDoiThongTin.Size = new System.Drawing.Size(1164, 681);
+            this.lblDoiThongTin.TabIndex = 2;
             // 
             // frmDash_board
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1412, 806);
-            this.Controls.Add(this.panelControl);
+            this.Controls.Add(this.lblDoiThongTin);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelLeft);
@@ -343,6 +370,7 @@ namespace QuanLyNhaSach.Forms
             this.Text = "Dash_board";
             this.Load += new System.EventHandler(this.Dash_board_Load);
             this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -372,10 +400,11 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTime;
-        private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Panel lblDoiThongTin;
         private System.Windows.Forms.Button btnThaydoiquydinh;
-        private System.Windows.Forms.Button btnDangky;
+        private System.Windows.Forms.Button btnNhansu;
+        private System.Windows.Forms.Label lblDangXuat;
+        private System.Windows.Forms.Label label4;
     }
 }

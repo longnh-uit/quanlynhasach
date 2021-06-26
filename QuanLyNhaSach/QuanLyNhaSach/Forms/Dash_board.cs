@@ -12,13 +12,12 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class frmDash_board : Form
     {
-        int PanelWidth;
-        bool isColapsed;
+        public bool logOut = true;
+        int mov, movX, movY;
+
         public frmDash_board()
         {
             InitializeComponent();
-            PanelWidth = panelLeft.Width;
-            isColapsed = false;
             timerTime.Start();
         }
 
@@ -31,9 +30,10 @@ namespace QuanLyNhaSach.Forms
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void lblDangXuat_Click(object sender, EventArgs e)
         {
-
+            Globals.status = 1;
+            Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -48,6 +48,8 @@ namespace QuanLyNhaSach.Forms
         }
         private void Dash_board_Load(object sender, EventArgs e)
         {
+            Globals.status = 0;
+            logOut = false;
             lblWelcome.Text += Globals.name;
             lblRole.Text += Globals.role;
 
@@ -74,13 +76,13 @@ namespace QuanLyNhaSach.Forms
             if (Chucvu=="Nhân viên bán hàng")
             {
                 Unable_button(btnBaocao);
-                Unable_button(btnDangky);
+                Unable_button(btnNhansu);
                 Unable_button(btnThaydoiquydinh);
             }
             else if (Chucvu=="Thủ kho")
             {
                 Unable_button(btnBaocao);
-                Unable_button(btnDangky);
+                Unable_button(btnNhansu);
                 Unable_button(btnThaydoiquydinh);
                 Unable_button(btnThutien);
                 Unable_button(btnHoadon);
@@ -92,44 +94,12 @@ namespace QuanLyNhaSach.Forms
             this.Dispose();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (isColapsed)
-            {
-                panelLeft.Width = panelLeft.Width + 3;
-                if (panelLeft.Width>=PanelWidth)
-                {
-                    timer1.Stop();
-                    isColapsed = false;
-                    this.Refresh();
-                }
-            }
-            else
-            {
-                panelLeft.Width = panelLeft.Width - 3;
-                if (panelLeft.Width <= 63)
-                {
-                    timer1.Stop();
-                    isColapsed = true;
-                    this.Refresh();
-                }
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
         private void moveSidePanel(Control btn)
         {
             panelSide.Top = btn.Top;
@@ -167,8 +137,8 @@ namespace QuanLyNhaSach.Forms
         private void AddControltoPanel(Control c)
         {
             c.Dock = DockStyle.Fill;
-            panelControl.Controls.Clear();
-            panelControl.Controls.Add(c);
+            lblDoiThongTin.Controls.Clear();
+            lblDoiThongTin.Controls.Add(c);
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
@@ -209,11 +179,38 @@ namespace QuanLyNhaSach.Forms
             tdqd.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNhansu_Click(object sender, EventArgs e)
         {
-            Form_Dangky dk = new Form_Dangky();
-            dk.ShowDialog();
+            moveSidePanel(btnNhansu);
+            UC_Nhansu ucns = new UC_Nhansu();
+            AddControltoPanel(ucns);
+
         }
 
+        private void panel4_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            frmDoiThongTin dmk = new frmDoiThongTin();
+            dmk.ShowDialog();
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
     }
 }

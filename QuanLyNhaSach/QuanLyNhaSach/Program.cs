@@ -6,13 +6,14 @@ using System.Windows.Forms;
 using QuanLyNhaSach.Forms;
 using System.Data.SqlClient;
 
+
 //Class chua bien toan cuc
 public static class Globals
 {
     public static string ServerPath = System.IO.Path.Combine(@"D:\Courses\NhaSach\server\");
     public static SqlConnection sqlcon;
-    public static string name, role;
-    public static int Slmin, Luongtonmax, Nomax, Tonbanmin;
+    public static string name, username, role;
+    public static int Slmin, Luongtonmax, Nomax, Tonbanmin, status = 1; // 1 la login, 2 la dashboard, 0 la tat
     public static bool tienthuvuottienno;
 }
 
@@ -36,13 +37,21 @@ namespace QuanLyNhaSach
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmLogin loginForm = new frmLogin();
-            Application.Run(loginForm);
-
-            if (loginForm.UserSuccessfullyAuthenticated)
+            frmLogin loginForm;
+            frmDash_board mainForm;
+            while (Globals.status != 0)
             {
-                // MainForm is defined elsewhere
-                Application.Run(new frmDash_board());
+                switch (Globals.status)
+                {
+                    case 1:
+                        loginForm = new frmLogin();
+                        Application.Run(loginForm);
+                        break;
+                    case 2:
+                        mainForm = new frmDash_board();
+                        Application.Run(mainForm);
+                        break;
+                }
             }
         }
     }

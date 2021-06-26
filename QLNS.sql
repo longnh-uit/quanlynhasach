@@ -28,8 +28,8 @@ create table KHACHHANG(
 	MaKH int identity(1,1) not null,
 	TenKH nvarchar(100) ,
 	DiaChi nvarchar(100),
-	DienThoai char(20),
-	Email char(50),
+	DienThoai nvarchar(20),
+	Email nvarchar(50),
 	SoTienNo int,
 	primary key(MaKH)
 )
@@ -37,7 +37,7 @@ go
 create table HOADON(
 	MaHD int identity(1,1) not null,
 	TenKH nvarchar(100),
-	DienThoai char(20),
+	DienThoai nvarchar(20),
 	NgayHoaDon datetime,
 	TongTien int,
 	SoTienTra int,

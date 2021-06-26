@@ -53,6 +53,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.txtBoxHoten = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxSoluong = new System.Windows.Forms.TextBox();
-            this.txtBoxNgay = new System.Windows.Forms.TextBox();
             this.txtBoxSodienthoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxSotientra = new System.Windows.Forms.TextBox();
@@ -72,10 +72,17 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.cbTacGia = new System.Windows.Forms.ComboBox();
             this.lblTacGia = new System.Windows.Forms.Label();
             this.btnDoiThongTin = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             btnKiemTra = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKiemTra
@@ -84,7 +91,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             btnKiemTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             btnKiemTra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnKiemTra.ForeColor = System.Drawing.Color.White;
-            btnKiemTra.Location = new System.Drawing.Point(232, 124);
+            btnKiemTra.Location = new System.Drawing.Point(225, 209);
             btnKiemTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnKiemTra.Name = "btnKiemTra";
             btnKiemTra.Size = new System.Drawing.Size(105, 37);
@@ -106,7 +113,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
@@ -130,14 +137,13 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.soLuong,
             this.gia,
             this.maSach});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(10, 0);
+            this.listView1.Location = new System.Drawing.Point(10, 10);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(563, 538);
+            this.listView1.Size = new System.Drawing.Size(563, 532);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -331,6 +337,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel3.Controls.Add(this.panel12);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -339,10 +346,20 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 681);
+            this.panel12.TabIndex = 0;
+            // 
             // txtBoxHoten
             // 
             this.txtBoxHoten.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxHoten.Location = new System.Drawing.Point(232, 44);
+            this.txtBoxHoten.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxHoten.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBoxHoten.Location = new System.Drawing.Point(225, 129);
             this.txtBoxHoten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxHoten.Name = "txtBoxHoten";
             this.txtBoxHoten.Size = new System.Drawing.Size(173, 23);
@@ -357,7 +374,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(99, 47);
+            this.label1.Location = new System.Drawing.Point(92, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 19);
             this.label1.TabIndex = 9;
@@ -372,7 +389,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(232, 458);
+            this.btnThem.Location = new System.Drawing.Point(225, 543);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(173, 37);
@@ -387,7 +404,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(99, 414);
+            this.label4.Location = new System.Drawing.Point(92, 499);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 13;
@@ -400,7 +417,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(99, 372);
+            this.label5.Location = new System.Drawing.Point(92, 457);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 19);
             this.label5.TabIndex = 14;
@@ -413,7 +430,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(99, 288);
+            this.label6.Location = new System.Drawing.Point(92, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 19);
             this.label6.TabIndex = 15;
@@ -426,7 +443,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label7.Location = new System.Drawing.Point(99, 246);
+            this.label7.Location = new System.Drawing.Point(92, 331);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 19);
             this.label7.TabIndex = 16;
@@ -439,7 +456,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label8.Location = new System.Drawing.Point(99, 204);
+            this.label8.Location = new System.Drawing.Point(92, 289);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 19);
             this.label8.TabIndex = 17;
@@ -449,7 +466,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxSoluong
             // 
             this.txtBoxSoluong.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxSoluong.Location = new System.Drawing.Point(232, 368);
+            this.txtBoxSoluong.Location = new System.Drawing.Point(225, 453);
             this.txtBoxSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxSoluong.Name = "txtBoxSoluong";
             this.txtBoxSoluong.ReadOnly = true;
@@ -458,21 +475,10 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSoluong.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.txtBoxSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSoluong_KeyPress);
             // 
-            // txtBoxNgay
-            // 
-            this.txtBoxNgay.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxNgay.Location = new System.Drawing.Point(232, 200);
-            this.txtBoxNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxNgay.Name = "txtBoxNgay";
-            this.txtBoxNgay.ReadOnly = true;
-            this.txtBoxNgay.Size = new System.Drawing.Size(173, 23);
-            this.txtBoxNgay.TabIndex = 4;
-            this.txtBoxNgay.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
             // txtBoxSodienthoai
             // 
             this.txtBoxSodienthoai.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxSodienthoai.Location = new System.Drawing.Point(232, 82);
+            this.txtBoxSodienthoai.Location = new System.Drawing.Point(225, 167);
             this.txtBoxSodienthoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxSodienthoai.Name = "txtBoxSodienthoai";
             this.txtBoxSodienthoai.Size = new System.Drawing.Size(173, 23);
@@ -486,7 +492,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label9.Location = new System.Drawing.Point(99, 85);
+            this.label9.Location = new System.Drawing.Point(92, 170);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 19);
             this.label9.TabIndex = 22;
@@ -496,7 +502,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // txtBoxSotientra
             // 
             this.txtBoxSotientra.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxSotientra.Location = new System.Drawing.Point(232, 410);
+            this.txtBoxSotientra.Location = new System.Drawing.Point(225, 495);
             this.txtBoxSotientra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxSotientra.Name = "txtBoxSotientra";
             this.txtBoxSotientra.ReadOnly = true;
@@ -511,7 +517,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.lblCheck.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblCheck.AutoSize = true;
             this.lblCheck.ForeColor = System.Drawing.Color.Red;
-            this.lblCheck.Location = new System.Drawing.Point(99, 169);
+            this.lblCheck.Location = new System.Drawing.Point(92, 254);
             this.lblCheck.Name = "lblCheck";
             this.lblCheck.Size = new System.Drawing.Size(256, 15);
             this.lblCheck.TabIndex = 26;
@@ -525,7 +531,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.cbTenSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenSach.Enabled = false;
             this.cbTenSach.FormattingEnabled = true;
-            this.cbTenSach.Location = new System.Drawing.Point(232, 242);
+            this.cbTenSach.Location = new System.Drawing.Point(225, 327);
             this.cbTenSach.Name = "cbTenSach";
             this.cbTenSach.Size = new System.Drawing.Size(173, 23);
             this.cbTenSach.TabIndex = 5;
@@ -537,7 +543,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.cbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTheLoai.Enabled = false;
             this.cbTheLoai.FormattingEnabled = true;
-            this.cbTheLoai.Location = new System.Drawing.Point(232, 284);
+            this.cbTheLoai.Location = new System.Drawing.Point(225, 369);
             this.cbTheLoai.Name = "cbTheLoai";
             this.cbTheLoai.Size = new System.Drawing.Size(173, 23);
             this.cbTheLoai.TabIndex = 6;
@@ -549,7 +555,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.cbTacGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTacGia.Enabled = false;
             this.cbTacGia.FormattingEnabled = true;
-            this.cbTacGia.Location = new System.Drawing.Point(232, 326);
+            this.cbTacGia.Location = new System.Drawing.Point(225, 411);
             this.cbTacGia.Name = "cbTacGia";
             this.cbTacGia.Size = new System.Drawing.Size(173, 23);
             this.cbTacGia.TabIndex = 27;
@@ -561,7 +567,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.lblTacGia.AutoSize = true;
             this.lblTacGia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTacGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.lblTacGia.Location = new System.Drawing.Point(99, 330);
+            this.lblTacGia.Location = new System.Drawing.Point(92, 415);
             this.lblTacGia.Name = "lblTacGia";
             this.lblTacGia.Size = new System.Drawing.Size(65, 19);
             this.lblTacGia.TabIndex = 28;
@@ -573,7 +579,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnDoiThongTin.Enabled = false;
             this.btnDoiThongTin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDoiThongTin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDoiThongTin.Location = new System.Drawing.Point(368, 124);
+            this.btnDoiThongTin.Location = new System.Drawing.Point(361, 209);
             this.btnDoiThongTin.Name = "btnDoiThongTin";
             this.btnDoiThongTin.Size = new System.Drawing.Size(131, 37);
             this.btnDoiThongTin.TabIndex = 29;
@@ -581,9 +587,62 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnDoiThongTin.UseVisualStyleBackColor = false;
             this.btnDoiThongTin.Click += new System.EventHandler(this.btnDoiThongTin_Click);
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel9.Controls.Add(this.button3);
+            this.panel9.Location = new System.Drawing.Point(3, 10);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(579, 79);
+            this.panel9.TabIndex = 30;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(45, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 44);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Lịch sử hoá đơn";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1164, 10);
+            this.panel10.TabIndex = 30;
+            // 
+            // panel11
+            // 
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(10, 681);
+            this.panel11.TabIndex = 30;
+            // 
+            // dtpNgay
+            // 
+            this.dtpNgay.Enabled = false;
+            this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgay.Location = new System.Drawing.Point(225, 285);
+            this.dtpNgay.MaxDate = new System.DateTime(2021, 6, 27, 0, 0, 0, 0);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(173, 25);
+            this.dtpNgay.TabIndex = 31;
+            this.dtpNgay.Value = new System.DateTime(2021, 6, 26, 0, 0, 0, 0);
+            // 
             // UC_Hoadon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.dtpNgay);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.btnDoiThongTin);
             this.Controls.Add(this.lblTacGia);
             this.Controls.Add(this.cbTacGia);
@@ -594,7 +653,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Controls.Add(this.txtBoxSotientra);
             this.Controls.Add(this.txtBoxSodienthoai);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtBoxNgay);
             this.Controls.Add(this.txtBoxSoluong);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -612,6 +670,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -646,7 +706,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxSoluong;
-        private System.Windows.Forms.TextBox txtBoxNgay;
         private System.Windows.Forms.TextBox txtBoxSodienthoai;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBoxSotientra;
@@ -660,5 +719,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.ColumnHeader tacgia;
         private System.Windows.Forms.ColumnHeader maSach;
         private System.Windows.Forms.Button btnDoiThongTin;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.DateTimePicker dtpNgay;
     }
 }

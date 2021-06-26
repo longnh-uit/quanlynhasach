@@ -130,7 +130,7 @@ namespace QuanLyNhaSach
             this.lblLogin.BackColor = System.Drawing.Color.White;
             this.lblLogin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.lblLogin.Location = new System.Drawing.Point(463, 287);
+            this.lblLogin.Location = new System.Drawing.Point(497, 288);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(216, 25);
             this.lblLogin.TabIndex = 0;

@@ -14,8 +14,6 @@ namespace QuanLyNhaSach
 {
     public partial class frmLogin : Form
     {
-        public bool UserSuccessfullyAuthenticated { get; private set; }
-
         public frmLogin()
         {
             InitializeComponent();
@@ -42,9 +40,10 @@ namespace QuanLyNhaSach
             // If there is 1 element (a match has been found), allow access
             if (dtb1.Rows.Count == 1)
             {
-                UserSuccessfullyAuthenticated = true;
+                Globals.status = 2;
                 Globals.name = dtb1.Rows[0].Field <string>(0);
                 Globals.role = dtb1.Rows[0].Field <string>(3);
+                Globals.username = dtb1.Rows[0].Field <string>(1);
 
                 Close();
 
@@ -59,7 +58,7 @@ namespace QuanLyNhaSach
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            Globals.status = 0;
         }
     }
 }

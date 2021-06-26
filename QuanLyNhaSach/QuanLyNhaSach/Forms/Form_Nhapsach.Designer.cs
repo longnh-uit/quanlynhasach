@@ -44,7 +44,6 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxTheloai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxNgaynhap = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxDongianhap = new System.Windows.Forms.TextBox();
             this.txtBoxTensach = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@ namespace QuanLyNhaSach.Forms
             this.soLuong = new System.Windows.Forms.ColumnHeader();
             this.donGia = new System.Windows.Forms.ColumnHeader();
             this.button8 = new System.Windows.Forms.Button();
+            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -234,16 +234,6 @@ namespace QuanLyNhaSach.Forms
             this.label4.TabIndex = 57;
             this.label4.Text = "Thể loại";
             // 
-            // txtBoxNgaynhap
-            // 
-            this.txtBoxNgaynhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNgaynhap.Location = new System.Drawing.Point(186, 69);
-            this.txtBoxNgaynhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxNgaynhap.Name = "txtBoxNgaynhap";
-            this.txtBoxNgaynhap.Size = new System.Drawing.Size(205, 23);
-            this.txtBoxNgaynhap.TabIndex = 69;
-            this.txtBoxNgaynhap.TextChanged += new System.EventHandler(this.txtBoxNgaynhap_TextChanged);
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -271,6 +261,8 @@ namespace QuanLyNhaSach.Forms
             // txtBoxTensach
             // 
             this.txtBoxTensach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxTensach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBoxTensach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtBoxTensach.Location = new System.Drawing.Point(186, 136);
             this.txtBoxTensach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxTensach.Name = "txtBoxTensach";
@@ -366,18 +358,27 @@ namespace QuanLyNhaSach.Forms
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // dtpNgay
+            // 
+            this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgay.Location = new System.Drawing.Point(188, 74);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(202, 25);
+            this.dtpNgay.TabIndex = 101;
+            // 
             // Form_Nhapsach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 407);
+            this.Controls.Add(this.dtpNgay);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.lv_nhapSach);
             this.Controls.Add(this.btnNhap);
             this.Controls.Add(this.txtBoxTacgia);
             this.Controls.Add(this.txtBoxTensach);
             this.Controls.Add(this.txtBoxDongianhap);
-            this.Controls.Add(this.txtBoxNgaynhap);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
@@ -421,7 +422,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.TextBox txtBoxTheloai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBoxNgaynhap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxDongianhap;
         private System.Windows.Forms.TextBox txtBoxTensach;
@@ -434,5 +434,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.ColumnHeader theLoai;
         private System.Windows.Forms.ColumnHeader tacGia;
         private System.Windows.Forms.ColumnHeader donGia;
+        private System.Windows.Forms.DateTimePicker dtpNgay;
     }
 }

@@ -40,6 +40,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void UC_Tracuu_Load(object sender, EventArgs e)
         {
             LoadSach();
+            if (Globals.role == "Nhân viên bán hàng") Unable_button(btnNhapSach);
         }
 
         private void btnNhapsach_Click(object sender, EventArgs e)
@@ -334,11 +335,16 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnNhapSach_Click(object sender, EventArgs e)
         {
-            using (Form_Nhapsach ns = new Form_Nhapsach())
-            {
-                ns.ShowDialog();
-                LoadSach();
-            }
+            using Form_Nhapsach ns = new Form_Nhapsach();
+            ns.ShowDialog();
+            LoadSach();
+        }
+
+        private void Unable_button(System.Windows.Forms.Button b)
+        {
+            b.Enabled = false;
+            Color cl = Color.FromName("Gray");
+            b.ForeColor = cl;
         }
     }
 }

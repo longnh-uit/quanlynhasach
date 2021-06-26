@@ -11,16 +11,50 @@ namespace QuanLyNhaSach.Forms
 {
     public partial class Form_Nhapsach : Form
     {
-        private DateTime ngay;
         public Form_Nhapsach()
         {
             InitializeComponent();
+            txtBoxTensach.LostFocus += txtBoxTensach_LostFocus;
+        }
+
+        private void txtBoxTensach_LostFocus(object sender, EventArgs e)
+        {
+            Globals.sqlcon.Open();
+            using (SqlCommand command = Globals.sqlcon.CreateCommand())
+            {
+                command.CommandText = "select * from SACH where TenSach = N'" + txtBoxTensach.Text + "'";
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtBoxTheloai.Text = dr["TheLoai"].ToString();
+                    txtBoxTacgia.Text = dr["TacGia"].ToString();
+                    txtBoxDongianhap.Text = dr["DonGiaNhap"].ToString();
+                }
+            }
+            Globals.sqlcon.Close();
+
         }
 
         private void Form_Nhapsach_Load(object sender, EventArgs e)
         {
             // Tu dong dien ngay hien tai
-            txtBoxNgaynhap.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+            dtpNgay.Value = System.DateTime.Now;
+            dtpNgay.MaxDate = System.DateTime.Now;
+
+            // Autofill Tensach
+            AutoCompleteStringCollection ascs = new AutoCompleteStringCollection();
+            Globals.sqlcon.Open();
+            using (SqlCommand command = Globals.sqlcon.CreateCommand())
+            {
+                command.CommandText = "select * from SACH";
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    ascs.Add(dr["TenSach"].ToString());
+                }
+            }
+            txtBoxTensach.AutoCompleteCustomSource = ascs;
+            Globals.sqlcon.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -42,13 +76,11 @@ namespace QuanLyNhaSach.Forms
         {
             if (lv_nhapSach.Items.Count > 0)
             {
-                if (IsDate(txtBoxNgaynhap.Text, ref ngay))
-                {
                     // Ghi vào CSDL
                     Globals.sqlcon.Open();
                     using (SqlCommand command = new SqlCommand("dbo.InsertNhapSach", Globals.sqlcon))
                     {
-                        command.Parameters.AddWithValue("@NgayNhap", ngay);
+                        command.Parameters.AddWithValue("@NgayNhap", dtpNgay.Value);
                         command.Parameters.Add("@TenSach", SqlDbType.NVarChar);
                         command.Parameters.Add("@TheLoai", SqlDbType.NVarChar);
                         command.Parameters.Add("@TacGia", SqlDbType.NVarChar);
@@ -71,11 +103,6 @@ namespace QuanLyNhaSach.Forms
 
                     MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     lv_nhapSach.Items.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Ngày không hợp lệ !");
-                }
             }
             else
             {
@@ -119,22 +146,10 @@ namespace QuanLyNhaSach.Forms
             }
 
         }
-        private bool IsDate(string tempDate, ref DateTime ngay)
-        {
-            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd", "d/M/yyyy", "d/MM/yyyy", "dd/M/yyyy" };
-            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out ngay))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            if (txtBoxNgaynhap.TextLength > 0 && txtBoxTensach.TextLength > 0 && txtBoxTheloai.TextLength > 0 && txtBoxTacgia.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxDongianhap.TextLength > 0)
+            if (txtBoxTensach.TextLength > 0 && txtBoxTheloai.TextLength > 0 && txtBoxTacgia.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxDongianhap.TextLength > 0)
             {
                 string[] arr = new string[5];
                 ListViewItem itm;

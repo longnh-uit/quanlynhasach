@@ -17,12 +17,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         SqlDataAdapter sda;
         DataSet bcTon;
         DataSet bcCongNo;
-        SqlCommandBuilder scb;
 
         public void LoadBCTon(string month, string year)
         {
             Globals.sqlcon.Open();
-            string thangNam = txtBoxThangnam.Text;
+            string thangNam = dtpThangNam.Text;
             string query = "select TenSach, TonDau, TonPhatSinh, TonCuoi from BAOCAOTON BC join SACH S on BC.MaSach = S.MaSach" +
                 " where Thang = "+month+@" and NAM = "+ year;
             SqlCommand sc = new SqlCommand(query, Globals.sqlcon);
@@ -49,6 +48,8 @@ namespace QuanLyNhaSach.Forms.UserControls
         public UC_Baocao()
         {
             InitializeComponent();
+            dtpThangNam.Value = System.DateTime.Now.AddMonths(-1);
+            dtpThangNam.MaxDate = System.DateTime.Now.AddMonths(-1);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -105,36 +106,21 @@ namespace QuanLyNhaSach.Forms.UserControls
         }
         private void btnBaocaoton_Click(object sender, EventArgs e)
         {
-            if (IsDate(txtBoxThangnam.Text))
-            {
-                //Báo cáo tồn thì bảng Công nợ ẩn đi
-                dgvTon.Visible = true;
-                dgvCongno.Visible = false;
-                //Dùng SQL đưa vô Datagrid dgvTon
-                string[] ThangNam = txtBoxThangnam.Text.Split("/");
-                LoadBCTon(ThangNam[0],ThangNam[1]);
-            }
-            else
-            {
-                MessageBox.Show("Hãy nhập đúng định dạng [Tháng]/[Năm]");
-            }
+            //Báo cáo tồn thì bảng Công nợ ẩn đi
+            dgvTon.Visible = true;
+            dgvCongno.Visible = false;
+            //Dùng SQL đưa vô Datagrid dgvTon
+            string[] ThangNam = dtpThangNam.Text.Split("/");
+            LoadBCTon(ThangNam[0],ThangNam[1]);
         }
 
         private void btnCongno_Click(object sender, EventArgs e)
         {
-            if (IsDate(txtBoxThangnam.Text))
-            {
-                //Báo cáo công nợ thì bảng Báo cáo tồn ẩn đi
-                dgvTon.Visible = false;
-                dgvCongno.Visible = true;
-                //Dùng SQL đưa dữ liệu vào Datagrid dgvCongno
-                string[] ThangNam = txtBoxThangnam.Text.Split("/");
-                LoadBCCongNo(ThangNam[0], ThangNam[1]);
-            }
-            else
-            {
-                MessageBox.Show("Hãy nhập đúng định dạng [Tháng]/[Năm]");
-            }
+            //Báo cáo công nợ thì bảng Báo cáo tồn ẩn đi
+            dgvTon.Visible = false;
+            dgvCongno.Visible = true;
+            //Dùng SQL đưa dữ liệu vào Datagrid dgvCongno
+            string[] ThangNam = dtpThangNam.Text.Split("/");
         }
 
         private void label1_Click(object sender, EventArgs e)

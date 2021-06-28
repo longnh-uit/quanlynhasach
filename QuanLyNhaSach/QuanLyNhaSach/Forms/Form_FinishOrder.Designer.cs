@@ -48,7 +48,8 @@ namespace QuanLyNhaSach.Forms
             this.lblGiatritienthua = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cboxXuat = new System.Windows.Forms.CheckBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,23 +249,23 @@ namespace QuanLyNhaSach.Forms
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // checkBox1
+            // cboxXuat
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(417, 301);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(132, 23);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Xuất hóa đơn";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cboxXuat.AutoSize = true;
+            this.cboxXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboxXuat.Location = new System.Drawing.Point(417, 301);
+            this.cboxXuat.Name = "cboxXuat";
+            this.cboxXuat.Size = new System.Drawing.Size(132, 23);
+            this.cboxXuat.TabIndex = 3;
+            this.cboxXuat.Text = "Xuất hóa đơn";
+            this.cboxXuat.UseVisualStyleBackColor = true;
             // 
             // Form_FinishOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(705, 429);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cboxXuat);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lblGiatritienthua);
@@ -317,6 +318,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label lblGiatritienthua;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cboxXuat;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

@@ -180,11 +180,11 @@ namespace QuanLyNhaSach.Forms.UserControls
 
                 int stt = 0;
                 row = 2; // dữ liệu bắt đầu từ dòng số 3 trong file Excel
-                foreach(DataRow sach in sach.Tables[0].Rows)
+                foreach(DataGridViewRow sach in this.dgvSach.Rows)
                 {
                     stt++;
                     row++;
-                    dynamic[] arr = {stt, sach[1], sach[2], sach[3], sach[4] };
+                    dynamic[] arr = { sach.Cells[0], sach.Cells[2], sach.Cells[3], sach.Cells[4], sach.Cells[5] };
                     Excel.Range rowData = ws.get_Range("A" + row, "E" + row); // Lấy dòng thứ row để đổ dữ liệu
                     rowData.Font.Size = fontSizeNoiDung;
                     rowData.Font.Name = fontName;

@@ -332,7 +332,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value);
+            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1);
             uf.ShowDialog();
             maHD = uf.maHD;
             if (maHD != -1) VietCTHD();

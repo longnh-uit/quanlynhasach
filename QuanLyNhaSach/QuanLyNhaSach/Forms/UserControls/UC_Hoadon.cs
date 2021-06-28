@@ -65,7 +65,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void cbTenSach_LostFocus(object sender, EventArgs e)
         {
             // Kiểm tra sách có tồn tại trong CSDL
-            if (cbTenSach.FindStringExact(cbTenSach.Text) == -1)
+            if (cbTenSach.Text != "" && cbTenSach.FindStringExact(cbTenSach.Text) == -1)
             {
                 MessageBox.Show("Sách không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbTenSach.Text = "";

@@ -87,7 +87,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // btnKiemTra
             // 
-            btnKiemTra.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             btnKiemTra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             btnKiemTra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnKiemTra.ForeColor = System.Drawing.Color.White;

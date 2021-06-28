@@ -191,22 +191,37 @@ namespace QuanLyNhaSach.Forms.UserControls
             SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
             DataTable kh = new DataTable();
             sda.Fill(kh);
-            Globals.sqlcon.Close();
 
             if (kh.Rows.Count != 0)
                 isEligible = false;
 
+            query = "select * from KHACHHANG where TenKH = N'" + txtBoxHoten.Text + "' and DienThoai = '" + txtBoxSodienthoai.Text + "'";
+            sda = new SqlDataAdapter(query, Globals.sqlcon);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
             if (txtBoxHoten.Text == "" || txtBoxSodienthoai.Text == "")
                 isFilled = false;
 
             if (isEligible && isFilled)
             {
+                Color cl = Color.FromName("Green");
+                lblCheck.ForeColor = cl;
+                if (dt.Rows.Count != 0)
+                {
+                    lblCheck.Text = "✓ Khách hàng đủ điều kiện";
+                }
+                else
+                {
+                    lblCheck.Text = "✓ Khách hàng mới, sẽ tiến hành thêm vào CSDL";
+                }
+                lblCheck.Visible = true;
+
+
                 dtpNgay.Enabled = true;
                 cbTenSach.Enabled = true;
                 cbTheLoai.Enabled = true;
                 cbTacGia.Enabled = true;
                 txtBoxSoluong.ReadOnly = false;
-                lblCheck.Visible = false;
                 btnDoiThongTin.Enabled = true;
                 txtBoxHoten.ReadOnly = true;
                 txtBoxSodienthoai.ReadOnly = true;
@@ -218,6 +233,8 @@ namespace QuanLyNhaSach.Forms.UserControls
                 else lblCheck.Text = "Khách hàng không đủ điều kiện để mua hàng";
                 lblCheck.Visible = true; // Hiện "khách ko đủ đk"
             }
+
+            Globals.sqlcon.Close();
         }
 
         private void txtBoxTensach_TextChanged(object sender, EventArgs e)

@@ -34,47 +34,57 @@ namespace QuanLyNhaSach.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (tienTra - thanhToan < 0)
+            Globals.sqlcon.Open();
+
+            // Kiểm tra khách hàng có trong CSDL
+            string query = "select * from KHACHHANG where TenKH = N'" + hoTen + "' and DienThoai = '" + sodienthoai + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            // Nếu có thông tin khách hàng trong CSDL
+            if (dt.Rows.Count != 0)
             {
-                Globals.sqlcon.Open();
-
-                // Kiểm tra khách hàng có trong CSDL
-                string query = "select * from KHACHHANG where TenKH = N'" + hoTen + "' and DienThoai = '" + sodienthoai + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                // Nếu có thông tin khách hàng trong CSDL
-                if (dt.Rows.Count != 0)
+                
+                using SqlCommand command = Globals.sqlcon.CreateCommand();
+                //Khach no thi moi dung vao DATABASE
+                if (tienTra < thanhToan)
                 {
-                    using SqlCommand command = Globals.sqlcon.CreateCommand();
                     command.CommandText = "update KHACHHANG " +
                         "set SoTienNo = SoTienNo + " + (thanhToan - tienTra).ToString();
                     command.ExecuteNonQuery();
                 }
+            }
+            else
+            {
+                using (frmThongTinThem form = new frmThongTinThem())
+                {
+                    form.ShowDialog();
+                    if (form.cancel == true) return;
+                    diaChi = form.diaChi;
+                    email = form.email;
+                }
+                using SqlCommand command = Globals.sqlcon.CreateCommand();
+                command.CommandText = "insert into KHACHHANG values(@ten, @diachi, @sodt, @email, @tienno)";
+                command.Parameters.AddWithValue("@ten", hoTen);
+                command.Parameters.AddWithValue("@diachi", diaChi);
+                command.Parameters.AddWithValue("@sodt", sodienthoai);
+                command.Parameters.AddWithValue("@email", email);
+                if (tienTra - thanhToan < 0)
+                {
+                    command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
+                }
                 else
                 {
-                    using (frmThongTinThem form = new frmThongTinThem())
-                    {
-                        form.ShowDialog();
-                        if (form.cancel == true) return;
-                        diaChi = form.diaChi;
-                        email = form.email;
-                    }
-                    using SqlCommand command = Globals.sqlcon.CreateCommand();
-                    command.CommandText = "insert into KHACHHANG values(@ten, @diachi, @sodt, @email, @tienno)";
-                    command.Parameters.AddWithValue("@ten", hoTen);
-                    command.Parameters.AddWithValue("@diachi", diaChi);
-                    command.Parameters.AddWithValue("@sodt", sodienthoai);
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
-                    command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@tienno", 0);
                 }
-                Globals.sqlcon.Close();
+                command.ExecuteNonQuery();
+            }
+            Globals.sqlcon.Close();
                 
 
 
-            }
+           // }
 
             //Ghi vào CSDL
             using (SqlConnection con = new SqlConnection(Globals.sqlcon.ConnectionString))

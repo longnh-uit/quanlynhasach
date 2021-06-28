@@ -345,5 +345,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             finally
             { GC.Collect(); }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgvKhachHang.SelectedRows)
+            {
+                dgvKhachHang.Rows.RemoveAt(item.Index);
+            }
+           
+        }
     }
 }

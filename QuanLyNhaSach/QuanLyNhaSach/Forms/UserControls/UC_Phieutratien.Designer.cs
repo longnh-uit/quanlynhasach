@@ -58,6 +58,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chonDuongDan = new System.Windows.Forms.SaveFileDialog();
+            this.btnXoaKH = new System.Windows.Forms.Button();
             button7 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,6 +121,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel8.Controls.Add(this.btnXoaKH);
             this.panel8.Controls.Add(this.btnXuat);
             this.panel8.Controls.Add(this.btnHoanTac);
             this.panel8.Controls.Add(this.btnLuu);
@@ -143,15 +145,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // btnXuat
             // 
-            this.btnXuat.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btnXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
             this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuat.Location = new System.Drawing.Point(380, 166);
+            this.btnXuat.Location = new System.Drawing.Point(501, 178);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(141, 44);
+            this.btnXuat.Size = new System.Drawing.Size(139, 32);
             this.btnXuat.TabIndex = 39;
             this.btnXuat.Text = "      Xuất Excel";
             this.btnXuat.UseVisualStyleBackColor = false;
@@ -159,14 +160,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // btnHoanTac
             // 
-            this.btnHoanTac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btnHoanTac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btnHoanTac.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHoanTac.ForeColor = System.Drawing.Color.White;
             this.btnHoanTac.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.Image")));
             this.btnHoanTac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoanTac.Location = new System.Drawing.Point(195, 166);
+            this.btnHoanTac.Location = new System.Drawing.Point(166, 178);
             this.btnHoanTac.Name = "btnHoanTac";
-            this.btnHoanTac.Size = new System.Drawing.Size(141, 44);
+            this.btnHoanTac.Size = new System.Drawing.Size(138, 32);
             this.btnHoanTac.TabIndex = 16;
             this.btnHoanTac.Text = "       Hoàn tác";
             this.btnHoanTac.UseVisualStyleBackColor = false;
@@ -179,9 +180,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(10, 166);
+            this.btnLuu.Location = new System.Drawing.Point(10, 178);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(141, 44);
+            this.btnLuu.Size = new System.Drawing.Size(137, 32);
             this.btnLuu.TabIndex = 15;
             this.btnLuu.Text = "     Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -193,9 +194,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(635, 98);
+            this.button1.Location = new System.Drawing.Point(635, 69);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 53);
+            this.button1.Size = new System.Drawing.Size(139, 32);
             this.button1.TabIndex = 14;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = false;
@@ -209,7 +210,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnTracuu.ForeColor = System.Drawing.Color.White;
             this.btnTracuu.Location = new System.Drawing.Point(635, 11);
             this.btnTracuu.Name = "btnTracuu";
-            this.btnTracuu.Size = new System.Drawing.Size(150, 53);
+            this.btnTracuu.Size = new System.Drawing.Size(139, 33);
             this.btnTracuu.TabIndex = 5;
             this.btnTracuu.Text = "Tìm";
             this.btnTracuu.UseVisualStyleBackColor = false;
@@ -381,6 +382,20 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.chonDuongDan.FileName = "Khach Hang";
             this.chonDuongDan.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All files (*.*)|*.*";
             // 
+            // btnXoaKH
+            // 
+            this.btnXoaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnXoaKH.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
+            this.btnXoaKH.Location = new System.Drawing.Point(324, 178);
+            this.btnXoaKH.Name = "btnXoaKH";
+            this.btnXoaKH.Size = new System.Drawing.Size(154, 33);
+            this.btnXoaKH.TabIndex = 40;
+            this.btnXoaKH.Text = "Xoá khách hàng";
+            this.btnXoaKH.UseVisualStyleBackColor = false;
+            this.btnXoaKH.Click += new System.EventHandler(this.button3_Click);
+            // 
             // UC_Phieutratien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -432,5 +447,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienNo;
         private System.Windows.Forms.SaveFileDialog chonDuongDan;
+        private System.Windows.Forms.Button btnXoaKH;
     }
 }

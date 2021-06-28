@@ -91,7 +91,7 @@ namespace QuanLyNhaSach.Forms
             using SqlCommand command = Globals.sqlcon.CreateCommand();
             // Cập nhật bảng KHACHHANG
             command.CommandText = "update KHACHHANG " +
-                "set SoTienNo = SoTienNo - " + txtBoxTienthu.Text;
+                "set SoTienNo = SoTienNo - " + txtBoxTienthu.Text + "where MAKH = " + maKH.ToString();
             command.ExecuteNonQuery();
 
             // thêm vào bảng PHIEUTHUTIEN

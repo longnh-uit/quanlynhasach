@@ -193,6 +193,11 @@ namespace QuanLyNhaSach.Forms
             mov = false;
         }
 
+        private void lblDoiThongTin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
             frmDoiThongTin dmk = new frmDoiThongTin();

@@ -353,6 +353,7 @@ namespace QuanLyNhaSach.Forms
             this.lblDoiThongTin.Name = "lblDoiThongTin";
             this.lblDoiThongTin.Size = new System.Drawing.Size(1164, 681);
             this.lblDoiThongTin.TabIndex = 2;
+            this.lblDoiThongTin.Paint += new System.Windows.Forms.PaintEventHandler(this.lblDoiThongTin_Paint);
             // 
             // frmDash_board
             // 

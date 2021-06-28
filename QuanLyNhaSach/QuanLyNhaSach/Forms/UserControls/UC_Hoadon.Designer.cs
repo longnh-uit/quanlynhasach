@@ -528,7 +528,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             // cbTenSach
             // 
             this.cbTenSach.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbTenSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTenSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTenSach.Enabled = false;
             this.cbTenSach.FormattingEnabled = true;
             this.cbTenSach.Location = new System.Drawing.Point(225, 327);
@@ -540,7 +541,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             // cbTheLoai
             // 
             this.cbTheLoai.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbTheLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTheLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTheLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTheLoai.Enabled = false;
             this.cbTheLoai.FormattingEnabled = true;
             this.cbTheLoai.Location = new System.Drawing.Point(225, 369);
@@ -552,7 +554,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             // cbTacGia
             // 
             this.cbTacGia.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbTacGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTacGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTacGia.Enabled = false;
             this.cbTacGia.FormattingEnabled = true;
             this.cbTacGia.Location = new System.Drawing.Point(225, 411);
@@ -630,7 +633,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgay.Location = new System.Drawing.Point(225, 285);
-            this.dtpNgay.MaxDate = new System.DateTime(2021, 6, 27, 0, 0, 0, 0);
+            this.dtpNgay.MaxDate = new System.DateTime(2028, 11, 30, 0, 0, 0, 0);
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(173, 25);
             this.dtpNgay.TabIndex = 31;

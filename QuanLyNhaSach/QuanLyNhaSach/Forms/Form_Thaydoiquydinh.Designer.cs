@@ -222,12 +222,12 @@ namespace QuanLyNhaSach.Forms
             this.cbVuotTienNo.AutoSize = true;
             this.cbVuotTienNo.Checked = true;
             this.cbVuotTienNo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbVuotTienNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbVuotTienNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbVuotTienNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.cbVuotTienNo.Location = new System.Drawing.Point(168, 275);
             this.cbVuotTienNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbVuotTienNo.Name = "cbVuotTienNo";
-            this.cbVuotTienNo.Size = new System.Drawing.Size(459, 25);
+            this.cbVuotTienNo.Size = new System.Drawing.Size(414, 25);
             this.cbVuotTienNo.TabIndex = 64;
             this.cbVuotTienNo.Text = "Số tiền thu không vượt quá số tiền khách hàng đang nợ";
             this.cbVuotTienNo.UseVisualStyleBackColor = true;
@@ -235,44 +235,44 @@ namespace QuanLyNhaSach.Forms
             // lblSlmin
             // 
             this.lblSlmin.AutoSize = true;
-            this.lblSlmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSlmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSlmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblSlmin.Location = new System.Drawing.Point(164, 98);
             this.lblSlmin.Name = "lblSlmin";
-            this.lblSlmin.Size = new System.Drawing.Size(171, 21);
+            this.lblSlmin.Size = new System.Drawing.Size(160, 21);
             this.lblSlmin.TabIndex = 65;
             this.lblSlmin.Text = "Số lượng nhập ít nhất";
             // 
             // lblLuongtonmax
             // 
             this.lblLuongtonmax.AutoSize = true;
-            this.lblLuongtonmax.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLuongtonmax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLuongtonmax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblLuongtonmax.Location = new System.Drawing.Point(164, 130);
             this.lblLuongtonmax.Name = "lblLuongtonmax";
-            this.lblLuongtonmax.Size = new System.Drawing.Size(303, 21);
+            this.lblLuongtonmax.Size = new System.Drawing.Size(270, 21);
             this.lblLuongtonmax.TabIndex = 65;
             this.lblLuongtonmax.Text = "Chỉ nhập các sách có lượng tồn ít hơn";
             // 
             // lblNomax
             // 
             this.lblNomax.AutoSize = true;
-            this.lblNomax.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNomax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNomax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblNomax.Location = new System.Drawing.Point(164, 199);
             this.lblNomax.Name = "lblNomax";
-            this.lblNomax.Size = new System.Drawing.Size(218, 21);
+            this.lblNomax.Size = new System.Drawing.Size(192, 21);
             this.lblNomax.TabIndex = 65;
             this.lblNomax.Text = "Khách hàng nợ không quá";
             // 
             // lblTonbanmin
             // 
             this.lblTonbanmin.AutoSize = true;
-            this.lblTonbanmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTonbanmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTonbanmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.lblTonbanmin.Location = new System.Drawing.Point(164, 231);
             this.lblTonbanmin.Name = "lblTonbanmin";
-            this.lblTonbanmin.Size = new System.Drawing.Size(232, 21);
+            this.lblTonbanmin.Size = new System.Drawing.Size(213, 21);
             this.lblTonbanmin.TabIndex = 65;
             this.lblTonbanmin.Text = "Lượng tồn sau khi bán ít nhất";
             // 

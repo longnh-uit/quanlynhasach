@@ -95,8 +95,9 @@ namespace QuanLyNhaSach.Forms
                             command.Parameters["@TacGia"].Value = item.SubItems[2].Text;
                             command.Parameters["@SoLuong"].Value = int.Parse(item.SubItems[3].Text);
                             command.Parameters["@DonGiaNhap"].Value = int.Parse(item.SubItems[4].Text);
-                        }
-                        command.ExecuteNonQuery();
+                            command.ExecuteNonQuery();
+                        }   
+                        
 
                     }
                     Globals.sqlcon.Close();
@@ -106,7 +107,7 @@ namespace QuanLyNhaSach.Forms
             }
             else
             {
-                MessageBox.Show("Cần phải nhập tất cả các mục !");
+                MessageBox.Show("Danh sách nhập sách trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

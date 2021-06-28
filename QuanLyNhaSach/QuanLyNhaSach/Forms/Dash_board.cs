@@ -13,7 +13,8 @@ namespace QuanLyNhaSach.Forms
     public partial class frmDash_board : Form
     {
         public bool logOut = true;
-        int mov, movX, movY;
+        int movX, movY, mouseinX, mouseinY;
+        bool mov;
 
         public frmDash_board()
         {
@@ -189,7 +190,7 @@ namespace QuanLyNhaSach.Forms
 
         private void panel4_MouseUp(object sender, MouseEventArgs e)
         {
-            mov = 0;
+            mov = false;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -200,16 +201,18 @@ namespace QuanLyNhaSach.Forms
 
         private void panel4_MouseDown(object sender, MouseEventArgs e)
         {
-            mov = 1;
-            movX = e.X;
-            movY = e.Y;
+            mov = true;
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
         }
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
         {
-            if (mov == 1)
+            if (mov == true)
             {
-                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+                movX = MousePosition.X - mouseinX;
+                movY = MousePosition.Y - mouseinY;
+                SetDesktopLocation(movX, movY);
             }
         }
     }

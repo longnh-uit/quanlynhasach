@@ -83,6 +83,7 @@ namespace QuanLyNhaSach.Forms
             if (Globals.tienthuvuottienno && int.Parse(txtBoxTienthu.Text) > soTienNo)
             {
                 MessageBox.Show("Số tiền thu không thể vượt số tiền nợ", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             //Cập nhật CSDl

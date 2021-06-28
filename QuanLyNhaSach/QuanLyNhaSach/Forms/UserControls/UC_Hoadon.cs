@@ -59,9 +59,28 @@ namespace QuanLyNhaSach.Forms.UserControls
             txtBoxSotientra.Font = new Font("Segoe UI", 10);
             txtBoxSodienthoai.GotFocus += txtBoxSodienthoai_GotFocus;
             dtpNgay.MaxDate = System.DateTime.Now;
-
+            cbTenSach.LostFocus += cbTenSach_LostFocus;
         }
 
+        private void cbTenSach_LostFocus(object sender, EventArgs e)
+        {
+            // Kiểm tra sách có tồn tại trong CSDL
+            if (cbTenSach.Text != "" && cbTenSach.FindStringExact(cbTenSach.Text) == -1)
+            {
+                MessageBox.Show("Sách không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbTenSach.Text = "";
+                return;
+            }
+
+            string strDonGiaNhap = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["DonGiaNhap"].ToString();
+            int DonGiaBan = (int)(int.Parse(strDonGiaNhap) * 1.05f);
+            dontHandle = true;
+            cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
+            cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
+            txtBoxSotientra.Text = DonGiaBan.ToString();
+            dontHandle = false;
+
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -233,7 +252,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                                 MessageBox.Show("Lượng tồn sau khi bán của đầu sách không thể bé hơn 20", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
                                 return;
                             }
-                            item.SubItems[3].Text = soLuong.ToString();
+                            item.SubItems[3].Text = soLuongBan.ToString();
                             dontHandle = true;
                             txtBoxSoluong.Text = "";
                             txtBoxSotientra.Text = "";
@@ -501,10 +520,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             string strDonGiaNhap = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["DonGiaNhap"].ToString();
             int DonGiaBan = (int)(int.Parse(strDonGiaNhap) * 1.05f);
             dontHandle = true;
-            if (cbTheLoai.SelectedIndex == -1 || cbTheLoai.Text == "Tất cả")
-                cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
-            if (cbTacGia.SelectedIndex == -1 || cbTacGia.Text == "Tất cả")
-                cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
+            cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
+            cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
             txtBoxSotientra.Text = DonGiaBan.ToString();
             dontHandle = false;
         }
@@ -542,7 +559,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
             if (dontHandle) return;
             string expr = "";
-            if (cbTheLoai.SelectedItem != null && cbTheLoai.SelectedItem.ToString() != "Tất cả")
+            if (cbTheLoai.SelectedItem.ToString() != "Tất cả")
                 expr += "TheLoai = '" + cbTheLoai.SelectedItem.ToString() + "' AND ";
             if (cbTacGia.SelectedItem.ToString() != "Tất cả")
                 expr += "TacGia = '" + cbTacGia.SelectedItem.ToString() + "' AND ";

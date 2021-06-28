@@ -41,17 +41,18 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnCongno = new System.Windows.Forms.Button();
             this.btnBaocaoton = new System.Windows.Forms.Button();
             this.dgvTon = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCongno = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chonDuongDan = new System.Windows.Forms.OpenFileDialog();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongno)).BeginInit();
@@ -120,6 +121,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button4.TabIndex = 39;
             this.button4.Text = "      Xuất báo cáo";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // txtBoxThangnam
             // 
@@ -190,42 +192,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.dgvTon.RowTemplate.Height = 29;
             this.dgvTon.Size = new System.Drawing.Size(1144, 567);
             this.dgvTon.TabIndex = 7;
-            this.dgvTon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Sách";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 350;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tồn đầu";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 205;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Phát sinh";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Tồn cuối";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 210;
+            //this.dgvTon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dgvTon.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTon_RowPostPaint);
             // 
             // dgvCongno
             // 
@@ -237,13 +205,14 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column9,
             this.Column11});
             this.dgvCongno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCongno.Location = new System.Drawing.Point(10, 104);
+            this.dgvCongno.Location = new System.Drawing.Point(0, 0);
             this.dgvCongno.Name = "dgvCongno";
             this.dgvCongno.RowHeadersWidth = 51;
             this.dgvCongno.RowTemplate.Height = 29;
-            this.dgvCongno.Size = new System.Drawing.Size(1144, 567);
+            this.dgvCongno.Size = new System.Drawing.Size(1164, 681);
             this.dgvCongno.TabIndex = 8;
-            this.dgvCongno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCongno_CellContentClick_1);
+            //this.dgvCongno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCongno_CellContentClick_1);
+            this.dgvCongno.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCongno_RowPostPaint);
             // 
             // Column6
             // 
@@ -280,17 +249,66 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column11.Name = "Column11";
             this.Column11.Width = 210;
             // 
+            // chonDuongDan
+            // 
+            this.chonDuongDan.CheckFileExists = false;
+            this.chonDuongDan.CheckPathExists = false;
+            this.chonDuongDan.DefaultExt = "xlsx";
+            this.chonDuongDan.FileName = "bao cao";
+            this.chonDuongDan.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            this.chonDuongDan.InitialDirectory = "D:\\";
+            this.chonDuongDan.Title = "Chọn vị trí lưu";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "STT";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenSach";
+            this.Column2.HeaderText = "Sách";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 350;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TonDau";
+            this.Column3.HeaderText = "Tồn đầu";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 205;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TonPhatSinh";
+            this.Column4.HeaderText = "Phát sinh";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TonCuoi";
+            this.Column5.HeaderText = "Tồn cuối";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 210;
+            // 
             // UC_Baocao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvCongno);
             this.Controls.Add(this.dgvTon);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.dgvCongno);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "UC_Baocao";
             this.Size = new System.Drawing.Size(1164, 681);
@@ -326,5 +344,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.TextBox txtBoxThangnam;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.OpenFileDialog chonDuongDan;
     }
 }

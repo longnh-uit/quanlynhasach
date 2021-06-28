@@ -1,5 +1,6 @@
 ﻿use master
 drop database QLNS
+go
 create database QLNS
 go
 use QLNS
@@ -69,6 +70,7 @@ go
 create table BAOCAOTON(
 	MaChiTietTon int identity(1,1) not null,
 	Thang int,
+	Nam int,
 	MaSach int,
 	TonDau int,
 	TonPhatSinh int,
@@ -81,6 +83,7 @@ go
 create table BAOCAOCONGNO(
 	MaChiTietCongNo int identity(1,1) not null ,
 	Thang int,
+	Nam int,
 	MaKH int,
 	NoDau int,
 	PhatSinh int,
@@ -155,11 +158,170 @@ begin
 end
 go
 
+
+go
+create trigger ThemCTHD on CTHD for insert
+as
+	declare @masach int;
+	declare @soluong int;
+	declare @thang int;
+	declare @nam int;
+
+	select @soluong = SoLuongBan from inserted;
+	select @masach = MaSach from inserted;
+	select @thang = month(NgayHoaDon) from HOADON, inserted where HOADON.MaHD = inserted.MaHD
+	select @nam = year(NgayHoaDon) from HOADON, inserted where HOADON.MaHD = inserted.MaHD
+	if exists(
+		select * from BAOCAOTON where MaSach = @masach and Thang = @thang and Nam = @nam
+	)
+	begin
+		update BAOCAOTON
+		set TonPhatSinh = TonPhatSinh - @soluong, TonCuoi = TonCuoi - @soluong where MaSach = @masach;
+	end
+	if exists(
+		select * from BAOCAOTON where MaSach = @masach and Thang = @thang and Nam = @nam
+	)
+	begin
+		update BAOCAOTON
+		set TonPhatSinh = TonPhatSinh + @soluong, TonCuoi = TonCuoi + @soluong where MaSach = @masach;
+	end
+	else 
+	begin
+		declare @tondau int;
+		declare @thangTruoc int;
+		declare @namTruoc int;
+
+		set @thangTruoc = @thang - 1;
+		set @namTruoc = @nam
+		if @thangTruoc < 0
+		begin
+			set @thangTruoc = 12;
+			set @namTruoc = @namTruoc - 1;
+		end;
+		
+		set @tondau = (select SoLuong from SACH where MaSach = @masach);
+		insert into BAOCAOTON values (@thang, @nam, @masach, @tondau, @soluong, @tondau - @soluong);
+	end
+go
+
+create trigger ThemHD on HOADON for insert
+as
+	declare @makh int;
+	declare @sotien int;
+	declare @thang int;
+	declare @nam int;
+
+	select @sotien = TongTien - SoTienTra from inserted;
+	select @makh = MaKH from inserted, KHACHHANG where inserted.TenKH = KHACHHANG.TenKH and inserted.DienThoai = KHACHHANG.DienThoai;
+	select @thang = month(NgayHoaDon) from inserted
+	select @nam = year(NgayHoaDon) from inserted
+
+	if exists(
+		select * from BAOCAOCONGNO where MaKH = @makh and Thang = @thang and Nam = @nam
+	)
+	begin
+		update BAOCAOCONGNO
+		set PhatSinh = PhatSinh + @sotien, NoCuoi = NoCuoi + @sotien where MaKH = @makh;
+	end
+	else 
+	begin
+		declare @tondau int;
+		declare @thangTruoc int;
+		declare @namTruoc int;
+
+		set @thangTruoc = @thang - 1;
+		set @namTruoc = @nam
+		if @thangTruoc < 0
+		begin
+			set @thangTruoc = 12;
+			set @namTruoc = @namTruoc - 1;
+		end;
+		
+		set @tondau = (select SoTienNo from KHACHHANG where MaKH = @makh) - @sotien;
+		insert into BAOCAOCONGNO values (@thang, @nam, @makh, @tondau, @sotien, @tondau + @sotien);
+	end
+go
+
+create trigger ThemSach on NHAPSACH for insert
+as
+	declare @masach int;
+	declare @soluong int;
+	declare @thang int;
+	declare @nam int;
+
+	select @soluong = SoLuong from inserted;
+	select @masach = MaSach from inserted;
+	select @thang = month(NgayNhap) from inserted
+	select @nam = year(NgayNhap) from inserted
+
+	if exists(
+		select * from BAOCAOTON where MaSach = @masach and Thang = @thang and Nam = @nam
+	)
+	begin
+		update BAOCAOTON
+		set TonPhatSinh = TonPhatSinh + @soluong, TonCuoi = TonCuoi + @soluong where MaSach = @masach;
+	end
+	else 
+	begin
+		declare @tondau int;
+		declare @thangTruoc int;
+		declare @namTruoc int;
+
+		set @thangTruoc = @thang - 1;
+		set @namTruoc = @nam
+		if @thangTruoc < 0
+		begin
+			set @thangTruoc = 12;
+			set @namTruoc = @namTruoc - 1;
+		end;
+		
+		set @tondau = (select SoLuong from SACH where MaSach = @masach) - @soluong;
+		insert into BAOCAOTON values (@thang, @nam, @masach, @tondau, @soluong, @tondau + @soluong);
+	end
+go
+
+create trigger ThemPhieuThuTien on PHIEUTHUTIEN for insert
+as
+	declare @makh int;
+	declare @sotien int;
+	declare @thang int;
+	declare @nam int;
+
+	select @sotien = SoTienThu from inserted;
+	select @makh = MaKH from inserted
+	select @thang = month(NgayThuTien) from inserted
+	select @nam = year(NgayThuTien) from inserted
+
+	if exists(
+		select * from BAOCAOCONGNO where MaKH = @makh and Thang = @thang and Nam = @nam
+	)
+	begin
+		update BAOCAOCONGNO
+		set PhatSinh = PhatSinh - @sotien, NoCuoi = NoCuoi - @sotien where MaKH = @makh;
+	end
+	else 
+	begin
+		declare @tondau int;
+		declare @thangTruoc int;
+		declare @namTruoc int;
+
+		set @thangTruoc = @thang - 1;
+		set @namTruoc = @nam
+		if @thangTruoc < 0
+		begin
+			set @thangTruoc = 12;
+			set @namTruoc = @namTruoc - 1;
+		end;
+		
+		set @tondau = (select SoTienNo from KHACHHANG where MaKH = @makh) + @sotien;
+		insert into BAOCAOCONGNO values (@thang, @nam, @makh, @tondau, @sotien, @tondau - @sotien);
+	end
+go
+
 insert into THAMSO values(150, 300, 20000, 20, 1)
 
 insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password', N'Quản lý') 
-exec InsertNhapSach '25/6/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 180, 9000
+exec InsertNhapSach '25/5/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 180, 9000
 insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')
-exec InsertNhapSach '25/6/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
-exec InsertNhapSach '25/6/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000
-
+exec InsertNhapSach '25/5/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
+exec InsertNhapSach '25/5/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000

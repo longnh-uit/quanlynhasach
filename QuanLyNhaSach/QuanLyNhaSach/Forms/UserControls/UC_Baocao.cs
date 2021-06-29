@@ -121,6 +121,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             dgvCongno.Visible = true;
             //Dùng SQL đưa dữ liệu vào Datagrid dgvCongno
             string[] ThangNam = dtpThangNam.Text.Split("/");
+            LoadBCCongNo(ThangNam[0], ThangNam[1]);
+
         }
 
         private void label1_Click(object sender, EventArgs e)

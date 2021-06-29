@@ -171,36 +171,25 @@ as
 	select @masach = MaSach from inserted;
 	select @thang = month(NgayHoaDon) from HOADON, inserted where HOADON.MaHD = inserted.MaHD
 	select @nam = year(NgayHoaDon) from HOADON, inserted where HOADON.MaHD = inserted.MaHD
+	-- Nếu đã có sách trong tháng đó
 	if exists(
 		select * from BAOCAOTON where MaSach = @masach and Thang = @thang and Nam = @nam
 	)
 	begin
 		update BAOCAOTON
-		set TonPhatSinh = TonPhatSinh - @soluong, TonCuoi = TonCuoi - @soluong where MaSach = @masach;
+		set TonPhatSinh = TonPhatSinh - @soluong, TonCuoi = TonCuoi - @soluong where MaSach = @masach and Thang = @thang and Nam = @nam;
 	end
-	if exists(
-		select * from BAOCAOTON where MaSach = @masach and Thang = @thang and Nam = @nam
-	)
-	begin
-		update BAOCAOTON
-		set TonPhatSinh = TonPhatSinh + @soluong, TonCuoi = TonCuoi + @soluong where MaSach = @masach;
-	end
+	-- Nếu chưa có
 	else 
 	begin
 		declare @tondau int;
 		declare @thangTruoc int;
 		declare @namTruoc int;
 
-		set @thangTruoc = @thang - 1;
-		set @namTruoc = @nam
-		if @thangTruoc < 0
-		begin
-			set @thangTruoc = 12;
-			set @namTruoc = @namTruoc - 1;
-		end;
-		
-		set @tondau = (select SoLuong from SACH where MaSach = @masach);
-		insert into BAOCAOTON values (@thang, @nam, @masach, @tondau, @soluong, @tondau - @soluong);
+		if exists(select TonCuoi, MaChiTietTon, max(Nam * 100 + Thang) as thoigian from BAOCAOTON where (Nam * 100 + Thang) < @nam * 100 + @thang and MaSach = @masach group by MaChiTietTon, TonCuoi)
+			select @tondau = temp.TonCuoi from (select TonCuoi, MaChiTietTon, max(Nam * 100 + Thang) as thoigian from BAOCAOTON where (Nam * 100 + Thang) < @nam * 100 + @thang and MaSach = @masach group by MaChiTietTon, TonCuoi) as temp;
+		else set @tondau = 0;
+		insert into BAOCAOTON values (@thang, @nam, @masach, @tondau, -@soluong, @tondau - @soluong);
 	end
 go
 
@@ -221,23 +210,14 @@ as
 	)
 	begin
 		update BAOCAOCONGNO
-		set PhatSinh = PhatSinh + @sotien, NoCuoi = NoCuoi + @sotien where MaKH = @makh;
+		set PhatSinh = PhatSinh + @sotien, NoCuoi = NoCuoi + @sotien where MaKH = @makh and Thang = @thang and @nam = Nam;
 	end
 	else 
 	begin
-		declare @tondau int;
-		declare @thangTruoc int;
-		declare @namTruoc int;
-
-		set @thangTruoc = @thang - 1;
-		set @namTruoc = @nam
-		if @thangTruoc < 0
-		begin
-			set @thangTruoc = 12;
-			set @namTruoc = @namTruoc - 1;
-		end;
-		
-		set @tondau = (select SoTienNo from KHACHHANG where MaKH = @makh) - @sotien;
+		declare @tondau int;		
+		if exists(select NoCuoi, MaChiTietCongNo, max(Nam * 100 + Thang) as thoigian from BAOCAOCONGNO where (Nam * 100 + Thang) < @nam * 100 + @thang and MaKH = @makh group by MaChiTietCongNo, NoCuoi)
+			select @tondau = temp.NoCuoi from (select NoCuoi, MaChiTietCongNo, max(Nam * 100 + Thang) as thoigian from BAOCAOCONGNO where (Nam * 100 + Thang) < @nam * 100 + @thang and MaKH = @makh group by MaChiTietCongNo, NoCuoi) as temp;
+		else set @tondau = 0;
 		insert into BAOCAOCONGNO values (@thang, @nam, @makh, @tondau, @sotien, @tondau + @sotien);
 	end
 go
@@ -259,23 +239,14 @@ as
 	)
 	begin
 		update BAOCAOTON
-		set TonPhatSinh = TonPhatSinh + @soluong, TonCuoi = TonCuoi + @soluong where MaSach = @masach;
+		set TonPhatSinh = TonPhatSinh + @soluong, TonCuoi = TonCuoi + @soluong where MaSach = @masach and Thang = @thang and Nam = @nam;
 	end
 	else 
 	begin
 		declare @tondau int;
-		declare @thangTruoc int;
-		declare @namTruoc int;
-
-		set @thangTruoc = @thang - 1;
-		set @namTruoc = @nam
-		if @thangTruoc < 0
-		begin
-			set @thangTruoc = 12;
-			set @namTruoc = @namTruoc - 1;
-		end;
-		
-		set @tondau = (select SoLuong from SACH where MaSach = @masach) - @soluong;
+		if exists(select TonCuoi, MaChiTietTon, max(Nam * 100 + Thang) as thoigian from BAOCAOTON where (Nam * 100 + Thang) < @nam * 100 + @thang and MaSach = @masach group by MaChiTietTon, TonCuoi)
+			select @tondau = temp.TonCuoi from (select TonCuoi, MaChiTietTon, max(Nam * 100 + Thang) as thoigian from BAOCAOTON where (Nam * 100 + Thang) < @nam * 100 + @thang and MaSach = @masach group by MaChiTietTon, TonCuoi) as temp;
+		else set @tondau = 0;
 		insert into BAOCAOTON values (@thang, @nam, @masach, @tondau, @soluong, @tondau + @soluong);
 	end
 go
@@ -297,7 +268,7 @@ as
 	)
 	begin
 		update BAOCAOCONGNO
-		set PhatSinh = PhatSinh - @sotien, NoCuoi = NoCuoi - @sotien where MaKH = @makh;
+		set PhatSinh = PhatSinh - @sotien, NoCuoi = NoCuoi - @sotien where MaKH = @makh and Thang = @thang and Nam = @nam;
 	end
 	else 
 	begin
@@ -313,8 +284,10 @@ as
 			set @namTruoc = @namTruoc - 1;
 		end;
 		
-		set @tondau = (select SoTienNo from KHACHHANG where MaKH = @makh) + @sotien;
-		insert into BAOCAOCONGNO values (@thang, @nam, @makh, @tondau, @sotien, @tondau - @sotien);
+		if exists(select NoCuoi, MaChiTietCongNo, max(Nam * 100 + Thang) as thoigian from BAOCAOCONGNO where (Nam * 100 + Thang) < @nam * 100 + @thang and MaKH = @makh group by MaChiTietCongNo, NoCuoi)
+			select @tondau = temp.NoCuoi from (select NoCuoi, MaChiTietCongNo, max(Nam * 100 + Thang) as thoigian from BAOCAOCONGNO where (Nam * 100 + Thang) < @nam * 100 + @thang and MaKH = @makh group by MaChiTietCongNo, NoCuoi) as temp;
+		else set @tondau = 0;
+		insert into BAOCAOCONGNO values (@thang, @nam, @makh, @tondau, -@sotien, @tondau - @sotien);
 	end
 go
 

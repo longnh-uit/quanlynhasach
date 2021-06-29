@@ -298,3 +298,42 @@ exec InsertNhapSach '25/5/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Th
 insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')
 exec InsertNhapSach '25/5/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
 exec InsertNhapSach '25/5/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000
+
+create trigger DeletePhieuThuTien on PHIEUTHUTIEN
+for delete 
+as
+begin
+	declare @MaKH int 
+	select  @MaKH = MaKH from deleted
+	declare @NgayThuTien datetime
+	set @NgayThuTien = (select TOP 1 NgayThuTien from deleted )
+	declare @SoTienThu int
+	set @SoTienThu = (select Top 1 SoTienThu from deleted)
+	update BAOCAOCONGNO
+	set NoCuoi = NoCuoi + @SoTienThu
+	where MaKH = @MaKH and Thang = month(@NgayThuTien) and Nam = year(@NgayThuTien)
+end
+go
+create trigger DeleteKhachHang on KHACHHANG 
+instead of delete 
+as
+begin 
+	declare @MaKH int 
+	select  @MaKH = MaKH from deleted
+
+	delete from PHIEUTHUTIEN where MaKH = @MaKH
+	delete from BAOCAOCONGNO where MaKH = @MaKH
+	delete from KHACHHANG where MaKH = @MaKH
+end
+
+--set dateformat DMY
+--insert KHACHHANG (TenKH,DiaChi,DienThoai,Email,SoTienNo) values ('phan trong hau','phu yen ','0838201490','hauphanlvc@gmail.com',100000)
+--insert KHACHHANG (TenKH,DiaChi,DienThoai,Email,SoTienNo) values ('phan trong hau 1 ','phu yen ','0838201490','hauphanlvc@gmail.com',100000)
+--insert PHIEUTHUTIEN (MaKH,NgayThuTien,SoTienThu) values (9,'12/6/2021',10000)
+--insert PHIEUTHUTIEN (MaKH,NgayThuTien,SoTienThu) values (10,'12/6/2021',10000)
+--insert PHIEUTHUTIEN (MaKH,NgayThuTien,SoTienThu) values (10,'13/6/2021',100)
+--delete from PHIEUTHUTIEN where MaKH = 8 
+--delete from KHACHHANG where MaKH =10
+--select * from PHIEUTHUTIEN
+--select * from KHACHHANG
+--select * from BAOCAOCONGNO

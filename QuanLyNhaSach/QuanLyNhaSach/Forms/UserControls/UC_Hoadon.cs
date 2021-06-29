@@ -17,6 +17,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         bool dontHandle = false;
         int tongTien, maHD;
         DialogResult taotaikhoan;
+        string diachi, email;
 
         public class cSach
         {
@@ -226,6 +227,13 @@ namespace QuanLyNhaSach.Forms.UserControls
                     {
                         lblCheck.Text = "✓ Khách hàng mới, sẽ tiến hành tạo tài khoản khách hàng";
                         this.taotaikhoan = dialogResult;
+                        using (frmThongTinThem form = new frmThongTinThem())
+                        {
+                            form.ShowDialog();
+                            if (form.cancel == true) return;
+                            diachi = form.diaChi;
+                            email = form.email;
+                        }
                     }
                     else
                     {
@@ -357,7 +365,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1,this.taotaikhoan);
+            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1,this.taotaikhoan,diachi,email);
             uf.ShowDialog();
             maHD = uf.maHD;
             if (maHD != -1) VietCTHD();

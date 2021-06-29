@@ -30,7 +30,7 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Thutien));
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cboxXuat = new System.Windows.Forms.CheckBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXong = new System.Windows.Forms.Button();
             this.lblSotienthua = new System.Windows.Forms.Label();
@@ -55,21 +55,22 @@ namespace QuanLyNhaSach.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.lblNgay = new System.Windows.Forms.Label();
             this.txtBoxNgay = new System.Windows.Forms.TextBox();
+            this.Save = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // cboxXuat
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.checkBox1.Location = new System.Drawing.Point(522, 348);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(138, 23);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Xuất phiếu thu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cboxXuat.AutoSize = true;
+            this.cboxXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboxXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.cboxXuat.Location = new System.Drawing.Point(522, 348);
+            this.cboxXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboxXuat.Name = "cboxXuat";
+            this.cboxXuat.Size = new System.Drawing.Size(138, 23);
+            this.cboxXuat.TabIndex = 8;
+            this.cboxXuat.Text = "Xuất phiếu thu";
+            this.cboxXuat.UseVisualStyleBackColor = true;
             // 
             // btnHuy
             // 
@@ -357,7 +358,7 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.txtBoxTienno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBoxTiennomoi);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cboxXuat);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnXong);
             this.Controls.Add(this.lblSotienthua);
@@ -391,7 +392,7 @@ namespace QuanLyNhaSach.Forms
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cboxXuat;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnXong;
         private System.Windows.Forms.Label lblSotienthua;
@@ -416,5 +417,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNgay;
         private System.Windows.Forms.TextBox txtBoxNgay;
+        private System.Windows.Forms.SaveFileDialog Save;
     }
 }

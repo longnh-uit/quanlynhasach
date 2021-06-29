@@ -17,7 +17,7 @@ namespace QuanLyNhaSach.Forms
         private ListView cthd;
         private DialogResult taotk;
         DateTime ngay;
-        public Form_FinishOrder(int uc_tongTien, string uc_hoten, string uc_sodienthoai, DateTime date,ListView uc_cthd,DialogResult taotaikhoan)
+        public Form_FinishOrder(int uc_tongTien, string uc_hoten, string uc_sodienthoai, DateTime date,ListView uc_cthd,DialogResult taotaikhoan,string dc,string em)
         {
             InitializeComponent();
             tongTien = uc_tongTien;
@@ -27,6 +27,8 @@ namespace QuanLyNhaSach.Forms
             ngay = date;
             cthd = uc_cthd;
             taotk = taotaikhoan;
+            diaChi = dc;
+            email = em;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace QuanLyNhaSach.Forms
             // Nếu có thông tin khách hàng trong CSDL
             if (dt.Rows.Count != 0)
             {
-                
+
                 using SqlCommand command = Globals.sqlcon.CreateCommand();
                 if (tienTra < thanhToan)
                 {
@@ -65,13 +67,13 @@ namespace QuanLyNhaSach.Forms
             {
                 if (this.taotk == DialogResult.Yes)
                 {
-                    using (frmThongTinThem form = new frmThongTinThem())
+                    /*using (frmThongTinThem form = new frmThongTinThem())
                     {
                         form.ShowDialog();
                         if (form.cancel == true) return;
                         diaChi = form.diaChi;
                         email = form.email;
-                    }
+                    }*/
                     using SqlCommand command = Globals.sqlcon.CreateCommand();
                     command.CommandText = "insert into KHACHHANG values(@ten, @diachi, @sodt, @email, @tienno)";
                     command.Parameters.AddWithValue("@ten", hoTen);
@@ -80,6 +82,17 @@ namespace QuanLyNhaSach.Forms
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
                     command.ExecuteNonQuery();
+                }
+                else
+                {
+                    if (thanhToan - tienTra > 0)
+                    {
+                        MessageBox.Show("Khách hàng nợ phải có tài khoản!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        maHD = -1;
+                        Globals.sqlcon.Close();
+                        this.Dispose();
+                        return;
+                    }
                 }
             }
             Globals.sqlcon.Close();
@@ -127,21 +140,18 @@ namespace QuanLyNhaSach.Forms
                     row1_TieuDe.Value2 = "Hoá đơn";
 
                     //Tạo Ô "Ho va ten"
-                    Excel.Range row2_Ten = ws.get_Range("A2", "B2");//Cột A dòng 2
-                    row2_Ten.Merge();
+                    Excel.Range row2_Ten = ws.get_Range("A2", "A2");//Cột A dòng 2
                     row2_Ten.Font.Size = fontSizeTenTruong;
                     row2_Ten.Font.Name = fontName;
                     row2_Ten.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
-                    row2_Ten.Value2 = "Họ và tên";
+                    row2_Ten.Value2 = "Họ và tên:";
                     //Tạo ô chứa tên:
-                    Excel.Range row2_ten_vl = ws.get_Range("C2", "C2");//Cột A dòng 2
+                    Excel.Range row2_ten_vl = ws.get_Range("B2", "C2");//Cột A dòng 2
                     row2_ten_vl.Merge();
                     row2_ten_vl.Font.Size = fontSizeTenTruong;
                     row2_ten_vl.Font.Name = fontName;
                     row2_ten_vl.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                     row2_ten_vl.Value2 = hoTen;
-
-
                     //Tạo Ô Tên "Ngày"
                     Excel.Range row2_ngay = ws.get_Range("D2", "D2");//Cột B dòng 2
                     row2_ngay.Font.Size = fontSizeTenTruong;
@@ -300,6 +310,7 @@ namespace QuanLyNhaSach.Forms
             MessageBox.Show("Ghi hoá đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();
         }
+
         private static void releaseObject(object obj)
         {
             try

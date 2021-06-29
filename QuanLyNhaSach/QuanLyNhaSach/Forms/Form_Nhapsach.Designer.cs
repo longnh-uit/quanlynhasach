@@ -57,6 +57,7 @@ namespace QuanLyNhaSach.Forms
             this.donGia = new System.Windows.Forms.ColumnHeader();
             this.button8 = new System.Windows.Forms.Button();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.Save = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -367,6 +368,10 @@ namespace QuanLyNhaSach.Forms
             this.dtpNgay.Size = new System.Drawing.Size(202, 25);
             this.dtpNgay.TabIndex = 101;
             // 
+            // Save
+            // 
+            this.Save.DefaultExt = "xlsx";
+            // 
             // Form_Nhapsach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -435,5 +440,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.ColumnHeader tacGia;
         private System.Windows.Forms.ColumnHeader donGia;
         private System.Windows.Forms.DateTimePicker dtpNgay;
+        private System.Windows.Forms.SaveFileDialog Save;
     }
 }

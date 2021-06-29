@@ -187,7 +187,7 @@ namespace QuanLyNhaSach.Forms
             this.btnTracuu.Name = "btnTracuu";
             this.btnTracuu.Size = new System.Drawing.Size(234, 63);
             this.btnTracuu.TabIndex = 5;
-            this.btnTracuu.Text = "    Tra cứu sách";
+            this.btnTracuu.Text = "    Sách";
             this.btnTracuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTracuu.UseVisualStyleBackColor = true;
             this.btnTracuu.Click += new System.EventHandler(this.btnTracuu_Click);

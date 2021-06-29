@@ -49,7 +49,7 @@ namespace QuanLyNhaSach.Forms
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.cboxXuat = new System.Windows.Forms.CheckBox();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Save = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,6 +260,11 @@ namespace QuanLyNhaSach.Forms
             this.cboxXuat.Text = "Xuất hóa đơn";
             this.cboxXuat.UseVisualStyleBackColor = true;
             // 
+            // Save
+            // 
+            this.Save.DefaultExt = "xlsx";
+            this.Save.FileName = "hoadon";
+            // 
             // Form_FinishOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -319,6 +324,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox cboxXuat;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog Save;
     }
 }

@@ -36,7 +36,7 @@ namespace QuanLyNhaSach.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cboxXuat = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBoxSoluong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -140,18 +140,18 @@ namespace QuanLyNhaSach.Forms
             this.panel1.Size = new System.Drawing.Size(9, 407);
             this.panel1.TabIndex = 38;
             // 
-            // checkBox1
+            // cboxXuat
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(614, 330);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(195, 23);
-            this.checkBox1.TabIndex = 67;
-            this.checkBox1.Text = "Xuất phiếu nhập sách";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cboxXuat.AutoSize = true;
+            this.cboxXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboxXuat.Location = new System.Drawing.Point(614, 330);
+            this.cboxXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboxXuat.Name = "cboxXuat";
+            this.cboxXuat.Size = new System.Drawing.Size(195, 23);
+            this.cboxXuat.TabIndex = 67;
+            this.cboxXuat.Text = "Xuất phiếu nhập sách";
+            this.cboxXuat.UseVisualStyleBackColor = true;
+            this.cboxXuat.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label6
             // 
@@ -380,7 +380,7 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.txtBoxTensach);
             this.Controls.Add(this.txtBoxDongianhap);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cboxXuat);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBoxSoluong);
             this.Controls.Add(this.label3);
@@ -414,7 +414,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cboxXuat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxSoluong;
         private System.Windows.Forms.Label label3;

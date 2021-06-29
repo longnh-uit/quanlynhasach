@@ -56,7 +56,6 @@ namespace QuanLyNhaSach.Forms
             {
 
                 using SqlCommand command = Globals.sqlcon.CreateCommand();
-                if (tienTra < thanhToan)
                 {
                     command.CommandText = "update KHACHHANG " +
                         "set SoTienNo = SoTienNo + " + (thanhToan - tienTra).ToString();

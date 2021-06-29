@@ -148,7 +148,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }
@@ -181,7 +181,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             }    
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }
@@ -255,6 +255,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             }
             else
             {
+                Color cl = Color.FromName("Red");
+                lblCheck.ForeColor = cl;
                 if (!isFilled)
                     lblCheck.Text = "Vui lòng nhập đủ các trường trên";
                 else lblCheck.Text = "Khách hàng không đủ điều kiện để mua hàng";
@@ -484,7 +486,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }

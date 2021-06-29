@@ -87,9 +87,9 @@ namespace QuanLyNhaSach.Forms
             this.lblTieuDe.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTieuDe.Location = new System.Drawing.Point(168, 47);
             this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(290, 19);
+            this.lblTieuDe.Size = new System.Drawing.Size(266, 19);
             this.lblTieuDe.TabIndex = 2;
-            this.lblTieuDe.Text = "Nhập thêm thông tin khách hàng nợ";
+            this.lblTieuDe.Text = "Nhập thêm thông tin khách hàng";
             this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDiaChi

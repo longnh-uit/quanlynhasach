@@ -134,6 +134,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button2_Click_2(object sender, EventArgs e)
         {
+
             for (int i = 0; i < listView1.Items.Count; i++)
             {
                 if (listView1.Items[i].Selected)
@@ -142,6 +143,12 @@ namespace QuanLyNhaSach.Forms.UserControls
                     i--;
                 }
             }
+            tongTien = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+            }
+            lbltongTien.Text = tongTien.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -166,14 +173,15 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            try{
-                string soluong = listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text;
-                int sl = int.Parse(soluong);
-                sl++;
-                soluong = sl.ToString();
-                listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text = soluong;
+            foreach (ListViewItem item in listView1.SelectedItems)
+            {
+                item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) + 1).ToString();
+            }    
+            foreach (ListViewItem item in listView1.Items)
+            {
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            catch {  }
+            lbltongTien.Text = tongTien.ToString();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -266,7 +274,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                             soLuongTon = sach.Tables[0].Select("MaSach = " + item.SubItems[5].Text)[0].Field<int>("SoLuong");
                             if (soLuongTon - soLuongBan < Globals.Tonbanmin)
                             {
-                                MessageBox.Show("Lượng tồn sau khi bán của đầu sách không thể bé hơn 20", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                                MessageBox.Show("Lượng tồn sau khi bán của đầu sách không thể bé hơn 20", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Warning); ;
                                 return;
                             }
                             item.SubItems[3].Text = soLuongBan.ToString();
@@ -313,6 +321,12 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 MessageBox.Show("Cần phải nhập tất cả các mục !");
             }
+            tongTien = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+            }
+            lbltongTien.Text = tongTien.ToString();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -390,6 +404,28 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 e.Handled = true;
             }
+            Globals.sqlcon.Open();
+
+            // Kiểm tra khách hàng có trong CSDL
+            string query = "select * from SACH where SACH.TenSach = N'" + cbTenSach.Text + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            sda.Fill(dt);
+            Globals.sqlcon.Close();
+            try{
+                int soluong_co = int.Parse(dt.Rows[0].ItemArray[4].ToString());
+                int soluong_muonmua = int.Parse(txtBoxSoluong.Text + e.KeyChar.ToString()); ;
+                if (soluong_co - soluong_muonmua < Globals.Tonbanmin)
+                {
+                    e.Handled = true;
+                    string m = "Số lượng sách tối đa có thể mua cho loại này là " + (soluong_co - Globals.Tonbanmin).ToString();
+                    MessageBox.Show(m, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            { }
+            // Nếu có thông tin khách hàng trong CSDL
+            
         }
 
         private void txtBoxSotientra_KeyPress(object sender, KeyPressEventArgs e)
@@ -421,18 +457,17 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-            try
+            foreach (ListViewItem item in listView1.SelectedItems)
             {
-                string soluong = listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text;
-                int sl = int.Parse(soluong);
-                sl--;
-                if (sl >= 1)
-                {
-                    soluong = sl.ToString();
-                    listView1.Items[listView1.SelectedIndices[0]].SubItems[1].Text = soluong;
-                }
+                if (int.Parse(item.SubItems[3].Text) > 1)
+                item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) - 1).ToString();
             }
-            catch { }
+            tongTien = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+            }
+            lbltongTien.Text = tongTien.ToString();
         }
 
         private void txtBoxSodienthoai_TextChanged(object sender, EventArgs e)
@@ -443,6 +478,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void button4_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+            lbltongTien.Text = "0";
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -618,6 +654,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
             using frmDSHoaDon ds = new frmDSHoaDon();
             ds.ShowDialog();
+        }
+
+        private void cbTenSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnDoiThongTin_Click(object sender, EventArgs e)

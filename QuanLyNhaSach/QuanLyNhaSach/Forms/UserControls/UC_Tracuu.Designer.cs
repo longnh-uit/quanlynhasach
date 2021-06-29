@@ -58,7 +58,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chonDuongDan = new System.Windows.Forms.OpenFileDialog();
+            this.Save = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -375,15 +375,10 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel1.Size = new System.Drawing.Size(10, 681);
             this.panel1.TabIndex = 5;
             // 
-            // chonDuongDan
+            // Save
             // 
-            this.chonDuongDan.CheckFileExists = false;
-            this.chonDuongDan.CheckPathExists = false;
-            this.chonDuongDan.DefaultExt = "xlsx";
-            this.chonDuongDan.FileName = "danh sach sach";
-            this.chonDuongDan.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            this.chonDuongDan.InitialDirectory = "D:\\";
-            this.chonDuongDan.Title = "Chọn vị trí lưu";
+            this.Save.DefaultExt = "xlsx";
+            this.Save.FileName = "Danhsachsach";
             // 
             // UC_Tracuu
             // 
@@ -435,6 +430,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn Tacgia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.Button btnNhapSach;
-        private System.Windows.Forms.OpenFileDialog chonDuongDan;
+        private System.Windows.Forms.SaveFileDialog Save;
     }
 }

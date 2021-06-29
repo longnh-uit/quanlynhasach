@@ -36,6 +36,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnXoaKH = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chonDuongDan = new System.Windows.Forms.SaveFileDialog();
-            this.btnXoaKH = new System.Windows.Forms.Button();
             button7 = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -142,6 +142,20 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel8.Size = new System.Drawing.Size(1144, 226);
             this.panel8.TabIndex = 8;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // btnXoaKH
+            // 
+            this.btnXoaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnXoaKH.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
+            this.btnXoaKH.Location = new System.Drawing.Point(324, 178);
+            this.btnXoaKH.Name = "btnXoaKH";
+            this.btnXoaKH.Size = new System.Drawing.Size(154, 33);
+            this.btnXoaKH.TabIndex = 40;
+            this.btnXoaKH.Text = "Xoá khách hàng";
+            this.btnXoaKH.UseVisualStyleBackColor = false;
+            this.btnXoaKH.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnXuat
             // 
@@ -380,21 +394,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.chonDuongDan.DefaultExt = "xlsx";
             this.chonDuongDan.FileName = "Khach Hang";
-            this.chonDuongDan.Filter = "Excel Workbook (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            // 
-            // btnXoaKH
-            // 
-            this.btnXoaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnXoaKH.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(324, 178);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(154, 33);
-            this.btnXoaKH.TabIndex = 40;
-            this.btnXoaKH.Text = "Xoá khách hàng";
-            this.btnXoaKH.UseVisualStyleBackColor = false;
-            this.btnXoaKH.Click += new System.EventHandler(this.button3_Click);
             // 
             // UC_Phieutratien
             // 

@@ -42,7 +42,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.maSach = new System.Windows.Forms.ColumnHeader();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbltongTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -190,7 +190,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lbltongTien);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnXacNhan);
             this.panel5.Controls.Add(this.button4);
@@ -204,17 +204,17 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5.TabIndex = 5;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // label3
+            // lbltongTien
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(122, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 19);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "00";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lbltongTien.AutoSize = true;
+            this.lbltongTien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbltongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.lbltongTien.Location = new System.Drawing.Point(122, 62);
+            this.lbltongTien.Name = "lbltongTien";
+            this.lbltongTien.Size = new System.Drawing.Size(27, 19);
+            this.lbltongTien.TabIndex = 20;
+            this.lbltongTien.Text = "00";
+            this.lbltongTien.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -535,6 +535,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.cbTenSach.Name = "cbTenSach";
             this.cbTenSach.Size = new System.Drawing.Size(173, 23);
             this.cbTenSach.TabIndex = 5;
+            this.cbTenSach.SelectedIndexChanged += new System.EventHandler(this.cbTenSach_SelectedIndexChanged);
             this.cbTenSach.SelectionChangeCommitted += new System.EventHandler(this.cbTenSach_SelectionChangeCommitted);
             // 
             // cbTheLoai
@@ -696,7 +697,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbltongTien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader tenSach;

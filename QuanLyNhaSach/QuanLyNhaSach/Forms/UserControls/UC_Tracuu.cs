@@ -95,9 +95,9 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-            if (chonDuongDan.ShowDialog() == DialogResult.OK)
+            if (Save.ShowDialog() == DialogResult.OK)
             {
-                string saveLocation = chonDuongDan.FileName;
+                string saveLocation = Save.FileName;
 
                 Excel.Application xlApp = new Excel.Application();
 

@@ -52,7 +52,6 @@ namespace QuanLyNhaSach.Forms
             {
                 
                 using SqlCommand command = Globals.sqlcon.CreateCommand();
-                //Khach no thi moi dung vao DATABASE
                 if (tienTra < thanhToan)
                 {
                     command.CommandText = "update KHACHHANG " +
@@ -76,13 +75,7 @@ namespace QuanLyNhaSach.Forms
                 command.Parameters.AddWithValue("@sodt", sodienthoai);
                 command.Parameters.AddWithValue("@email", email);
                 if (tienTra - thanhToan < 0)
-                {
-                    command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
-                }
-                else
-                {
-                    command.Parameters.AddWithValue("@tienno", 0);
-                }
+                command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
                 command.ExecuteNonQuery();
                 
 
@@ -91,7 +84,7 @@ namespace QuanLyNhaSach.Forms
 
             if (cboxXuat.Checked)
             {
-                SaveFileDialog chonduongdan = saveFileDialog1;
+                SaveFileDialog chonduongdan = Save;
                 if (chonduongdan.ShowDialog() == DialogResult.OK)
                 {
                     string saveLocation = chonduongdan.FileName;
@@ -218,6 +211,46 @@ namespace QuanLyNhaSach.Forms
                         rowData.Value2 = arr;
 
                     }
+                    row++;
+                    Excel.Range r_tongtien = ws.get_Range("D" + row, "D" + row);//Cột E dòng 2
+                    r_tongtien.Font.Size = fontSizeTenTruong;
+                    r_tongtien.Font.Name = fontName;
+                    r_tongtien.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_tongtien.Value2 = "Tổng tiền: ";
+
+                    Excel.Range r_tongtien_vl = ws.get_Range("E" + row, "E" + row);//Cột E dòng 2
+                    r_tongtien_vl.Font.Size = fontSizeTenTruong;
+                    r_tongtien_vl.Font.Name = fontName;
+                    r_tongtien_vl.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_tongtien_vl.Value2 = tongTien.ToString();
+
+                    row++;
+
+                    Excel.Range r_tientra = ws.get_Range("D" + row, "D" + row);//Cột E dòng 2
+                    r_tientra.Font.Size = fontSizeTenTruong;
+                    r_tientra.Font.Name = fontName;
+                    r_tientra.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_tientra.Value2 = "Số tiền trả: ";
+
+                    Excel.Range r_tientra_vl = ws.get_Range("E" + row, "E" + row);//Cột E dòng 2
+                    r_tientra_vl.Font.Size = fontSizeTenTruong;
+                    r_tientra_vl.Font.Name = fontName;
+                    r_tientra_vl.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_tientra_vl.Value2 = tienTra.ToString();
+
+                    row++;
+
+                    Excel.Range r_conlai = ws.get_Range("D" + row, "D" + row);//Cột E dòng 2
+                    r_conlai.Font.Size = fontSizeTenTruong;
+                    r_conlai.Font.Name = fontName;
+                    r_conlai.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_conlai.Value2 = "Còn lại: ";
+
+                    Excel.Range r_conlai_vl = ws.get_Range("E" + row, "E" + row);//Cột E dòng 2
+                    r_conlai_vl.Font.Size = fontSizeTenTruong;
+                    r_conlai_vl.Font.Name = fontName;
+                    r_conlai_vl.Cells.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                    r_conlai_vl.Value2 = (tienTra - tongTien).ToString();
 
                     //Kẻ khung toàn bộ
                     BorderAround(ws.get_Range("A2", "E" + row));

@@ -100,6 +100,10 @@ namespace QuanLyNhaSach.Forms
                         
 
                     }
+                    if (cboxXuat.Checked)
+                    {
+                        
+                    }
                     Globals.sqlcon.Close();
 
                     MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

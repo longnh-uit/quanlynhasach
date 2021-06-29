@@ -241,6 +241,7 @@ namespace QuanLyNhaSach.Forms
 
                     MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     lv_nhapSach.Items.Clear();
+                this.Dispose();
             }
             else
             {

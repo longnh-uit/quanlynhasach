@@ -107,7 +107,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Khách hàng không nợ", "Lỗi");
+                    MessageBox.Show("Khách hàng không nợ", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else

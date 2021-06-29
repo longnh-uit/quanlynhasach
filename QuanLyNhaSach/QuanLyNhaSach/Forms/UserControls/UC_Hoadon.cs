@@ -16,6 +16,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         DataView dv;
         bool dontHandle = false;
         int tongTien, maHD;
+        DialogResult taotaikhoan;
 
         public class cSach
         {
@@ -220,7 +221,17 @@ namespace QuanLyNhaSach.Forms.UserControls
                 }
                 else
                 {
-                    lblCheck.Text = "✓ Khách hàng mới, sẽ tiến hành thêm vào CSDL";
+                    DialogResult dialogResult = MessageBox.Show("Khách hàng chưa có trong CSDL \n Tạo tài khoản khách hàng mới?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        lblCheck.Text = "✓ Khách hàng mới, sẽ tiến hành tạo tài khoản khách hàng";
+                        this.taotaikhoan = dialogResult;
+                    }
+                    else
+                    {
+                        lblCheck.Text = "✓ Khách hàng mới, không tạo tài khoản khách hàng";
+                        this.taotaikhoan = dialogResult;
+                    }
                 }
                 lblCheck.Visible = true;
 
@@ -346,7 +357,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1);
+            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1,this.taotaikhoan);
             uf.ShowDialog();
             maHD = uf.maHD;
             if (maHD != -1) VietCTHD();

@@ -95,10 +95,19 @@ namespace QuanLyNhaSach.Forms.UserControls
             // Thực hiện nếu có item được chọn ở bảng khách hàng
             if (dgvKhachHang.SelectedCells.Count > 0)
             {
-                using (Form_Thutien uf = new Form_Thutien(dgvKhachHang.Rows[dgvKhachHang.SelectedCells[0].RowIndex]))
+                DataGridViewRow row_no = dgvKhachHang.Rows[dgvKhachHang.SelectedCells[0].RowIndex];
+                int no = int.Parse(row_no.Cells[5].Value.ToString());
+                if (no > 0)
                 {
-                    uf.ShowDialog();
-                    LoadKH();
+                    using (Form_Thutien uf = new Form_Thutien(dgvKhachHang.Rows[dgvKhachHang.SelectedCells[0].RowIndex]))
+                    {
+                        uf.ShowDialog();
+                        LoadKH();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Khách hàng không nợ", "Lỗi");
                 }
             }
             else

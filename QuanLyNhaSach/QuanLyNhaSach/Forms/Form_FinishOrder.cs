@@ -15,8 +15,9 @@ namespace QuanLyNhaSach.Forms
         private int tongTien, thanhToan, tienTra;
         private string hoTen, sodienthoai, diaChi, email;
         private ListView cthd;
+        private DialogResult taotk;
         DateTime ngay;
-        public Form_FinishOrder(int uc_tongTien, string uc_hoten, string uc_sodienthoai, DateTime date,ListView uc_cthd)
+        public Form_FinishOrder(int uc_tongTien, string uc_hoten, string uc_sodienthoai, DateTime date,ListView uc_cthd,DialogResult taotaikhoan)
         {
             InitializeComponent();
             tongTien = uc_tongTien;
@@ -25,6 +26,7 @@ namespace QuanLyNhaSach.Forms
             sodienthoai = uc_sodienthoai;
             ngay = date;
             cthd = uc_cthd;
+            taotk = taotaikhoan;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,23 +63,24 @@ namespace QuanLyNhaSach.Forms
             }
             else
             {
-                using (frmThongTinThem form = new frmThongTinThem())
+                if (this.taotk == DialogResult.Yes)
                 {
-                    form.ShowDialog();
-                    if (form.cancel == true) return;
-                    diaChi = form.diaChi;
-                    email = form.email;
+                    using (frmThongTinThem form = new frmThongTinThem())
+                    {
+                        form.ShowDialog();
+                        if (form.cancel == true) return;
+                        diaChi = form.diaChi;
+                        email = form.email;
+                    }
+                    using SqlCommand command = Globals.sqlcon.CreateCommand();
+                    command.CommandText = "insert into KHACHHANG values(@ten, @diachi, @sodt, @email, @tienno)";
+                    command.Parameters.AddWithValue("@ten", hoTen);
+                    command.Parameters.AddWithValue("@diachi", diaChi);
+                    command.Parameters.AddWithValue("@sodt", sodienthoai);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
+                    command.ExecuteNonQuery();
                 }
-                using SqlCommand command = Globals.sqlcon.CreateCommand();
-                command.CommandText = "insert into KHACHHANG values(@ten, @diachi, @sodt, @email, @tienno)";
-                command.Parameters.AddWithValue("@ten", hoTen);
-                command.Parameters.AddWithValue("@diachi", diaChi);
-                command.Parameters.AddWithValue("@sodt", sodienthoai);
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
-                command.ExecuteNonQuery();
-                
-
             }
             Globals.sqlcon.Close();
 

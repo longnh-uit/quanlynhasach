@@ -74,7 +74,6 @@ namespace QuanLyNhaSach.Forms
                 command.Parameters.AddWithValue("@diachi", diaChi);
                 command.Parameters.AddWithValue("@sodt", sodienthoai);
                 command.Parameters.AddWithValue("@email", email);
-                if (tienTra - thanhToan < 0)
                 command.Parameters.AddWithValue("@tienno", thanhToan - tienTra);
                 command.ExecuteNonQuery();
                 

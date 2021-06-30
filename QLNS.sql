@@ -323,10 +323,10 @@ go
 insert into THAMSO values(150, 300, 20000, 20, 1)
 
 insert into ADMINISTRATORS values (N'Nguyễn Hữu Long', 'longproks123', 'password', N'Quản lý') 
-exec InsertNhapSach '25/5/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 180, 9000
+exec InsertNhapSach '25/3/2021', N'Cho tôi xin một vé đi tuổi thơ', N'Thiếu nhi', N'Nguyễn Nhật Ánh', 180, 9000
 insert into ADMINISTRATORS values(N'Phan Đại Dương', 'duonghcb', 'abc', N'Nhân viên bán hàng')
-exec InsertNhapSach '25/5/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
-exec InsertNhapSach '25/5/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000
+exec InsertNhapSach '25/3/2021', N'Mắt biếc', N'Truyện dài', N'Nguyễn Nhật Ánh', 180, 9000
+exec InsertNhapSach '25/3/2021', N'Harry Porter và Hòn đá Phù thuỷ', N'Tiểu thuyết', N'J. K. Rowling', 180, 9000
 
 
 

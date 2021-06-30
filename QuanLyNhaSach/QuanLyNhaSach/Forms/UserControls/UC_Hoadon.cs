@@ -66,6 +66,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void cbTenSach_LostFocus(object sender, EventArgs e)
         {
+            if (cbTenSach.Text == "") return;
             // Kiểm tra sách có tồn tại trong CSDL
             if (cbTenSach.Text != "" && cbTenSach.FindStringExact(cbTenSach.Text) == -1)
             {
@@ -148,7 +149,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }
@@ -178,10 +179,11 @@ namespace QuanLyNhaSach.Forms.UserControls
             foreach (ListViewItem item in listView1.SelectedItems)
             {
                 item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) + 1).ToString();
-            }    
+            }
+            tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }
@@ -230,7 +232,11 @@ namespace QuanLyNhaSach.Forms.UserControls
                         using (frmThongTinThem form = new frmThongTinThem())
                         {
                             form.ShowDialog();
-                            if (form.cancel == true) return;
+                            if (form.cancel == true)
+                            {
+                                Globals.sqlcon.Close();
+                                return;
+                            }
                             diachi = form.diaChi;
                             email = form.email;
                         }
@@ -370,7 +376,12 @@ namespace QuanLyNhaSach.Forms.UserControls
             using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1,this.taotaikhoan,diachi,email);
             uf.ShowDialog();
             maHD = uf.maHD;
-            if (maHD != -1) VietCTHD();
+            if (maHD != -1)
+            {
+                VietCTHD();
+                listView1.Items.Clear();
+                lbltongTien.Text = "0";
+            }
         }
 
         private void VietCTHD()
@@ -486,7 +497,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             tongTien = 0;
             foreach (ListViewItem item in listView1.Items)
             {
-                tongTien = int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
+                tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
             lbltongTien.Text = tongTien.ToString();
         }

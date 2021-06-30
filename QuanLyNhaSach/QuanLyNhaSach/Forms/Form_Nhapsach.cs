@@ -136,7 +136,6 @@ namespace QuanLyNhaSach.Forms
                             int row = 1;
                             string fontName = "Times New Roman";
                             int fontSizeTieuDe = 18;
-                            int fontSizeTenTruong = 14;
                             int fontSizeNoiDung = 12;
 
                             //Xuất dòng Tiêu đề của File báo cáo: Lưu ý

@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-using System.Drawing;
 
 namespace QuanLyNhaSach.Forms
 {
@@ -137,11 +136,9 @@ namespace QuanLyNhaSach.Forms
                         return;
                     }
 
-                    int row = 1;
                     string fontName = "Times New Roman";
                     int fontSizeTieuDe = 18;
                     int fontSizeTenTruong = 14;
-                    int fontSizeNoiDung = 12;
 
                     //Xuất dòng Tiêu đề của File báo cáo: Lưu ý
                     Excel.Range row1_TieuDe = ws.get_Range("A1", "D1");

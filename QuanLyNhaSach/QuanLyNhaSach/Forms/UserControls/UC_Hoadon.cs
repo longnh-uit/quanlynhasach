@@ -178,6 +178,24 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
             foreach (ListViewItem item in listView1.SelectedItems)
             {
+                string query = "select * from SACH where SACH.MaSach = " + item.SubItems[5].Text;
+                SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                sda.Fill(dt);
+                Globals.sqlcon.Close();
+                try
+                {
+                    int soluong_co = int.Parse(dt.Rows[0].ItemArray[4].ToString());
+                    int soluong_muonmua = int.Parse(item.SubItems[3].Text) + 1; ;
+                    if (soluong_co - soluong_muonmua < Globals.Tonbanmin)
+                    {
+                        string m = "Số lượng sách tối đa có thể mua cho loại này là " + (soluong_co - Globals.Tonbanmin).ToString();
+                        MessageBox.Show(m, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                catch
+                { }
                 item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) + 1).ToString();
             }
             tongTien = 0;
@@ -439,7 +457,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             Globals.sqlcon.Open();
 
             // Kiểm tra khách hàng có trong CSDL
-            string query = "select * from SACH where SACH.TenSach = N'" + cbTenSach.Text + "'";
+            string query = "select * from SACH where SACH.MaSach = " + cbTenSach.SelectedValue.ToString();
             SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
             System.Data.DataTable dt = new System.Data.DataTable();
             sda.Fill(dt);

@@ -30,8 +30,8 @@ namespace QuanLyNhaSach.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Thaydoiquydinh));
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnHoantat = new System.Windows.Forms.Button();
             this.logo2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -40,7 +40,7 @@ namespace QuanLyNhaSach.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLuongtonmax = new System.Windows.Forms.TextBox();
-            this.txtSlmin = new System.Windows.Forms.TextBox();
+            this.txtBoxSlmin = new System.Windows.Forms.TextBox();
             this.txtBoxNomax = new System.Windows.Forms.TextBox();
             this.txtBoxTonbanmin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,34 +52,34 @@ namespace QuanLyNhaSach.Forms
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btnHuy
             // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(40, 353);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 40);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "Hủy";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(40, 353);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(148, 40);
+            this.btnHuy.TabIndex = 55;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btnHoantat
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.SeaGreen;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(506, 353);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 40);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "Hoàn tất";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnHoantat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHoantat.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnHoantat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHoantat.ForeColor = System.Drawing.Color.White;
+            this.btnHoantat.Location = new System.Drawing.Point(506, 353);
+            this.btnHoantat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHoantat.Name = "btnHoantat";
+            this.btnHoantat.Size = new System.Drawing.Size(148, 40);
+            this.btnHoantat.TabIndex = 54;
+            this.btnHoantat.Text = "Hoàn tất";
+            this.btnHoantat.UseVisualStyleBackColor = false;
+            this.btnHoantat.Click += new System.EventHandler(this.button3_Click);
             // 
             // logo2
             // 
@@ -173,15 +173,15 @@ namespace QuanLyNhaSach.Forms
             this.txtLuongtonmax.TextChanged += new System.EventHandler(this.txtBoxSoluong_TextChanged);
             this.txtLuongtonmax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongtonmax_KeyPress);
             // 
-            // txtSlmin
+            // txtBoxSlmin
             // 
-            this.txtSlmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSlmin.Location = new System.Drawing.Point(522, 98);
-            this.txtSlmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSlmin.Name = "txtSlmin";
-            this.txtSlmin.Size = new System.Drawing.Size(72, 23);
-            this.txtSlmin.TabIndex = 1;
-            this.txtSlmin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSlmin_KeyPress);
+            this.txtBoxSlmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxSlmin.Location = new System.Drawing.Point(522, 98);
+            this.txtBoxSlmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxSlmin.Name = "txtBoxSlmin";
+            this.txtBoxSlmin.Size = new System.Drawing.Size(72, 23);
+            this.txtBoxSlmin.TabIndex = 1;
+            this.txtBoxSlmin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSlmin_KeyPress);
             // 
             // txtBoxNomax
             // 
@@ -290,9 +290,9 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.cbVuotTienNo);
             this.Controls.Add(this.txtBoxTonbanmin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSlmin);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtBoxSlmin);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnHoantat);
             this.Controls.Add(this.txtLuongtonmax);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.logo2);
@@ -314,8 +314,8 @@ namespace QuanLyNhaSach.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnHoantat;
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
@@ -324,7 +324,7 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLuongtonmax;
-        private System.Windows.Forms.TextBox txtSlmin;
+        private System.Windows.Forms.TextBox txtBoxSlmin;
         private System.Windows.Forms.TextBox txtBoxNomax;
         private System.Windows.Forms.TextBox txtBoxTonbanmin;
         private System.Windows.Forms.Label label2;

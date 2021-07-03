@@ -315,5 +315,10 @@ namespace QuanLyNhaSach.Forms.UserControls
             borders[XlBordersIndex.xlDiagonalUp].LineStyle = XlLineStyle.xlLineStyleNone;
             borders[XlBordersIndex.xlDiagonalDown].LineStyle = XlLineStyle.xlLineStyleNone;
         }
+
+        private void dgvTon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

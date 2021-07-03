@@ -83,7 +83,7 @@ namespace QuanLyNhaSach.Forms
 
         private void Form_Thaydoiquydinh_Load(object sender, EventArgs e)
         {
-            txtSlmin.Text = Globals.Slmin.ToString();
+            txtBoxSlmin.Text = Globals.Slmin.ToString();
             txtLuongtonmax.Text = Globals.Luongtonmax.ToString();
             txtBoxNomax.Text = Globals.Nomax.ToString();
             txtBoxTonbanmin.Text = Globals.Tonbanmin.ToString();
@@ -172,7 +172,7 @@ namespace QuanLyNhaSach.Forms
             {
                 return false;
             }
-            if (txtSlmin.TextLength == 0)
+            if (txtBoxSlmin.TextLength == 0)
             {
                 return false;
             }
@@ -197,7 +197,7 @@ namespace QuanLyNhaSach.Forms
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    Globals.Slmin = int.Parse(txtSlmin.Text);
+                    Globals.Slmin = int.Parse(txtBoxSlmin.Text);
                     Globals.Luongtonmax = int.Parse(txtLuongtonmax.Text);
                     Globals.Nomax = int.Parse(txtBoxNomax.Text);
                     Globals.Tonbanmin = int.Parse(txtBoxTonbanmin.Text);

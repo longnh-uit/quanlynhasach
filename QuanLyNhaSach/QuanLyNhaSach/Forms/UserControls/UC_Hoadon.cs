@@ -58,7 +58,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             cbTacGia.Font = new Font("Segoe UI", 10);
             cbTheLoai.Font = new Font("Segoe UI", 10);
             txtBoxSoluong.Font = new Font("Segoe UI", 10);
-            txtBoxSotientra.Font = new Font("Segoe UI", 10);
+            txtBoxDongia.Font = new Font("Segoe UI", 10);
             txtBoxSodienthoai.GotFocus += txtBoxSodienthoai_GotFocus;
             dtpNgay.MaxDate = System.DateTime.Now;
             cbTenSach.LostFocus += cbTenSach_LostFocus;
@@ -80,7 +80,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             dontHandle = true;
             cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
             cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
-            txtBoxSotientra.Text = DonGiaBan.ToString();
+            txtBoxDongia.Text = DonGiaBan.ToString();
             dontHandle = false;
 
         }
@@ -138,16 +138,16 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void button2_Click_2(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < listView1.Items.Count; i++)
+            for (int i = 0; i < lvGio.Items.Count; i++)
             {
-                if (listView1.Items[i].Selected)
+                if (lvGio.Items[i].Selected)
                 {
-                    listView1.Items[i].Remove();
+                    lvGio.Items[i].Remove();
                     i--;
                 }
             }
             tongTien = 0;
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
@@ -176,7 +176,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in lvGio.SelectedItems)
             {
                 string query = "select * from SACH where SACH.MaSach = " + item.SubItems[5].Text;
                 SqlDataAdapter sda = new SqlDataAdapter(query, Globals.sqlcon);
@@ -199,7 +199,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                 item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) + 1).ToString();
             }
             tongTien = 0;
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
@@ -307,11 +307,11 @@ namespace QuanLyNhaSach.Forms.UserControls
         private void btnThem_Click(object sender, EventArgs e)
         {
             int soLuongBan, soLuongTon;
-            if (cbTenSach.SelectedItem != null && cbTheLoai.SelectedItem != null && txtBoxHoten.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxSotientra.TextLength > 0 && txtBoxSodienthoai.TextLength > 0)
+            if (cbTenSach.SelectedItem != null && cbTheLoai.SelectedItem != null && txtBoxHoten.TextLength > 0 && txtBoxSoluong.TextLength > 0 && txtBoxDongia.TextLength > 0 && txtBoxSodienthoai.TextLength > 0)
             {
                 
                     // Nếu đã có sách trong list view thì tăng số lượng
-                    foreach (ListViewItem item in listView1.Items)
+                    foreach (ListViewItem item in lvGio.Items)
                     {
                         if (item.SubItems[5].Text == cbTenSach.SelectedValue.ToString())
                         {
@@ -325,7 +325,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                             item.SubItems[3].Text = soLuongBan.ToString();
                             dontHandle = true;
                             txtBoxSoluong.Text = "";
-                            txtBoxSotientra.Text = "";
+                            txtBoxDongia.Text = "";
                             cbTheLoai.SelectedItem = null;
                             cbTacGia.SelectedItem = null;
                             dontHandle = false;
@@ -349,13 +349,13 @@ namespace QuanLyNhaSach.Forms.UserControls
                     arr[1] = cbTheLoai.Text;
                     arr[2] = cbTacGia.Text;
                     arr[3] = txtBoxSoluong.Text;
-                    arr[4] = txtBoxSotientra.Text;
+                    arr[4] = txtBoxDongia.Text;
                     arr[5] = cbTenSach.SelectedValue.ToString();
                     ListViewItem lst = new ListViewItem(arr);
-                    listView1.Items.Add(lst);
+                    lvGio.Items.Add(lst);
                     dontHandle = true;
                     txtBoxSoluong.Text = "";
-                    txtBoxSotientra.Text = "";
+                    txtBoxDongia.Text = "";
                     cbTheLoai.SelectedItem = null;
                     cbTacGia.SelectedItem = null;
                     dontHandle = false;
@@ -367,7 +367,7 @@ namespace QuanLyNhaSach.Forms.UserControls
                 MessageBox.Show("Cần phải nhập tất cả các mục !");
             }
             tongTien = 0;
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
@@ -381,23 +381,23 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (listView1.Items.Count == 0)
+            if (lvGio.Items.Count == 0)
             {
                 MessageBox.Show("Vui lòng thêm sách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             tongTien = 0;
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
-            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, listView1,this.taotaikhoan,diachi,email);
+            using Form_FinishOrder uf = new Form_FinishOrder(tongTien, txtBoxHoten.Text, txtBoxSodienthoai.Text, dtpNgay.Value, lvGio,this.taotaikhoan,diachi,email);
             uf.ShowDialog();
             maHD = uf.maHD;
             if (maHD != -1)
             {
                 VietCTHD();
-                listView1.Items.Clear();
+                lvGio.Items.Clear();
                 lbltongTien.Text = "0";
             }
         }
@@ -417,7 +417,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             command.Parameters.Add("@dongia", SqlDbType.Int);
 
             con.Open();
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 command.CommandText = insert;
                 command.Parameters["@mahd"].Value = maHD;
@@ -507,13 +507,13 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in listView1.SelectedItems)
+            foreach (ListViewItem item in lvGio.SelectedItems)
             {
                 if (int.Parse(item.SubItems[3].Text) > 1)
                 item.SubItems[3].Text = (int.Parse(item.SubItems[3].Text) - 1).ToString();
             }
             tongTien = 0;
-            foreach (ListViewItem item in listView1.Items)
+            foreach (ListViewItem item in lvGio.Items)
             {
                 tongTien += int.Parse(item.SubItems[4].Text) * int.Parse(item.SubItems[3].Text);
             }
@@ -527,7 +527,7 @@ namespace QuanLyNhaSach.Forms.UserControls
 
         private void button4_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            lvGio.Items.Clear();
             lbltongTien.Text = "0";
         }
 
@@ -625,7 +625,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             dontHandle = true;
             cbTheLoai.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TheLoai"].ToString();
             cbTacGia.Text = sach.Tables[0].Select("MaSach = '" + cbTenSach.SelectedValue.ToString() + "'")[0]["TacGia"].ToString();
-            txtBoxSotientra.Text = DonGiaBan.ToString();
+            txtBoxDongia.Text = DonGiaBan.ToString();
             dontHandle = false;
         }
 
@@ -655,7 +655,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             })
             .ToList<cSach>();
             cbTenSach.SelectedIndex = -1;
-            txtBoxSotientra.Text = null;
+            txtBoxDongia.Text = null;
         }
 
         private void cbTacGia_SelectedIndexChanged(object sender, EventArgs e)
@@ -684,7 +684,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             })
             .ToList<cSach>();
             cbTenSach.SelectedIndex = -1;
-            txtBoxSotientra.Text = null;
+            txtBoxDongia.Text = null;
         }
 
         private void txtBoxSodienthoai_GotFocus(object sender, EventArgs e)
@@ -721,10 +721,10 @@ namespace QuanLyNhaSach.Forms.UserControls
             txtBoxSoluong.ReadOnly = true;
             cbTenSach.SelectedItem = null;
             txtBoxSoluong.Text = "";
-            txtBoxSotientra.Text = "";
+            txtBoxDongia.Text = "";
             cbTheLoai.SelectedItem = null;
             cbTacGia.SelectedItem = null;
-            listView1.Items.Clear();
+            lvGio.Items.Clear();
             dontHandle = false;
 
             txtBoxHoten.ReadOnly = false;

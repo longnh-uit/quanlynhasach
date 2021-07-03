@@ -218,7 +218,7 @@ namespace QuanLyNhaSach.Forms
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button8.Location = new System.Drawing.Point(1037, 10);
+            this.button8.Location = new System.Drawing.Point(1037, 8);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(54, 40);

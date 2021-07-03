@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 //Class chua bien toan cuc
 public static class Globals
 {
-    public static string ServerPath = System.IO.Path.Combine(@"C:\Users\Admin\Desktop\quanlynhasach\server\");
+    public static string ServerPath = System.IO.Path.Combine(@"D:\Courses\NhaSach\server\");
     public static SqlConnection sqlcon;
     public static string name, username, role;
     public static int Slmin, Luongtonmax, Nomax, Tonbanmin, status = 1; // 1 la login, 2 la dashboard, 0 la tat

@@ -29,7 +29,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button7;
+            System.Windows.Forms.Button btnXemPhieu;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Phieutratien));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -59,27 +59,28 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chonDuongDan = new System.Windows.Forms.SaveFileDialog();
-            button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            btnXemPhieu = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
-            // button7
+            // btnXemPhieu
             // 
-            button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            button7.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            button7.ForeColor = System.Drawing.Color.White;
-            button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            button7.Location = new System.Drawing.Point(0, 0);
-            button7.Name = "button7";
-            button7.Size = new System.Drawing.Size(339, 226);
-            button7.TabIndex = 4;
-            button7.Text = "  THU TIỀN";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += new System.EventHandler(this.button7_Click);
+            btnXemPhieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            btnXemPhieu.Dock = System.Windows.Forms.DockStyle.Fill;
+            btnXemPhieu.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnXemPhieu.ForeColor = System.Drawing.Color.White;
+            btnXemPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btnXemPhieu.Image")));
+            btnXemPhieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnXemPhieu.Location = new System.Drawing.Point(0, 0);
+            btnXemPhieu.Name = "btnXemPhieu";
+            btnXemPhieu.Size = new System.Drawing.Size(339, 226);
+            btnXemPhieu.TabIndex = 4;
+            btnXemPhieu.Text = "  THU TIỀN";
+            btnXemPhieu.UseVisualStyleBackColor = false;
+            btnXemPhieu.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel2
             // 
@@ -121,6 +122,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.btnXoaKH);
             this.panel8.Controls.Add(this.btnXuat);
             this.panel8.Controls.Add(this.btnHoanTac);
@@ -149,7 +151,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnXoaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnXoaKH.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Location = new System.Drawing.Point(324, 178);
+            this.btnXoaKH.Location = new System.Drawing.Point(323, 178);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(154, 33);
             this.btnXoaKH.TabIndex = 40;
@@ -164,7 +166,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
             this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuat.Location = new System.Drawing.Point(501, 178);
+            this.btnXuat.Location = new System.Drawing.Point(635, 118);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(139, 32);
             this.btnXuat.TabIndex = 39;
@@ -208,7 +210,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(635, 69);
+            this.button1.Location = new System.Drawing.Point(635, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 32);
             this.button1.TabIndex = 14;
@@ -234,7 +236,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(button7);
+            this.panel1.Controls.Add(btnXemPhieu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel1.Location = new System.Drawing.Point(805, 0);
@@ -293,7 +295,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // txtBoxDiachi
             // 
-            this.txtBoxDiachi.Location = new System.Drawing.Point(151, 69);
+            this.txtBoxDiachi.Location = new System.Drawing.Point(151, 65);
             this.txtBoxDiachi.Name = "txtBoxDiachi";
             this.txtBoxDiachi.Size = new System.Drawing.Size(444, 29);
             this.txtBoxDiachi.TabIndex = 2;
@@ -395,6 +397,19 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.chonDuongDan.DefaultExt = "xlsx";
             this.chonDuongDan.FileName = "Khach Hang";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(496, 178);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(167, 31);
+            this.button3.TabIndex = 41;
+            this.button3.Text = "Xem phiếu thu";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // UC_Phieutratien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -447,5 +462,6 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienNo;
         private System.Windows.Forms.SaveFileDialog chonDuongDan;
         private System.Windows.Forms.Button btnXoaKH;
+        private System.Windows.Forms.Button button3;
     }
 }

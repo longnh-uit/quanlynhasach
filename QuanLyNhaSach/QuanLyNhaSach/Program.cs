@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 //Class chua bien toan cuc
 public static class Globals
 {
-    public static string ServerPath = System.IO.Path.Combine(@"C:\Users\Admin\Desktop\quanlynhasach\server\");
+    public static string ServerPath = System.IO.Path.Combine(@"D:\SE104\longnh-uit\quanlynhasach\server\");
     public static SqlConnection sqlcon;
     public static string name, username, role;
     public static int Slmin, Luongtonmax, Nomax, Tonbanmin, status = 1; // 1 la login, 2 la dashboard, 0 la tat
@@ -28,11 +28,7 @@ namespace QuanLyNhaSach
         static void Main()
         {
             // Create connection to database
-            Globals.sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;
-                          AttachDbFilename=" + Globals.ServerPath + @"QLNS.mdf;
-                          Integrated Security=True;
-                          Connect Timeout=30;
-                          User Instance=True");
+            Globals.sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=QLNS;Integrated Security=True");
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

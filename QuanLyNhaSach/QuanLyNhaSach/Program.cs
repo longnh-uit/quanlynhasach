@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaSach.Forms;
@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 //Class chua bien toan cuc
 public static class Globals
 {
-    public static string ServerPath = System.IO.Path.Combine(@"C:\Users\Admin\Desktop\New folder\quanlynhasach\server\");
+    public static string ServerPath = Directory.GetCurrentDirectory().ToString();
     public static SqlConnection sqlcon;
     public static string name, username, role;
     public static int Slmin, Luongtonmax, Nomax, Tonbanmin, status = 1; // 1 la login, 2 la dashboard, 0 la tat
@@ -21,12 +21,19 @@ namespace QuanLyNhaSach
 {
     static class Program
     {
+        static void getPath()
+        {
+            for (int i = 0; i < 5; ++i)
+                Globals.ServerPath = Directory.GetParent(Globals.ServerPath).FullName.ToString();
+            Globals.ServerPath = Path.Combine(Globals.ServerPath, @"server\");
+        }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            getPath();
             // Create connection to database
             Globals.sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;
                           AttachDbFilename=" + Globals.ServerPath + @"QLNS.mdf;

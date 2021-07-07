@@ -33,7 +33,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Hoadon));
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvGio = new System.Windows.Forms.ListView();
             this.tenSach = new System.Windows.Forms.ColumnHeader();
             this.theloai = new System.Windows.Forms.ColumnHeader();
             this.tacgia = new System.Windows.Forms.ColumnHeader();
@@ -45,12 +45,12 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.lbltongTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnXoatat = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTru = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnCong = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -65,7 +65,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.txtBoxSoluong = new System.Windows.Forms.TextBox();
             this.txtBoxSodienthoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBoxSotientra = new System.Windows.Forms.TextBox();
+            this.txtBoxDongia = new System.Windows.Forms.TextBox();
             this.lblCheck = new System.Windows.Forms.Label();
             this.cbTenSach = new System.Windows.Forms.ComboBox();
             this.cbTheLoai = new System.Windows.Forms.ComboBox();
@@ -73,7 +73,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.lblTacGia = new System.Windows.Forms.Label();
             this.btnDoiThongTin = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLichsu = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
@@ -113,7 +113,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.lvGio);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -126,27 +126,27 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // listView1
+            // lvGio
             // 
-            this.listView1.BackColor = System.Drawing.Color.White;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvGio.BackColor = System.Drawing.Color.White;
+            this.lvGio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.tenSach,
             this.theloai,
             this.tacgia,
             this.soLuong,
             this.gia,
             this.maSach});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(10, 10);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(563, 532);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.lvGio.FullRowSelect = true;
+            this.lvGio.GridLines = true;
+            this.lvGio.HideSelection = false;
+            this.lvGio.Location = new System.Drawing.Point(10, 10);
+            this.lvGio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvGio.Name = "lvGio";
+            this.lvGio.Size = new System.Drawing.Size(563, 532);
+            this.lvGio.TabIndex = 7;
+            this.lvGio.UseCompatibleStateImageBehavior = false;
+            this.lvGio.View = System.Windows.Forms.View.Details;
+            this.lvGio.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // tenSach
             // 
@@ -193,7 +193,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5.Controls.Add(this.lbltongTien);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.btnXacNhan);
-            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.btnXoatat);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -242,19 +242,19 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
-            // button4
+            // btnXoatat
             // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 90);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 38);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Xóa tất cả";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnXoatat.BackColor = System.Drawing.Color.Firebrick;
+            this.btnXoatat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXoatat.ForeColor = System.Drawing.Color.White;
+            this.btnXoatat.Location = new System.Drawing.Point(0, 90);
+            this.btnXoatat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoatat.Name = "btnXoatat";
+            this.btnXoatat.Size = new System.Drawing.Size(116, 38);
+            this.btnXoatat.TabIndex = 17;
+            this.btnXoatat.Text = "Xóa tất cả";
+            this.btnXoatat.UseVisualStyleBackColor = false;
+            this.btnXoatat.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel8
             // 
@@ -269,9 +269,9 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button5);
-            this.panel7.Controls.Add(this.button2);
-            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.btnTru);
+            this.panel7.Controls.Add(this.btnXoa);
+            this.panel7.Controls.Add(this.btnCong);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -280,47 +280,47 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel7.TabIndex = 0;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // button5
+            // btnTru
             // 
-            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(52, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(54, 34);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "-";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_2);
+            this.btnTru.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnTru.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTru.ForeColor = System.Drawing.Color.White;
+            this.btnTru.Location = new System.Drawing.Point(52, 0);
+            this.btnTru.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTru.Name = "btnTru";
+            this.btnTru.Size = new System.Drawing.Size(54, 34);
+            this.btnTru.TabIndex = 17;
+            this.btnTru.Text = "-";
+            this.btnTru.UseVisualStyleBackColor = false;
+            this.btnTru.Click += new System.EventHandler(this.button5_Click_2);
             // 
-            // button2
+            // btnXoa
             // 
-            this.button2.BackColor = System.Drawing.Color.OrangeRed;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(102, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 34);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            this.btnXoa.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnXoa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(102, 0);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 34);
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.button2_Click_2);
             // 
-            // button1
+            // btnCong
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 34);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnCong.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCong.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCong.ForeColor = System.Drawing.Color.White;
+            this.btnCong.Location = new System.Drawing.Point(0, 0);
+            this.btnCong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCong.Name = "btnCong";
+            this.btnCong.Size = new System.Drawing.Size(54, 34);
+            this.btnCong.TabIndex = 15;
+            this.btnCong.Text = "+";
+            this.btnCong.UseVisualStyleBackColor = false;
+            this.btnCong.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel4
             // 
@@ -498,18 +498,18 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.label9.Text = "Số điện thoại";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // txtBoxSotientra
+            // txtBoxDongia
             // 
-            this.txtBoxSotientra.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtBoxSotientra.Location = new System.Drawing.Point(225, 495);
-            this.txtBoxSotientra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxSotientra.Name = "txtBoxSotientra";
-            this.txtBoxSotientra.ReadOnly = true;
-            this.txtBoxSotientra.Size = new System.Drawing.Size(173, 23);
-            this.txtBoxSotientra.TabIndex = 8;
-            this.txtBoxSotientra.TabStop = false;
-            this.txtBoxSotientra.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
-            this.txtBoxSotientra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
+            this.txtBoxDongia.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtBoxDongia.Location = new System.Drawing.Point(225, 495);
+            this.txtBoxDongia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxDongia.Name = "txtBoxDongia";
+            this.txtBoxDongia.ReadOnly = true;
+            this.txtBoxDongia.Size = new System.Drawing.Size(173, 23);
+            this.txtBoxDongia.TabIndex = 8;
+            this.txtBoxDongia.TabStop = false;
+            this.txtBoxDongia.TextChanged += new System.EventHandler(this.txtBoxSotientra_TextChanged);
+            this.txtBoxDongia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxSotientra_KeyPress);
             // 
             // lblCheck
             // 
@@ -593,24 +593,24 @@ namespace QuanLyNhaSach.Forms.UserControls
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel9.Controls.Add(this.button3);
+            this.panel9.Controls.Add(this.btnLichsu);
             this.panel9.Location = new System.Drawing.Point(3, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(579, 79);
             this.panel9.TabIndex = 30;
             // 
-            // button3
+            // btnLichsu
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(45, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 44);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Lịch sử hoá đơn";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnLichsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnLichsu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLichsu.ForeColor = System.Drawing.Color.White;
+            this.btnLichsu.Location = new System.Drawing.Point(45, 15);
+            this.btnLichsu.Name = "btnLichsu";
+            this.btnLichsu.Size = new System.Drawing.Size(155, 44);
+            this.btnLichsu.TabIndex = 0;
+            this.btnLichsu.Text = "Lịch sử hoá đơn";
+            this.btnLichsu.UseVisualStyleBackColor = false;
+            this.btnLichsu.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel10
             // 
@@ -653,7 +653,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Controls.Add(this.cbTenSach);
             this.Controls.Add(this.lblCheck);
             this.Controls.Add(btnKiemTra);
-            this.Controls.Add(this.txtBoxSotientra);
+            this.Controls.Add(this.txtBoxDongia);
             this.Controls.Add(this.txtBoxSodienthoai);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBoxSoluong);
@@ -692,14 +692,14 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTru;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnCong;
         private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnXoatat;
         private System.Windows.Forms.Label lbltongTien;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvGio;
         private System.Windows.Forms.ColumnHeader tenSach;
         private System.Windows.Forms.ColumnHeader soLuong;
         private System.Windows.Forms.ColumnHeader gia;
@@ -711,7 +711,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.TextBox txtBoxSoluong;
         private System.Windows.Forms.TextBox txtBoxSodienthoai;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBoxSotientra;
+        private System.Windows.Forms.TextBox txtBoxDongia;
         private System.Windows.Forms.Label lblCheck;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ColumnHeader theloai;
@@ -723,7 +723,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.ColumnHeader maSach;
         private System.Windows.Forms.Button btnDoiThongTin;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLichsu;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;

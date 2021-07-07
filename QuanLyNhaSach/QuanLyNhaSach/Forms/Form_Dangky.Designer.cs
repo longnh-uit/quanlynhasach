@@ -29,9 +29,9 @@ namespace QuanLyNhaSach.Forms
         /// </summary>
         private void InitializeComponent()
         {
- //           System.Windows.Forms.ComboBox cbBoxChucVu;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dangky));
-            this.button4 = new System.Windows.Forms.Button();
+            System.Windows.Forms.ComboBox cbBoxChucVu;
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.logo2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,38 +47,23 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxNhaplaimatkhau = new System.Windows.Forms.TextBox();
             this.txtBoxTentk = new System.Windows.Forms.TextBox();
             this.lblHoten = new System.Windows.Forms.Label();
-            this.txtHoten = new System.Windows.Forms.TextBox();
-            this.cbBoxChucVu = new System.Windows.Forms.ComboBox();
+            this.txtBoxHoten = new System.Windows.Forms.TextBox();
+            cbBoxChucVu = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbBoxChucVu
+            // btnHuy
             // 
-            this.cbBoxChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBoxChucVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbBoxChucVu.FormattingEnabled = true;
-            this.cbBoxChucVu.Items.AddRange(new object[] {
-            "Quản lý",
-            "Nhân viên bán hàng",
-            "Thủ kho"});
-            this.cbBoxChucVu.Location = new System.Drawing.Point(383, 285);
-            this.cbBoxChucVu.Name = "cbBoxChucVu";
-            this.cbBoxChucVu.Size = new System.Drawing.Size(205, 29);
-            this.cbBoxChucVu.TabIndex = 5;
-            this.cbBoxChucVu.SelectedIndexChanged += new System.EventHandler(this.cbBoxChucvu_SelectedIndexChanged);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(33, 368);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 53);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Hủy";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(33, 368);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(169, 53);
+            this.btnHuy.TabIndex = 7;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnDangKy
             // 
@@ -228,20 +213,35 @@ namespace QuanLyNhaSach.Forms
             this.lblHoten.TabIndex = 87;
             this.lblHoten.Text = "Họ và tên:";
             // 
-            // txtHoten
+            // txtBoxHoten
             // 
-            this.txtHoten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHoten.Location = new System.Drawing.Point(383, 87);
-            this.txtHoten.Name = "txtHoten";
-            this.txtHoten.Size = new System.Drawing.Size(205, 29);
-            this.txtHoten.TabIndex = 1;
+            this.txtBoxHoten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxHoten.Location = new System.Drawing.Point(383, 87);
+            this.txtBoxHoten.Name = "txtBoxHoten";
+            this.txtBoxHoten.Size = new System.Drawing.Size(205, 29);
+            this.txtBoxHoten.TabIndex = 1;
+            // 
+            // cbBoxChucVu
+            // 
+            cbBoxChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBoxChucVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cbBoxChucVu.FormattingEnabled = true;
+            cbBoxChucVu.Items.AddRange(new object[] {
+            "Quản lý",
+            "Nhân viên bán hàng",
+            "Thủ kho"});
+            cbBoxChucVu.Location = new System.Drawing.Point(383, 285);
+            cbBoxChucVu.Name = "cbBoxChucVu";
+            cbBoxChucVu.Size = new System.Drawing.Size(205, 29);
+            cbBoxChucVu.TabIndex = 5;
+            cbBoxChucVu.SelectedIndexChanged += new System.EventHandler(this.cbBoxChucvu_SelectedIndexChanged);
             // 
             // Form_Dangky
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtHoten);
+            this.Controls.Add(this.txtBoxHoten);
             this.Controls.Add(this.txtBoxTentk);
             this.Controls.Add(this.txtBoxNhaplaimatkhau);
             this.Controls.Add(this.txtBoxMatkhau);
@@ -250,8 +250,8 @@ namespace QuanLyNhaSach.Forms
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbBoxChucVu);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(cbBoxChucVu);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.logo2);
             this.Controls.Add(this.label1);
@@ -273,7 +273,7 @@ namespace QuanLyNhaSach.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.Label label1;
@@ -290,6 +290,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.TextBox txtBoxNhaplaimatkhau;
         private System.Windows.Forms.TextBox txtBoxTentk;
         private System.Windows.Forms.Label lblHoten;
-        private System.Windows.Forms.TextBox txtHoten;
+        private System.Windows.Forms.TextBox txtBoxHoten;
     }
 }

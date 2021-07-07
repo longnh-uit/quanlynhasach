@@ -359,9 +359,24 @@ namespace QuanLyNhaSach.Forms.UserControls
         {
             foreach (DataGridViewRow item in this.dgvKhachHang.SelectedRows)
             {
-                dgvKhachHang.Rows.RemoveAt(item.Index);
+                if (Convert.ToInt32(item.Cells[5].Value) > 0)
+                {
+                    if (MessageBox.Show("Khách hàng này vẫn còn nợ, bạn có chắc muốn xoá khách hàng?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        dgvKhachHang.Rows.RemoveAt(item.Index);
+                    return;
+                }
+                else dgvKhachHang.Rows.RemoveAt(item.Index);
             }
            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (dgvKhachHang.SelectedRows.Count > 0)
+            {
+                using frmPhieuthu frm = new frmPhieuthu(Convert.ToInt32(dgvKhachHang.SelectedRows[0].Cells["MaKH"].Value));
+                frm.ShowDialog();
+            }
         }
     }
 }

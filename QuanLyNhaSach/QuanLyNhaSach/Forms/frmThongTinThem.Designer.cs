@@ -41,7 +41,7 @@ namespace QuanLyNhaSach.Forms
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.logo2 = new System.Windows.Forms.PictureBox();
             this.btnHoanTat = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,18 +152,18 @@ namespace QuanLyNhaSach.Forms
             this.btnHoanTat.UseVisualStyleBackColor = false;
             this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
             // 
-            // button4
+            // btnHuy
             // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(29, 246);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 53);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Hủy";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(29, 246);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(169, 53);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.button4_Click);
             // 
             // frmThongTinThem
             // 
@@ -171,7 +171,7 @@ namespace QuanLyNhaSach.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(603, 330);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnHoanTat);
             this.Controls.Add(this.logo2);
             this.Controls.Add(this.txtBoxEmail);
@@ -207,6 +207,6 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.Button btnHoanTat;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

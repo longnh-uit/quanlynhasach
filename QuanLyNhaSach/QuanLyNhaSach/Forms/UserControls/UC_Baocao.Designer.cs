@@ -35,7 +35,8 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.dtpThangNam = new System.Windows.Forms.DateTimePicker();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCongno = new System.Windows.Forms.Button();
             this.btnBaocaoton = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chonDuongDan = new System.Windows.Forms.OpenFileDialog();
-            this.dtpThangNam = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongno)).BeginInit();
@@ -95,7 +95,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel4.Controls.Add(this.dtpThangNam);
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.btnXuat);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnCongno);
             this.panel4.Controls.Add(this.btnBaocaoton);
@@ -107,21 +107,30 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.panel4.TabIndex = 6;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint_1);
             // 
-            // button4
+            // dtpThangNam
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.GrayText;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(865, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 50);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "      Xuất báo cáo";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
+            this.dtpThangNam.CustomFormat = "MM/yyyy";
+            this.dtpThangNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThangNam.Location = new System.Drawing.Point(598, 32);
+            this.dtpThangNam.Name = "dtpThangNam";
+            this.dtpThangNam.Size = new System.Drawing.Size(167, 27);
+            this.dtpThangNam.TabIndex = 40;
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXuat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
+            this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuat.Location = new System.Drawing.Point(865, 22);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(210, 50);
+            this.btnXuat.TabIndex = 39;
+            this.btnXuat.Text = "      Xuất báo cáo";
+            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // label1
             // 
@@ -187,6 +196,7 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.dgvTon.RowTemplate.Height = 29;
             this.dgvTon.Size = new System.Drawing.Size(1144, 567);
             this.dgvTon.TabIndex = 7;
+            this.dgvTon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTon_CellContentClick);
             this.dgvTon.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvTon_RowPostPaint);
             // 
             // Column1
@@ -304,15 +314,6 @@ namespace QuanLyNhaSach.Forms.UserControls
             this.chonDuongDan.InitialDirectory = "D:\\";
             this.chonDuongDan.Title = "Chọn vị trí lưu";
             // 
-            // dtpThangNam
-            // 
-            this.dtpThangNam.CustomFormat = "MM/yyyy";
-            this.dtpThangNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangNam.Location = new System.Drawing.Point(598, 32);
-            this.dtpThangNam.Name = "dtpThangNam";
-            this.dtpThangNam.Size = new System.Drawing.Size(167, 27);
-            this.dtpThangNam.TabIndex = 40;
-            // 
             // UC_Baocao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -347,7 +348,7 @@ namespace QuanLyNhaSach.Forms.UserControls
         private System.Windows.Forms.DataGridView dgvTon;
         private System.Windows.Forms.DataGridView dgvCongno;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.OpenFileDialog chonDuongDan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

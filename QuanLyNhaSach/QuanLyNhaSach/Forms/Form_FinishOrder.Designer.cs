@@ -46,8 +46,8 @@ namespace QuanLyNhaSach.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.lblSotienthua = new System.Windows.Forms.Label();
             this.lblGiatritienthua = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnHoantat = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.cboxXuat = new System.Windows.Forms.CheckBox();
             this.Save = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
@@ -222,32 +222,32 @@ namespace QuanLyNhaSach.Forms
             this.lblGiatritienthua.TabIndex = 34;
             this.lblGiatritienthua.Text = "0";
             // 
-            // button3
+            // btnHoantat
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.SeaGreen;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(503, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 53);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Hoàn tất";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnHoantat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHoantat.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnHoantat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHoantat.ForeColor = System.Drawing.Color.White;
+            this.btnHoantat.Location = new System.Drawing.Point(503, 350);
+            this.btnHoantat.Name = "btnHoantat";
+            this.btnHoantat.Size = new System.Drawing.Size(169, 53);
+            this.btnHoantat.TabIndex = 35;
+            this.btnHoantat.Text = "Hoàn tất";
+            this.btnHoantat.UseVisualStyleBackColor = false;
+            this.btnHoantat.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnHuy
             // 
-            this.button4.BackColor = System.Drawing.Color.Firebrick;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(38, 350);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 53);
-            this.button4.TabIndex = 36;
-            this.button4.Text = "Hủy";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(38, 350);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(169, 53);
+            this.btnHuy.TabIndex = 36;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.button4_Click);
             // 
             // cboxXuat
             // 
@@ -271,8 +271,8 @@ namespace QuanLyNhaSach.Forms
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(705, 429);
             this.Controls.Add(this.cboxXuat);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnHoantat);
             this.Controls.Add(this.lblGiatritienthua);
             this.Controls.Add(this.lblSotienthua);
             this.Controls.Add(this.txtBoxSotiennhan);
@@ -321,8 +321,8 @@ namespace QuanLyNhaSach.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSotienthua;
         private System.Windows.Forms.Label lblGiatritienthua;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnHoantat;
+        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.CheckBox cboxXuat;
         private System.Windows.Forms.SaveFileDialog Save;
     }

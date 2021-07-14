@@ -25,7 +25,7 @@ namespace QuanLyNhaSach
         {
             for (int i = 0; i < 5; ++i)
                 Globals.ServerPath = Directory.GetParent(Globals.ServerPath).FullName.ToString();
-            Globals.ServerPath = Path.Combine(Globals.ServerPath, @"server\");
+            Globals.ServerPath = Path.Combine(Globals.ServerPath, @"server\QLNS.mdf");
         }
         /// <summary>
         ///  The main entry point for the application.
@@ -35,7 +35,7 @@ namespace QuanLyNhaSach
         {
             getPath();
             // Create connection to database
-            Globals.sqlcon = new SqlConnection(@"Data Source=.;Initial Catalog=QLNS;Integrated Security=True");
+            Globals.sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;" + @"AttachDbFilename = " + Globals.ServerPath + "; Integrated Security=True; Connect Timeout = 30; User Instance = True");
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
